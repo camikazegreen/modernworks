@@ -39,6 +39,9 @@ module.exports.routes = {
   '/client': {
     view: 'client'
   },
+  '/user': {
+    view: 'user'
+  }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
