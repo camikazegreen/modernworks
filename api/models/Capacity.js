@@ -8,9 +8,10 @@
 module.exports = {
 
   attributes: {
-  	name: 'string',
-  	unique: true
-
+  	name: {
+  		type = 'string',
+  		unique: true
+  	}
   }
 };
 
