@@ -39,12 +39,12 @@ module.exports = {
     var payee = params.payee;
     var address = params.address;
     var user = params.user;
-    CheckDetail.create({payee:payee,address:address,user:user}, function(err, address){
+    CheckDetail.create({payee:payee,address:address,user:user}, function(err, checkDetail){
       if (err){
         res.send(err);
       }
       else{
-        return res.send(checkdetail.id);
+        return res.send(checkDetail.id);
       }
     });
   },
