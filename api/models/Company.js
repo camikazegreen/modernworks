@@ -7,16 +7,16 @@
 
 module.exports = {
 
-  attributes: {
-  	name:{
-  		type: 'string',
-  		unique: true
-  	},
-  	clients:{
-  		collection:'user',
-  		via: 'company'
-  	}
+  // attributes: {
+  // 	name:{
+  // 		type: 'string',
+  // 		unique: true
+  // 	},
+  // 	clients:{
+  // 		collection:'user',
+  // 		via: 'company'
+  // 	}
 
-  }
+  // }
 };
 
