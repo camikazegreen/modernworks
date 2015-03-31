@@ -52,6 +52,13 @@ module.exports = {
     accountManager:{
       model: 'accountManager'
     },
+    isAccountManager:{
+      type: 'boolean'
+    },
+    accountsManaged:{
+      collection:'user',
+      via:'accountManager'
+    },
     startDate:{
       type:'date'
     },
