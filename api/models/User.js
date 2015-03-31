@@ -35,7 +35,7 @@ module.exports = {
       model: 'depositDetail'
     },
     checkDetail:{
-      model: 'chedkDetail'
+      model: 'checkDetail'
     },
     company:{
       model: 'company'
