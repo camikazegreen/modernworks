@@ -1,7 +1,7 @@
 /**
  * AddressController
  *
- * @description :: Server-side logic for managing Addresss
+ * @description :: Server-side logic for managing Addresses
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
@@ -41,7 +41,7 @@ module.exports = {
     var city = params.city;
     var state = params.state;
     var zip = params.zip;
-    Address.create({name:name,email:email,password:pass}, function(err, address){
+    Address.create({info1:info1,info2:info2,city:city,state:state,zip:zip}, function(err, address){
       if (err){
         res.send(err);
       }
