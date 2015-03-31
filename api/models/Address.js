@@ -23,9 +23,6 @@ module.exports = {
   	},
   	zip:{
   		type: 'string'
-  	},
-  	user:{
-  		model: 'user'
   	}
   }
 };
