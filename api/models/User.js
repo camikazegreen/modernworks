@@ -13,11 +13,64 @@ module.exports = {
       unique: true
     },
     email:{
-      type:'string',
+      type:'email',
       unique:true
     },
     password:{
       type:'string'
+    },
+    phone:{
+      type: 'string'
+    },
+    address:{
+      model: 'address'
+    },
+    digital:{
+      type: 'boolean'
+    },
+    deposit:{
+      type: 'boolean'
+    },
+    depositDetail:{
+      model: 'depositDetail'
+    },
+    checkDetail:{
+      model: 'chedkDetail'
+    },
+    company:{
+      model: 'company'
+    },
+    publisher:{
+      model:'publisher'
+    },
+    isComposer:{
+      type: 'boolean'
+    },
+    composer:{
+      model: 'composer'
+    },
+    accountManager:{
+      model: 'accountManager'
+    },
+    startDate:{
+      type:'date'
+    },
+    expiryDate:{
+      type:'date'
+    },
+    finder:{
+      model:'user'
+    },
+    finderClients:{
+      collection:'user',
+      via:'finder'
+    },
+    cc:{
+      model:'user'
+    },
+    ccFor:{
+      collection:'user',
+      via:'cc'
     }
 
   }
