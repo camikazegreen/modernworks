@@ -8,6 +8,27 @@
 module.exports = {
 
   attributes: {
+  	name:{
+  		type: 'string'
+  	},
+  	account:{
+  		type: 'string'
+  	},
+  	routing:{
+  		type: 'string'
+  	},
+  	bankName:{
+  		type: 'string'
+  	},
+  	checking:{
+  		type: 'boolean'
+  	},
+  	attachment:{
+  		type: 'boolean'
+  	},
+  	user:{
+  		model: 'user'
+  	}
 
   }
 };

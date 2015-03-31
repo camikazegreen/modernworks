@@ -8,6 +8,13 @@
 module.exports = {
 
   attributes: {
+  	name:{
+  		type: 'string'
+  	},
+  	clients:{
+  		collection:'user',
+  		via: 'company'
+  	}
 
   }
 };

@@ -8,7 +8,25 @@
 module.exports = {
 
   attributes: {
-
+  	
+  	info1:{
+  		type:'text'
+  	},
+  	info2:{
+  		type:'text'
+  	},
+  	city:{
+  		type: 'string'
+  	},
+  	state:{
+  		type: 'string'
+  	},
+  	zip:{
+  		type: 'string'
+  	},
+  	user:{
+  		model: 'user'
+  	}
   }
 };
 

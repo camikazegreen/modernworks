@@ -8,7 +8,15 @@
 module.exports = {
 
   attributes: {
-
+  	payee:{
+  		type: 'string'
+  	},
+  	address:{
+  		model: 'address'
+  	},
+  	user:{
+  		model: 'user'
+  	}
   }
 };
 

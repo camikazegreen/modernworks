@@ -8,6 +8,31 @@
 module.exports = {
 
   attributes: {
+  	name:{
+  		type: 'string'
+  	},
+  	PRO:{
+  		model: 'PRO'
+  	},
+  	capacity:{
+  		model: 'capacity'
+  	},
+  	linkedPublisher:{
+  		model: 'publisher'
+  	},
+  	publishersLinked{
+  		collection: 'publisher',
+  		via: 'linkedPublisher'
+  	},
+  	linkedCapacity:{
+  		model: 'capacity'
+  	},
+  	caeIpi:{
+  		type: 'string'
+  	},
+  	controlled:{
+  		type: 'boolean'
+  	}
 
   }
 };
