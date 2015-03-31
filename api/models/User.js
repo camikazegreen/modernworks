@@ -50,7 +50,7 @@ module.exports = {
       model: 'composer'
     },
     accountManager:{
-      model: 'accountManager'
+      model: 'user'
     },
     isAccountManager:{
       type: 'boolean'
