@@ -44,7 +44,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        return res.send(checkDetail.id);
+        return res.send(checkdetail.id);
       }
     });
   },
