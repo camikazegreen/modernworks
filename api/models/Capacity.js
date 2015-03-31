@@ -7,10 +7,10 @@
 
 module.exports = {
 
-  // attributes: {
-  // 	name: 'string',
-  // 	unique: true
+  attributes: {
+  	name: 'string',
+  	unique: true
 
-  // }
+  }
 };
 
