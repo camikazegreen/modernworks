@@ -39,9 +39,36 @@ module.exports.routes = {
   '/client': {
     view: 'client'
   },
+  '/address':{
+    view: 'address'
+  },
+  '/checkdetail':{
+    view:'checkdetail'
+  },
+  '/depositdetail':{
+    view:'depositdetail'
+  },
   '/user': {
     view: 'user'
   },
+  '/capacity': {
+    view: 'capacity'
+  },
+  '/composer': {
+    view: 'composer'
+  },
+  '/company':{
+    view: 'company'
+  },
+  '/pro':{
+    view: 'pro'
+  },
+  '/publisher':{
+    view: 'publisher'
+  },
+  'song':{
+    view: 'song'
+  }
   
   /***************************************************************************
   *                                                                          *
