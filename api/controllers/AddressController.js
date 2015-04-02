@@ -22,6 +22,7 @@ module.exports = {
  */
   new: function(req,res){
     Address.find({id:1},function(err, address){
+      sails.log(address);
       if (err){
         res.send(err);
       }
