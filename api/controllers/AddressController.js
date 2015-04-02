@@ -21,7 +21,7 @@ module.exports = {
  * 'AddressController.new()'
  */
   new: function(req,res){
-    console.log(Address.find({state:'az'}));
+    // console.log(Address.find({state:'az'}));
     return res.view('address',{
       addresses:'somewhere'
     })
@@ -37,7 +37,6 @@ module.exports = {
     var city = params.city;
     var state = params.state;
     var zip = params.zip;
-    // console.log(params);
     Address.create({info1:info1,info2:info2,city:city,state:state,zip:zip}, function(err, address){
       if (err){
         res.send(err);
