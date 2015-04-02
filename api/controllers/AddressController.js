@@ -43,7 +43,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        return res.send(address.id);
+        console.log(address.id);
       }
     });
   },
