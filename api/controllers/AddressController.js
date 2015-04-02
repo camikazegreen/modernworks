@@ -23,7 +23,7 @@ module.exports = {
   new: function(req,res){
     console.log(Address.find({id:{'>':0}}));
     return res.view('address',{
-      addresses:'somewhere')
+      addresses:'somewhere'
     })
   },
 
