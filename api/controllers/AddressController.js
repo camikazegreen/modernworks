@@ -42,7 +42,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        return res.send(address.id);
+        return res.view('address'));
       }
     });
   },

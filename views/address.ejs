@@ -18,6 +18,12 @@
   <!-- Form Name -->
   <legend>Address Details</legend>
   <!-- Text input-->
+  <ul>
+    <% for(var i=0; i<addresses.length; i++){ %>
+      <li><%= addresses[i] %></li>
+    <% } %>
+  </ul>
+
   <p><%= addresses %></p>
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 1</label>
