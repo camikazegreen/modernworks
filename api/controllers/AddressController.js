@@ -21,14 +21,9 @@ module.exports = {
  * 'AddressController.new()'
  */
   new: function(req,res){
-    res.send(
-      '<form action="http://107.170.53.5:1337/address/create" enctype="multipart/form-data" method="post">'+
-      'name:<input type="text" name="name"><br>'+
-      'email:<input type="text" name="email"><br>'+
-      'password:<input type="text" name="password"><br>'+
-      '<input type="submit" value="submit">'+
-      '</form>'
-      )
+    return res.view('address',{
+      user:theUser
+    })
   },
 
   /**
