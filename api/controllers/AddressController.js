@@ -42,7 +42,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        sails.log(address.id);
+        res.send(address.id);
       }
     });
   },
