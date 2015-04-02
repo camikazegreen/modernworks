@@ -43,7 +43,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        return res.view('address');
+        return res.send(address.id);
       }
     });
   },
