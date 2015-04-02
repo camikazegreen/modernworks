@@ -36,6 +36,7 @@ module.exports = {
     var city = params.city;
     var state = params.state;
     var zip = params.zip;
+    captains-log(params);
     Address.create({info1:info1,info2:info2,city:city,state:state,zip:zip}, function(err, address){
       if (err){
         res.send(err);
