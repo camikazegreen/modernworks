@@ -21,13 +21,11 @@ module.exports = {
  * 'AddressController.new()'
  */
   new: function(req,res){
-    Address.find({id:1},function(err, address){
-      sails.log(address);
       if (err){
         res.send(err);
       }
       else{
-        res.view('address',{addresses:address});
+        res.view('address');
       }
     })
   },
@@ -47,7 +45,9 @@ module.exports = {
         res.send(err);
       }
       else{
-        res.send(address.id);
+        Address.find({id:address.id},function(err,data){
+          res.view('address',{addresses:data});
+        })
       }
     });
   },
