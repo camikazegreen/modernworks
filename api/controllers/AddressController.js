@@ -27,7 +27,6 @@ module.exports = {
       else{
         res.view('address');
       }
-    })
   },
 
   /**
