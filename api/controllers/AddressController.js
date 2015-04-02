@@ -22,7 +22,7 @@ module.exports = {
  */
   new: function(req,res){
     return res.view('address',{
-      user:theUser
+      user:'cameron'
     })
   },
 
