@@ -21,8 +21,9 @@ module.exports = {
  * 'AddressController.new()'
  */
   new: function(req,res){
+    console.log(Address.find({id:{'>':0}}));
     return res.view('address',{
-      addresses:Address.find({id:{'>':0}})
+      addresses:'somewhere')
     })
   },
 
