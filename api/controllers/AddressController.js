@@ -25,7 +25,8 @@ module.exports = {
         res.send(err);
       }
       else{
-        res.view('address');
+        var addresses = []
+        res.view('address',{addresses:addresses});
       }
   },
 
@@ -44,7 +45,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        Address.find({id:address.id},function(err,data){
+        Address.find({id:{'>=':0}},function(err,data){
           res.view('address',{addresses:data});
         })
       }
