@@ -21,8 +21,8 @@ module.exports = {
  * 'AddressController.new()'
  */
   new: function(req,res){
-        var addresses = [{'info1':'something'}];
-        res.view('address',{addresses:addresses});
+        // var addresses = [{'info1':'something'}];
+        res.view('address');
   },
 
   /**
