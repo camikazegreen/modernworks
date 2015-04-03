@@ -13,6 +13,11 @@
 </head>
 <body>
 <div class="container">
+  <ul>
+<% for(var i=0; i<addresses.length; i++) {%>
+   <li><%= addresses[i].info1 %></li>
+<% } %>
+</ul>
   <p><%= addresses[0].info1 %></p>
 <form action="/address/create" enctype="multipart/form-data" method="post">
   <fieldset>
