@@ -21,13 +21,8 @@ module.exports = {
  * 'AddressController.new()'
  */
   new: function(req,res){
-      if (err){
-        res.send(err);
-      }
-      else{
         var addresses = []
         res.view('address',{addresses:addresses});
-      }
   },
 
   /**
