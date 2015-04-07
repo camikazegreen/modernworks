@@ -40,7 +40,7 @@ module.exports = {
         res.send(err);
       }
       else{
-        Address.find(id:{'>=':0}},function(err,data){
+        Address.find({id:{'>=':0}},function(err,data){
           res.view('address',{addresses:data});
         })
       }
