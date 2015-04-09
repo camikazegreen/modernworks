@@ -23,7 +23,7 @@ module.exports = {
 	},
 	upload: function (req,res){
 		req.file('songMP3').upload({
-			maxBytes:1000000
+			maxBytes:10000000
 		},function whenDone(err,uploadedFiles){
 			if (err){
 				return res.negotiate(err);
