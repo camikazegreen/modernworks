@@ -30,13 +30,19 @@ module.exports = {
 			if(uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
+			var id3 = require('id3js');
+ 
+			id3({ file: uploadedFiles[0], type: id3.OPEN_LOCAL }, function(err, tags) {
+  				  // tags now contains your ID3 tags 
+  				  console.log(tags)
+			});
 			Song.create({
 			songFd: uploadedFiles[0].fd,
 			songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd)
 		})
 			.exec(function(err){
 				if (err) return res.negotiate(err);
-				return res.ok();
+				return res.redirect('song/songMP3'+song.id);
 			});
 		});
 	},
