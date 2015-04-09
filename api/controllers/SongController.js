@@ -24,8 +24,8 @@ module.exports = {
 	upload: function (req,res){
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
-			key: s3keys.key,
-			secret: s3keys.secret,
+			key: Object.module.exports.s3keys.key,
+			secret: Object.module.exports.s3keys.secret,
 			bucket: 'mw-songs',
 			region: 'Oregon'
 		},function whenDone(err,uploadedFiles){
