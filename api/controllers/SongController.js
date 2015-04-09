@@ -34,16 +34,24 @@ module.exports = {
  
 			id3({ file: uploadedFiles[0].fd, type: id3.OPEN_LOCAL }, function(err, tags) {
   				  // tags now contains your ID3 tags 
-  				  console.log(tags)
-			});
-			Song.create({
-			songFd: uploadedFiles[0].fd,
-			songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd)
-		})
-			.exec(function(err){
+  				  console.log(tags);
+  				  Song.create({
+					songFd: uploadedFiles[0].fd,
+					songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd),
+					title: tags.title,
+					artist: tags.artist,
+					album: tags.album,
+					year: tags.year
+				},function(err,user){
 				if (err) return res.negotiate(err);
 				return res.redirect('song/songMP3'+song.id);
+			})
 			});
+			
+			// .exec(function(err){
+			// 	if (err) return res.negotiate(err);
+			// 	return res.redirect('song/songMP3'+song.id);
+			// });
 		});
 	},
 	songMP3: function(req,res){
