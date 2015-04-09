@@ -55,7 +55,7 @@ module.exports = {
 			var SkipperDisk = require('skipper-disk');
 			var fileAdapter = SkipperDisk();
 
-			fileAdapter.read(song.avatarFd)
+			fileAdapter.read(song.songFd)
 			.on('error',function(err){
 				return res.serverError(err);
 			})
