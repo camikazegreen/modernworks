@@ -3,7 +3,12 @@
 </head>
 <body>
 <div class="container">
-<form action="/song/create" enctype="multipart/form-data" method="post">
+<form action="/song/upload" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <label for="songUpload">Upload Mp3</label>
+    <input type="file" id="songUpload" name="songMP3">
+    <p class="help-block">File cannot exceed 10 MBs</p>
+  </div>
   <fieldset>
   <!-- Form Name -->
   <legend>Address Details</legend>
