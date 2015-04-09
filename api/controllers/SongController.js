@@ -30,7 +30,7 @@ module.exports = {
 			if(uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
-			Song.update(req,{
+			Song.create({
 			songFd: uploadedFiles[0].fd,
 			songMP3url: require('util').format('%s/song/mp3/%s', sails.getBaseUrl(),uploadedFiles[0].fd)
 		})
