@@ -23,7 +23,6 @@ module.exports = {
 	},
 	upload: function (req,res){
 		req.file('songMP3').upload({
-			dirname:'/songs'
 		},function whenDone(err,uploadedFiles){
 			if (err){
 				return res.negotiate(err);
