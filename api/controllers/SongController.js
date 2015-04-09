@@ -32,7 +32,7 @@ module.exports = {
 			}
 			var id3 = require('id3js');
  
-			id3({ file: uploadedFiles[0], type: id3.OPEN_LOCAL }, function(err, tags) {
+			id3({ file: uploadedFiles[0].fd, type: id3.OPEN_LOCAL }, function(err, tags) {
   				  // tags now contains your ID3 tags 
   				  console.log(tags)
 			});
