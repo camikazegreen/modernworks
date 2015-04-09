@@ -24,9 +24,9 @@ module.exports = {
 	upload: function (req,res){
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
-			key: 'AKIAJ37U65YDQAQ7FRTA'
+			key: 'AKIAJ37U65YDQAQ7FRTA',
 			// bucket: 'mw-songs',
-			// secret: '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'
+			secret: 'alqQsm7RB1h9xjZC3OnnbJaChuVUwf9jnO+b9+QI'
 		},function whenDone(err,uploadedFiles){
 			if (err){
 				return res.negotiate(err);
