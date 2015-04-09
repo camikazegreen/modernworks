@@ -28,13 +28,56 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    This is from the layout template
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" area-expanded="false">New <span class="caret"></span></a>
+            </li>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/user">User</a></li>
+              <li><a href="/address">Address</a></li>
+              <li><a href="/capacity">Capacity</a></li>
+              <li><a href="/checkdetail">Check Detail</a></li>
+              <li><a href="/depositdetail">Deposit Detail</a></li>
+              <li><a href="/composer">Composer</a></li>
+              <li><a href="/company">Company</a></li>
+              <li><a href="/pro">PRO</a></li>
+              <li><a href="/publisher">Publisher</a></li>
+              <li><a href="/song">Song</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
     <%- body %>
 
 
