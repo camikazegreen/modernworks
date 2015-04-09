@@ -8,6 +8,27 @@
 module.exports = {
 
   attributes: {
+  	title:{
+  		type:'string'
+  	},
+  	artist:{
+  		type:'string'
+  	},
+  	artistID:{
+  		model:'user'
+  	},
+  	album:{
+  		type:'string'
+  	},
+  	year:{
+  		type:'integer'
+  	},
+  	songMP3url:{
+  		type:'string'
+  	},
+  	songFd:{
+  		type:'string'
+  	}
 
   }
 };

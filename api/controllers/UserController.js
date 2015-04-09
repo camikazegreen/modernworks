@@ -35,7 +35,7 @@ module.exports = {
    * `UserController.create()`
    */
   create: function (req, res) {
-    var params = req.params.all()
+    var params = req.params.all();
     var name = params.name;
     var email = params.email;
     var pass = params.password;
