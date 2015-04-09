@@ -32,7 +32,7 @@ module.exports = {
 			}
 			Song.create({
 			songFd: uploadedFiles[0].fd,
-			songMP3url: require('util').format('%s/song/mp3/%s', sails.getBaseUrl(),uploadedFiles[0].fd)
+			songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd)
 		})
 			.exec(function(err){
 				if (err) return res.negotiate(err);
