@@ -82,12 +82,12 @@ req.file(song.songMP3url).get({
 			secret: apikeys.s3keys[0].secret,
 			bucket: 'mw-songs',
 			region: 'Oregon'
-		}
+		})
 			// fileAdapter.read(song.songMP3url)
-			// .on('error',function(err){
-			// 	return res.serverError(err);
-			// })
-			// .pipe(res);
+			.on('error',function(err){
+				return res.serverError(err);
+			})
+			.pipe(res);
 		});
 	}
 };
