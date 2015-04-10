@@ -4,7 +4,7 @@
  * @description :: Server-side logic for managing songs
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
-
+var apikeys= require('./apikeys.js');
 module.exports = {
 	/**
 	* 'SongController.index()'
@@ -22,10 +22,11 @@ module.exports = {
 
 	},
 	upload: function (req,res){
+   console.log(apikeys.s3keys);
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
-			key: global.apikeys.s3keys.key,
-			secret: global.apikeys.s3keys.secret,
+			key: apikeys.s3keys[0].key,
+			secret: apikeys.s3keys[0].secret,
 			bucket: 'mw-songs',
 			region: 'Oregon'
 		},function whenDone(err,uploadedFiles){
@@ -35,24 +36,26 @@ module.exports = {
 			if(uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
-			var id3 = require('id3js');
- 
-			id3({ file: uploadedFiles[0].fd, type: id3.OPEN_LOCAL }, function(err, tags) {
-  				  // tags now contains your ID3 tags 
-  				  console.log(tags);
-  				  Song.create({
-					songFd: uploadedFiles[0].fd,
-					songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd),
-					title: tags.title,
-					artist: tags.artist,
-					album: tags.album,
-					year: tags.year
-				},function(err,song){
-				if (err) return res.negotiate(err);
-				return res.redirect('song/songMP3?id=1');
-			})
-			});
-			
+
+            console.log(uploadedFiles);
+//			var id3 = require('id3js');
+//
+//			id3({ file: uploadedFiles[0].extra.Location, type: id3.OPEN_LOCAL }, function(err, tags) {
+//  				  // tags now contains your ID3 tags
+//  				  console.log(err);
+//  				  Song.create({
+//					songFd: uploadedFiles[0].fd,
+//					songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd),
+//					title: tags.title,
+//					artist: tags.artist,
+//					album: tags.album,
+//					year: tags.year
+//				},function(err,song){
+//				if (err) return res.negotiate(err);
+//				return res.redirect('song/songMP3?id=1');
+//			})
+//			});
+
 			// .exec(function(err){
 			// 	if (err) return res.negotiate(err);
 			// 	return res.redirect('song/songMP3'+song.id);
