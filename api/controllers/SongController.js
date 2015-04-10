@@ -76,12 +76,14 @@ module.exports = {
 			}
 			var SkipperS3 = require('skipper-s3');
 			var fileAdapter = SkipperS3();
-req.file(song.songMP3url).get({
+			
+			fileAdapter.read({
 			adapter: require('skipper-s3'),
 			key: apikeys.s3keys[0].key,
 			secret: apikeys.s3keys[0].secret,
 			bucket: 'mw-songs',
-			region: 'Oregon'
+			region: 'Oregon',
+			url:song.songMP3url
 		})
 			// fileAdapter.read(song.songMP3url)
 			.on('error',function(err){
