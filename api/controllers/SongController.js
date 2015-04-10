@@ -22,7 +22,7 @@ module.exports = {
 
 	},
 	upload: function (req,res){
-   console.log(apikeys.s3keys);
+   // console.log(apikeys.s3keys);
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
 			key: apikeys.s3keys[0].key,
@@ -76,12 +76,18 @@ module.exports = {
 			}
 			var SkipperS3 = require('skipper-s3');
 			var fileAdapter = SkipperS3();
-
-			fileAdapter.read(song.songMP3url)
-			.on('error',function(err){
-				return res.serverError(err);
-			})
-			.pipe(res);
+req.file(song.songMP3url).get({
+			adapter: require('skipper-s3'),
+			key: apikeys.s3keys[0].key,
+			secret: apikeys.s3keys[0].secret,
+			bucket: 'mw-songs',
+			region: 'Oregon'
+		}
+			// fileAdapter.read(song.songMP3url)
+			// .on('error',function(err){
+			// 	return res.serverError(err);
+			// })
+			// .pipe(res);
 		});
 	}
 };
