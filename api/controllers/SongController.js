@@ -74,8 +74,8 @@ module.exports = {
 			if(!song.songFd){
 				return res.notFound();
 			}
-			var SkipperDisk = require('skipper-disk');
-			var fileAdapter = SkipperDisk();
+			var SkipperS3 = require('skipper-s3');
+			var fileAdapter = SkipperS3();
 
 			fileAdapter.read(song.songMP3url)
 			.on('error',function(err){
