@@ -46,10 +46,10 @@ module.exports = {
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: require('util').format('%s/%s', sails.getBaseUrl(),uploadedFiles[0].fd),
-					title: tags.title,
-					artist: tags.artist,
-					album: tags.album,
-					year: tags.year
+					// title: tags.title,
+					// artist: tags.artist,
+					// album: tags.album,
+					// year: tags.year
 				},function(err,song){
 				if (err) return res.negotiate(err);
 				return res.redirect('song/songMP3?id=1');
