@@ -82,7 +82,7 @@ module.exports = {
 				region: 'Oregon'
 			});
 			
-			fileAdapter.read(song.songMP3url);
+			fileAdapter.read(song.songMP3url)
 			// fileAdapter.read(song.songMP3url)
 			.on('error',function(err){
 				return res.serverError(err);
