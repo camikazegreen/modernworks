@@ -68,10 +68,14 @@ module.exports = {
 			id:'string'
 		});
 		Song.findOne(req.param('id')).exec(function(err,song){
+			console.log('findOne.exec is happening');
 			if(err) return res.negotiate(err);
 			if(!song) return res.notFound();
 
 			if(!song.songFd){
+				return res.notFound();
+			}
+			if(!song.songMP3url){
 				return res.notFound();
 			}
 			var SkipperS3 = require('skipper-s3');
