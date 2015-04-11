@@ -85,6 +85,7 @@ module.exports = {
 			fileAdapter.read(song.songMP3url)
 			// fileAdapter.read(song.songMP3url)
 			.on('error',function(err){
+				console.log('the error is in the on function');
 				return res.serverError(err);
 			})
 			.pipe(res);
