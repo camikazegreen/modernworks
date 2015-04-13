@@ -5,6 +5,14 @@
     document.querySelector('input[type="file"]').onchange = function(e) {
       id3(this.files[0], function(err, tags) {
         console.log(tags)  // tags now contains your ID3 tags 
+        var arrayBufferView = new Uint8Array(tags.v2.image.data);
+        var blob = new Blob([arrayBufferView],{type:"image/jpeg"});
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL(blob);
+        var img = document.querySelector("#coverArt");
+        img.src = imageUrl;
+
+
     });
 }
 </script>
@@ -12,6 +20,7 @@
 <body>
 <div class="container">
   <input type="file" id="input" multiple onchange="handleFiles(this.files)">
+  <img id="coverArt"/>
 <form action="/song/upload" enctype="multipart/form-data" method="post">
   <div class="form-group">
     <label for="songUpload">Upload Mp3</label>
