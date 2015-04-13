@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+  <input type="file" id="input" multiple onchange="handleFiles(this.files)">
 <form action="/song/upload" enctype="multipart/form-data" method="post">
   <div class="form-group">
     <label for="songUpload">Upload Mp3</label>
