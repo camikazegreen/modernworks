@@ -54,6 +54,7 @@
         contentType: false,
         processData: false
     });
+    console.log('its getting to here.')
     function progressHandling(e){
         if(e.lengthComputable){
             console.log("progess is getting called")
