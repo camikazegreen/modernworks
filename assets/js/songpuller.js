@@ -51,6 +51,7 @@
             return myXhr;
         },
         data: this.files[i],
+        debugger
         cache: false,
         contentType: false,
         processData: false
