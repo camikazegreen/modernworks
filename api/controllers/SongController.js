@@ -58,6 +58,9 @@ module.exports = {
 			// });
 		});
 	},
+	response: function(req,res){
+		console.log("at least this one is working");
+	},
 	songMP3: function(req,res){
 
 		req.validate({

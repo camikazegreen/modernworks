@@ -70,7 +70,7 @@ module.exports.routes = {
     view: 'song'
   },
   'POST /song':'SongController.upload',
-  'POST /son':{response:'notfound'},
+  'POST /son':'SongController.response',
   
   /***************************************************************************
   *                                                                          *
