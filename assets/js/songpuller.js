@@ -56,6 +56,7 @@
     });
     function progressHandling(e){
         if(e.lengthComputable){
+            console.log("progess is getting called")
             $('#progress'+i).attr({value:e.loaded,max:e.total});
         }
     }
