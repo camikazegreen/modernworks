@@ -18,23 +18,47 @@
             var albumArt = document.createElement('img');
             albumArt.setAttribute('src',imageUrl);
             albumArt.setAttribute('width','50px');
-            var title = document.createElement('h3');
+            var title = document.createElement('h4');
             title.innerHTML = tags.title;
-            var artist = document.createElement('h4');
+            var artist = document.createElement('h5');
             artist.innerHTML = 'by ' + tags.artist;
-            var album = document.createElement('h4');
+            var album = document.createElement('h5');
             album.innerHTML = 'on ' + tags.album;
             var artBox = row.insertCell(0);
             var infoBox = row.insertCell(1);
+            var progBox = row.insertCell(2);
             artBox.appendChild(albumArt);
             infoBox.appendChild(title);
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
+            var progress = document.createElement('progress');
+            progress.setAttribute('id','progress'+i);
+            progBox.appendChild(progress);
 
         };
         thisSongDeets();
 
+    });//closing id3 tagging
+    $.ajax({
+        url:'/song',
+        type: 'POST',
+        xhr: function(){
+            var myXhr = $ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progressHandling, false);
+            }
+            return myXhr;
+        },
+        data: this.files[i],
+        cache: false,
+        contentType: false,
+        processData: false
     });
+    progressHandling(e){
+        if(e.lengthComputable){
+            $('#progress'+i).attr({value:e.loaded,max:e.total});
+        }
+    }
  i++;
 }
 }

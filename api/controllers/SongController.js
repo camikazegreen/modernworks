@@ -38,10 +38,6 @@ module.exports = {
 			}
 
             console.log(uploadedFiles);
-//			var id3 = require('id3js');
-//
-//			id3({ file: uploadedFiles[0].extra.Location, type: id3.OPEN_LOCAL }, function(err, tags) {
-//  				  // tags now contains your ID3 tags
 //  				  console.log(err);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
@@ -54,7 +50,6 @@ module.exports = {
 				if (err) return res.negotiate(err);
 				return res.redirect('song/songMP3?id=1');
 			})
-//			});
 
 			// .exec(function(err){
 			// 	if (err) return res.negotiate(err);
