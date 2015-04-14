@@ -44,7 +44,7 @@
         var formData = new FormData();
         formData.append('files[]',file,file.name);
     $.ajax({
-        url:'/song',
+        url:'http://107.170.53.5:1337/song',
         type: 'POST',
         // xhr: function(){
         //     console.log(file);
