@@ -55,9 +55,9 @@
         //     return myXhr;
         // },
         data: formData,
-        cache: false,
-        contentType: false,
-        processData: false
+        cache: false
+        // contentType: false,
+        // processData: false
     });
     console.log('its getting to here.')
     function progressHandling(e){
