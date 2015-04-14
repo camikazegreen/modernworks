@@ -1,6 +1,8 @@
  $(document).ready(function(){
 
     document.querySelector('input[type="file"]').onchange = function(e) {
+        i=0;
+        while(i<this.files.length){
       id3(this.files[0], function(err, tags) {
         console.log(tags)  // tags now contains your ID3 tags 
         
@@ -33,5 +35,7 @@
         thisSongDeets();
 
     });
+ i++;
+}
 }
 }) //closing document.ready
