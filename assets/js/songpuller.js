@@ -44,7 +44,7 @@
         var formData = new FormData();
         formData.append('files[]',file,file.name);
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://107.170.53.5:1337/song', true);
+        xhr.open('POST', 'http://107.170.53.5:1337/son', true);
         xhr.onload = function(){
             if (xhr.status===200){
                 console.log("we're all good");
