@@ -66,10 +66,10 @@ module.exports.routes = {
   '/publisher':{
     view: 'publisher'
   },
+  'POST /song':'SongController.upload',
   '/song':{
     view: 'song'
   },
-  'POST /song':'SongController.upload',
   'POST /son':'SongController.response',
   
   /***************************************************************************
