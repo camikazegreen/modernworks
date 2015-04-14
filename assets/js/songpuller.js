@@ -25,7 +25,7 @@
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             document.getElementById('songDetails').appendChild(infoBox);
-        })()
+        }) ();
 
     });
 }
