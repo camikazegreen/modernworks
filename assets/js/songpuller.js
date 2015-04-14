@@ -4,7 +4,7 @@
       id3(this.files[0], function(err, tags) {
         console.log(tags)  // tags now contains your ID3 tags 
         
-        function thisSongDeets(){
+        (function thisSongDeets(){
            var arrayBufferView = new Uint16Array(tags.v2.image.data);
             var blob = new Blob([arrayBufferView],{type:"image/jpeg"});
             var urlCreator = window.URL || window.webkitURL;
@@ -25,7 +25,7 @@
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             document.getElementById('songDetails').appendChild(infoBox);
-        }
+        })()
 
     });
 }
