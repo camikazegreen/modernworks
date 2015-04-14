@@ -20,12 +20,14 @@
             artist.innerHTML = 'by ' + tags.artist;
             var album = document.createElement('h4');
             album.innerHTML = 'on ' + tags.album;
-            var infoBox = document.createElement('div');
+            var infoBox = document.createElement('td');
             infoBox.appendChild(albumArt);
             infoBox.appendChild(title);
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
-            document.getElementById('songDetails').appendChild(infoBox);
+            var newSongRow = document.createElement('tr');
+            newSongRow.appendChild(infoBox);
+            document.getElementById('songDetailTable').insertRow(0);
         };
         thisSongDeets();
 
