@@ -54,7 +54,7 @@
         contentType: false,
         processData: false
     });
-    progressHandling(e){
+    function progressHandling(e){
         if(e.lengthComputable){
             $('#progress'+i).attr({value:e.loaded,max:e.total});
         }
