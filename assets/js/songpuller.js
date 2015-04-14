@@ -40,12 +40,14 @@
 
     });//closing id3 tagging
     function postSong(){
-        var formData = new FormData($('form')[0]);
+        var file = document.getElementById('fileUpload').files[0];
+        var formData = new FormData();
+        formData.append('files[]',file,file.name);
     $.ajax({
         url:'/song',
         type: 'POST',
         xhr: function(){
-            console.log($('form')[0]);
+            console.log(formData);
             var myXhr = $ajaxSettings.xhr();
             if(myXhr.upload){
                 myXhr.upload.addEventListener('progress',progressHandling, false);
