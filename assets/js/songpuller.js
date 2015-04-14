@@ -5,6 +5,8 @@
         console.log(tags)  // tags now contains your ID3 tags 
         
         function thisSongDeets(){
+
+            var row = document.getElementById('songDetailTable').insertRow(1);
            var arrayBufferView = new Uint16Array(tags.v2.image.data);
             var blob = new Blob([arrayBufferView],{type:"image/jpeg"});
             var urlCreator = window.URL || window.webkitURL;
@@ -20,14 +22,13 @@
             artist.innerHTML = 'by ' + tags.artist;
             var album = document.createElement('h4');
             album.innerHTML = 'on ' + tags.album;
-            var infoBox = document.createElement('td');
-            infoBox.appendChild(albumArt);
+            var artBox = row.insertCell(0);
+            var infoBox = row.insertCell(1);
+            artBox.appendChild(albumArt);
             infoBox.appendChild(title);
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
-            var newSongRow = document.createElement('tr');
-            newSongRow.appendChild(infoBox);
-            document.getElementById('songDetailTable').insertRow(0);
+
         };
         thisSongDeets();
 
