@@ -45,7 +45,7 @@
         url:'/song',
         type: 'POST',
         xhr: function(){
-            console.log(formData);
+            console.log($('form')[0]);
             var myXhr = $ajaxSettings.xhr();
             if(myXhr.upload){
                 myXhr.upload.addEventListener('progress',progressHandling, false);
