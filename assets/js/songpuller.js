@@ -46,14 +46,14 @@
     $.ajax({
         url:'/song',
         type: 'POST',
-        xhr: function(){
-            console.log(file.name);
-            var myXhr = $ajaxSettings.xhr();
-            if(myXhr.upload){
-                myXhr.upload.addEventListener('progress',progressHandling, false);
-            }
-            return myXhr;
-        },
+        // xhr: function(){
+        //     console.log(file);
+        //     var myXhr = $ajaxSettings.xhr();
+        //     if(myXhr.upload){
+        //         myXhr.upload.addEventListener('progress',progressHandling, false);
+        //     }
+        //     return myXhr;
+        // },
         data: formData,
         cache: false,
         contentType: false,
