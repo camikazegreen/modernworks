@@ -40,7 +40,7 @@
 
     });//closing id3 tagging
     function postSong(){
-        var file = document.getElementById('fileUpload').files[0];
+        var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('files[]',file,file.name);
     $.ajax({
