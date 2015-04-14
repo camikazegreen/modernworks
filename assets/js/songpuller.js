@@ -13,6 +13,7 @@
             // img.src = imageUrl; 
             var albumArt = document.createElement('img');
             albumArt.setAttribute('src',imageUrl);
+            albumArt.setAttribute('width','50px');
             var title = document.createElement('h3');
             title.innerHTML = tags.title;
             var artist = document.createElement('h4');
