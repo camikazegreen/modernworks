@@ -39,6 +39,7 @@
         thisSongDeets();
 
     });//closing id3 tagging
+    function postSong(){
     $.ajax({
         url:'/song',
         type: 'POST',
@@ -61,6 +62,8 @@
             $('#progress'+i).attr({value:e.loaded,max:e.total});
         }
     }
+};
+postSong();
  i++;
 }
 }
