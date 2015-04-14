@@ -54,8 +54,8 @@
         //     }
         //     return myXhr;
         // },
-        data: formData,
-        cache: false
+        data: formData
+        // cache: false
         // contentType: false,
         // processData: false
     });
