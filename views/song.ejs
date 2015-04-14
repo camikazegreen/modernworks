@@ -4,7 +4,9 @@
 </head>
 <body>
 <div class="container">
+  <div id="songDetails">
   <input type="file" id="input" multiple onchange="handleFiles(this.files)">
+</div> <!--songDetails-->
   <img id="coverArt"/>
 <form action="/song/upload" enctype="multipart/form-data" method="post">
   <div class="form-group">
