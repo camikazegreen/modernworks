@@ -69,7 +69,7 @@ module.exports.routes = {
   '/song':{
     view: 'song'
   },
-  'post /song':'SongController.upload',
+  'POST /song':'SongController.upload',
   
   /***************************************************************************
   *                                                                          *
