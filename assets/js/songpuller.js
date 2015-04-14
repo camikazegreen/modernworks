@@ -39,31 +39,32 @@
         thisSongDeets();
 
     });//closing id3 tagging
-//     function postSong(){
-//     $.ajax({
-//         url:'/song',
-//         type: 'POST',
-//         xhr: function(){
-//             var myXhr = $ajaxSettings.xhr();
-//             if(myXhr.upload){
-//                 myXhr.upload.addEventListener('progress',progressHandling, false);
-//             }
-//             return myXhr;
-//         },
-//         data: this.files[i],
-//         cache: false,
-//         contentType: false,
-//         processData: false
-//     });
-//     console.log('its getting to here.')
-//     function progressHandling(e){
-//         if(e.lengthComputable){
-//             console.log("progess is getting called")
-//             $('#progress'+i).attr({value:e.loaded,max:e.total});
-//         }
-//     }
-// };
-// postSong();
+    function postSong(){
+        var formData = new FormData($('form')[0]);
+    $.ajax({
+        url:'/song',
+        type: 'POST',
+        xhr: function(){
+            var myXhr = $ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progressHandling, false);
+            }
+            return myXhr;
+        },
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+    console.log('its getting to here.')
+    function progressHandling(e){
+        if(e.lengthComputable){
+            console.log("progess is getting called")
+            $('#progress'+i).attr({value:e.loaded,max:e.total});
+        }
+    }
+};
+postSong();
  i++;
 }
 }
