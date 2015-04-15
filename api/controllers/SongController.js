@@ -42,9 +42,9 @@ module.exports = {
 			}
 			
 					var titleAlt = tags.title;
-					var yearAlt;
-					if(tags.year=='null'){
-						yearAlt= 'na'
+					// var yearAlt;
+					// if(tags.year=='null'){
+					// 	yearAlt= 'na'
 					} else {yearAlt= tags.year}
 				
  				  console.log(titleAlt+yearAlt);
@@ -54,7 +54,7 @@ module.exports = {
 					title: titleAlt,
 					artist: tags.artist,
 					album: tags.album,
-					year: yearAlt
+					year: 1995
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
 					res.write(JSON.stringify({ status: song }));
