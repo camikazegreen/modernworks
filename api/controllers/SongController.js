@@ -40,6 +40,7 @@ module.exports = {
 			var jsonString = '';
             req.on('data', function (data) {
                 jsonString += data;
+                console.log('data is happening');
             });
             req.on('end', function () {
                  console.log('POSTed ' + jsonString);
