@@ -42,14 +42,15 @@ module.exports = {
 			}
 			
 					var titleAlt = tags.title;
- 				  console.log(titleAlt);
+					var yearAlt = if(tags.year!=null){return tags.year}else{return 'NA'}
+ 				  console.log(titleAlt+yearAlt);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location,
 					title: titleAlt,
 					artist: tags.artist,
 					album: tags.album,
-					year: tags.year
+					year: yearAlt
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
 					res.write(JSON.stringify({ status: song }));
