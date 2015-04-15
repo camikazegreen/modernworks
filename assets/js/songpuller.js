@@ -56,14 +56,13 @@
     $.ajax({
         url:'http://107.170.53.5:1337/song',
         type: 'POST',
-        // xhr: function(){
-        //     console.log(file);
-        //     var myXhr = $ajaxSettings.xhr();
-        //     if(myXhr.upload){
-        //         myXhr.upload.addEventListener('progress',progressHandling, false);
-        //     }
-        //     return myXhr;
-        // },
+        xhr: function(){
+            var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progressHandling, false);
+            }
+            return myXhr;
+        },
         data: formData,
         cache: false,
         contentType: false,
