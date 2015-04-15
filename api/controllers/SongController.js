@@ -43,12 +43,10 @@ module.exports = {
 			
 					var titleAlt = tags.title;
 					var yearAlt;
-					function(){
 					if(tags.year!=null){
 						yearAlt= tags.year
-					}else{
-						yearAlt= 'NA'}
-				}
+					} else {yearAlt= 'NA'}
+				
  				  console.log(titleAlt+yearAlt);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
