@@ -46,7 +46,7 @@ module.exports = {
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location,
-					title: tags.title,
+					// title: tags.title,
 					artist: tags.artist,
 					album: 'billys album',
 					year: 'now'
