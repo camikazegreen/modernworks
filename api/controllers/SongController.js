@@ -41,12 +41,12 @@ module.exports = {
 				return res.badRequest('No file was uploaded');
 			}
 			
-
- 				  console.log(tags);
+					var titleAlt = tags.title;
+ 				  console.log(titleAlt);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location,
-					title: "song name",
+					title: titleAlt,
 					artist: tags.artist,
 					album: tags.album
 					// year: tags.year
