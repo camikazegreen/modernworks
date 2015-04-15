@@ -59,7 +59,7 @@
         // };
         // xhr.send(formData);
     $.ajax({
-        url:'http://107.170.53.5:1337/song',
+        url:'http://107.170.53.5:1337/song?title='+tags.title+',artist='+tags.artist+',album='+tags.album+',year='+tags.year
         type: 'POST',
         xhr: function(){
             var myXhr = $.ajaxSettings.xhr();
