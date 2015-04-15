@@ -82,20 +82,20 @@ module.exports = {
 			console.log('findOne.exec is happening');
 			if(err) {
 				console.log('error is happening at step1');
-				return res.negotiate(err);
+				// return res.negotiate(err);
 			}
 			if(!song) {
 				console.log('error is happening at step2');
-				return res.notFound();
+				// return res.notFound();
 			}
 
 			if(!song.songFd){
 				console.log('error is happening at step3');
-				return res.notFound();
+				// return res.notFound();
 			}
 			if(!song.songMP3url){
 				console.log('error is happening at step4');
-				return res.notFound();
+				// return res.notFound();
 			}
 			var SkipperS3 = require('skipper-s3');
 			var fileAdapter = SkipperS3({
@@ -109,7 +109,7 @@ module.exports = {
 			// fileAdapter.read(song.songMP3url)
 			.on('error',function(err){
 				console.log('the error is in the on function');
-				return res.serverError(err);
+				// return res.serverError(err);
 			})
 			.pipe(res);
 		});
