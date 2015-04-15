@@ -43,7 +43,7 @@ module.exports = {
 			
 					var titleAlt = tags.title;
 					var yearAlt;
-					if(tags.year==null){
+					if(tags.year=='null'){
 						yearAlt= 'na'
 					} else {yearAlt= tags.year}
 				
