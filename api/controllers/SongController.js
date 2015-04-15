@@ -24,29 +24,29 @@ module.exports = {
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
    console.log("upload is working");
-		// req.file('songMP3').upload({
-		// 	adapter: require('skipper-s3'),
-		// 	key: apikeys.s3keys[0].key,
-		// 	secret: apikeys.s3keys[0].secret,
-		// 	bucket: 'mw-songs',
-		// 	region: 'Oregon'
-		// },function whenDone(err,uploadedFiles){
-		// 	if (err){
-		// 		return res.negotiate(err);
-		// 	}
-		// 	if(uploadedFiles.length===0){
-		// 		return res.badRequest('No file was uploaded');
-		// 	}
+		req.file('songMP3').upload({
+			adapter: require('skipper-s3'),
+			key: apikeys.s3keys[0].key,
+			secret: apikeys.s3keys[0].secret,
+			bucket: 'mw-songs',
+			region: 'Oregon'
+		},function whenDone(err,uploadedFiles){
+			if (err){
+				return res.negotiate(err);
+			}
+			if(uploadedFiles.length===0){
+				return res.badRequest('No file was uploaded');
+			}
 
-            // console.log(uploadedFiles);
-//  				  console.log(err);
- 				//   Song.create({
-					// songFd: uploadedFiles[0].fd,
-					// songMP3url: uploadedFiles[0].extra.Location
-					// title: tags.title,
-					// artist: tags.artist,
-					// album: tags.album,
-					// year: tags.year
+            console.log(uploadedFiles);
+ 				  console.log(err);
+ 		// 		  Song.create({
+			// 		songFd: uploadedFiles[0].fd,
+			// 		songMP3url: uploadedFiles[0].extra.Location
+			// 		title: tags.title,
+			// 		artist: tags.artist,
+			// 		album: tags.album,
+			// 		year: tags.year
 			// 	},function(err,song){
 			// 	if (err) return res.negotiate(err);
 			// 	return res.redirect('song/songMP3?id=1');
@@ -54,9 +54,9 @@ module.exports = {
 
 			// .exec(function(err){
 			// 	if (err) return res.negotiate(err);
-				// return res.redirect('song/songMP3'+song.id);
+			// 	return res.redirect('song/songMP3'+song.id);
 			// });
-		// });
+		});
 	},
 	response: function(req,res){
 		console.log("at least this one is working");
