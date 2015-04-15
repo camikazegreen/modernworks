@@ -3,7 +3,6 @@
     document.querySelector('input[type="file"]').onchange = function(e) {
         i=0;
         while(i<this.files.length){
-            var tags;
       id3(this.files[i], function(err, tags) {
         console.log(tags)  // tags now contains your ID3 tags 
         
@@ -35,12 +34,13 @@
             var progress = document.createElement('progress');
             progress.setAttribute('id','progress'+i);
             progBox.appendChild(progress);
+            postSong(tags);
 
         };
         thisSongDeets();
 
     });//closing id3 tagging
-    function postSong(){
+    function postSong(tags){
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('files[]',file,file.name);
@@ -81,7 +81,7 @@
         }
     }
 };
-postSong();
+
  i++;
 }
 }
