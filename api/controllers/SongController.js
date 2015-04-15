@@ -49,7 +49,7 @@ module.exports = {
 			// 		year: tags.year
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
-					res.write(JSON.stringify({ status: OK }));
+					res.write(JSON.stringify({ status: 'OK' }));
 					res.end();
 					return res;
 				// if (err) return res.negotiate(err);
