@@ -43,7 +43,7 @@
     function postSong(tags){
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
-        formData.append('files[]',file,file.name);
+        formData.append('songMP3',file,file.name);
         formData.append('title',tags.title);
         formData.append('artist',tags.artist);
         formData.append('album',tags.album);
