@@ -39,10 +39,7 @@ module.exports = {
 			}
 			console.log('header: '+req.header);
 			console.log('head: '+req.head);
-			console.log('body: '+ req.body);
-			for(var key in req.body){
-				console.log('key: ' + key + '/n' + 'value: ' + req.body[key]);
-			}
+			console.log('body: '+ req.body[0]);
  				  console.log(err);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
