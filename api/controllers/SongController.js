@@ -23,7 +23,7 @@ module.exports = {
 	},
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
-   console.log(req);
+   // console.log(req);
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
 			key: apikeys.s3keys[0].key,
@@ -49,7 +49,7 @@ module.exports = {
 			// 		year: tags.year
 				},function(err,song){
 				if (err) return res.negotiate(err);
-				return res.redirect('song/songMP3?id=1');
+				// return res.redirect('song/songMP3?id=1');
 			});
 
 			// .exec(function(err){
