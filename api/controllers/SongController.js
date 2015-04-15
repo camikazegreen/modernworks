@@ -48,8 +48,10 @@ module.exports = {
 			// 		album: tags.album,
 			// 		year: tags.year
 				},function(err,song){
-					console.log("this issue");
-					return;
+					res.writeHead(200, { 'Content-Type': 'application/json' });
+					res.write(JSON.stringify({ status: OK }));
+					res.end();
+					return res;
 				// if (err) return res.negotiate(err);
 				// return res.redirect('song/songMP3?id=1');
 			});
