@@ -3,6 +3,7 @@
     document.querySelector('input[type="file"]').onchange = function(e) {
         i=0;
         while(i<this.files.length){
+            var tags;
       id3(this.files[i], function(err, tags) {
         console.log(tags)  // tags now contains your ID3 tags 
         
@@ -43,6 +44,10 @@
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('files[]',file,file.name);
+        formData.append('title',tags.title);
+        formData.append('artist',tags.artist);
+        formData.append('album',tags.album);
+        formData.append('year',tags.year);
         // var xhr = new XMLHttpRequest();
         // xhr.open('POST', 'http://107.170.53.5:1337/song', true);
         // xhr.onload = function(){
