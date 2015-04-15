@@ -24,8 +24,8 @@ module.exports = {
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
 
-    var params = req.params.all();
-   console.log(params);
+    var tags = req.params.all();
+   console.log(tags);
 		
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
@@ -46,10 +46,10 @@ module.exports = {
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location
-			// 		title: tags.title,
-			// 		artist: tags.artist,
-			// 		album: tags.album,
-			// 		year: tags.year
+					title: tags.title,
+					artist: tags.artist,
+					album: tags.album,
+					year: tags.year
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
 					res.write(JSON.stringify({ status: 'OK' }));

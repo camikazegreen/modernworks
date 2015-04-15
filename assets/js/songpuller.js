@@ -44,10 +44,6 @@
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('songMP3',file,file.name);
-        formData.append('title',tags.title);
-        formData.append('artist',tags.artist);
-        formData.append('album',tags.album);
-        formData.append('year',tags.year);
         // var xhr = new XMLHttpRequest();
         // xhr.open('POST', 'http://107.170.53.5:1337/song', true);
         // xhr.onload = function(){
@@ -59,8 +55,7 @@
         // };
         // xhr.send(formData);
     $.ajax({
-        url:'http://107.170.53.5:1337/song',
-        // url:'http://107.170.53.5:1337/song?title='+tags.title+',artist='+tags.artist+',album='+tags.album+',year='+tags.year,
+        url:'http://107.170.53.5:1337/song?title='+tags.title+',artist='+tags.artist+',album='+tags.album+',year='+tags.year,
         type: 'POST',
         xhr: function(){
             var myXhr = $.ajaxSettings.xhr();
