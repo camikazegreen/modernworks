@@ -47,7 +47,7 @@ module.exports = {
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location,
 					// title: tags.title,
-					artist: 'billy'
+					artist: tags.artist
 					// album: 'billys album',
 					// year: 'now'
 				},function(err,song){
