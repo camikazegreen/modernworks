@@ -48,8 +48,8 @@ module.exports = {
 					songMP3url: uploadedFiles[0].extra.Location,
 					// title: tags.title,
 					artist: tags.artist,
-					album: 'billys album',
-					year: 'now'
+					// album: 'billys album',
+					// year: 'now'
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
 					res.write(JSON.stringify({ status: song }));
