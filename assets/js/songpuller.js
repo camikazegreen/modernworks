@@ -43,32 +43,32 @@
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('files[]',file,file.name);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://107.170.53.5:1337/song', true);
-        xhr.onload = function(){
-            if (xhr.status===200){
-                console.log("we're all good");
-            } else {
-                console.log("an error occurred");
-            }
-        };
-        xhr.send(formData);
-    // $.ajax({
-    //     url:'http://107.170.53.5:1337/song',
-    //     type: 'POST',
-        // xhr: function(){
-        //     console.log(file);
-        //     var myXhr = $ajaxSettings.xhr();
-        //     if(myXhr.upload){
-        //         myXhr.upload.addEventListener('progress',progressHandling, false);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('POST', 'http://107.170.53.5:1337/song', true);
+        // xhr.onload = function(){
+        //     if (xhr.status===200){
+        //         console.log("we're all good");
+        //     } else {
+        //         console.log("an error occurred");
         //     }
-        //     return myXhr;
-        // },
-        // data: formData,
-        // cache: false,
-        // contentType: false,
-        // processData: false
-    // });
+        // };
+        // xhr.send(formData);
+    $.ajax({
+        url:'http://107.170.53.5:1337/song',
+        type: 'POST',
+        xhr: function(){
+            console.log(file);
+            var myXhr = $ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progressHandling, false);
+            }
+            return myXhr;
+        },
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    });
     console.log('its getting to here.')
     function progressHandling(e){
         if(e.lengthComputable){
