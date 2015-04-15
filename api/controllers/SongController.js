@@ -37,8 +37,9 @@ module.exports = {
 			if(uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
-
-            console.log(req.payload);
+			req.on('data',function(data){
+				console.log(data);
+			});
  				  console.log(err);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
