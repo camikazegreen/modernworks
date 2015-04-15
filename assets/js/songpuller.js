@@ -34,7 +34,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             var progress = document.createElement('progress');
-            progress.setAttribute('id','progress'+h);
+            progress.setAttribute('id','progress'+j);
             progBox.appendChild(progress);
             postSong(tags);
 
@@ -65,7 +65,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         row=document.getElementById('row'+h);
         var playerBox = row.insertCell(3);
         var player = document.createElement('audio');
-        player.setAttribute('src','song/songMP3');
+        // player.setAttribute('src','song/songMP3');
         playerBox.appendChild(player);
     });
     function progressHandling(e){
