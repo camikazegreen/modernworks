@@ -51,10 +51,10 @@ module.exports = {
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location,
-					title: titleAlt,
+					title: tags.title,
 					artist: tags.artist,
-					album: tags.album,
-					year: 1995
+					album: tags.album
+					// year: 1995
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
 					res.write(JSON.stringify({ status: song }));
