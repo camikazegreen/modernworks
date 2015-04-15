@@ -57,7 +57,7 @@ module.exports = {
 					// year: 1995
 				},function(err,song){
 					res.writeHead(200, { 'Content-Type': 'application/json' });
-					res.write(JSON.stringify({ status: song.status.id }));
+					res.write(JSON.stringify({ status: song }));
 					res.end();
 					return res;
 				// if (err) return res.negotiate(err);
