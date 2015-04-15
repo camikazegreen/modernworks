@@ -40,17 +40,17 @@ module.exports = {
 
             console.log(uploadedFiles);
  				  console.log(err);
- 		// 		  Song.create({
-			// 		songFd: uploadedFiles[0].fd,
-			// 		songMP3url: uploadedFiles[0].extra.Location
+ 				  Song.create({
+					songFd: uploadedFiles[0].fd,
+					songMP3url: uploadedFiles[0].extra.Location
 			// 		title: tags.title,
 			// 		artist: tags.artist,
 			// 		album: tags.album,
 			// 		year: tags.year
-			// 	},function(err,song){
-			// 	if (err) return res.negotiate(err);
-			// 	return res.redirect('song/songMP3?id=1');
-			// })
+				},function(err,song){
+				if (err) return res.negotiate(err);
+				return res.redirect('song/songMP3?id=1');
+			});
 
 			// .exec(function(err){
 			// 	if (err) return res.negotiate(err);
