@@ -45,9 +45,9 @@ module.exports = {
 					// var yearAlt;
 					// if(tags.year=='null'){
 					// 	yearAlt= 'na'
-					} else {yearAlt= tags.year}
+					// } else {yearAlt= tags.year}
 				
- 				  console.log(titleAlt+yearAlt);
+ 				  console.log(titleAlt);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
 					songMP3url: uploadedFiles[0].extra.Location,
