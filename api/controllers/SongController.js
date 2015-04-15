@@ -24,7 +24,7 @@ module.exports = {
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
    // console.log(req);
-		req.ondata(data,function(data){
+		req.ondata('data',function(data){
 			console.log(data);
 		});
 		req.file('songMP3').upload({
