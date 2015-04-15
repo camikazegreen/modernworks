@@ -9,7 +9,7 @@
         function thisSongDeets(){
 
             var row = document.getElementById('songDetailTable').insertRow(1);
-           var arrayBufferView = new Uint16Array(tags.v2.image.data);
+           var arrayBufferView = new Uint8Array(tags.v2.image.data);
             var blob = new Blob([arrayBufferView],{type:"image/jpeg"});
             var urlCreator = window.URL || window.webkitURL;
             var imageUrl = urlCreator.createObjectURL(blob);
