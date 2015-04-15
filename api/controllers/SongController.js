@@ -23,7 +23,9 @@ module.exports = {
 	},
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
-   console.log(req);
+
+    var params = req.params.all();
+   console.log(params);
 		
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
