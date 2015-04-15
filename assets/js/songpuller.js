@@ -1,5 +1,5 @@
  $(document).ready(function(){
-
+var j=0;//definied outside of the loop so that each progress bar will have a unique id.
     document.querySelector('input[type="file"]').onchange = function(e) {
         i=0;
         while(i<this.files.length){
@@ -32,7 +32,7 @@
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             var progress = document.createElement('progress');
-            progress.setAttribute('id','progress'+i);
+            progress.setAttribute('id','progress'+j);
             progBox.appendChild(progress);
             postSong(tags);
 
@@ -68,17 +68,17 @@
         cache: false,
         contentType: false,
         processData: false
+    }).done(function(result){
+        console.log(result);
     });
-    console.log('its getting to here.')
     function progressHandling(e){
         if(e.lengthComputable){
-            console.log("progess is getting called")
-            $('#progress'+i).attr({value:e.loaded,max:e.total});
+            $('#progress'+j).attr({value:e.loaded,max:e.total});
         }
     }
 };
 
- i++;
+ i++;j++;
 }
 }
 }) //closing document.ready
