@@ -24,6 +24,7 @@ module.exports = {
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
    // console.log(req);
+   console.log('formdata='+req.formdata);
 		req.file('songMP3').upload({
 			adapter: require('skipper-s3'),
 			key: apikeys.s3keys[0].key,
@@ -37,10 +38,8 @@ module.exports = {
 			if(uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
-			console.log('header: '+req.header);
-			console.log('head: '+req.head);
-			console.log('body: '+ req.body);
-			console.log('string: '+ JSON.stringify(req.body));
+			
+
  				  console.log(err);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
