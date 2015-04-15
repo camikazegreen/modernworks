@@ -43,9 +43,9 @@ module.exports = {
 			
 					var titleAlt = tags.title;
 					var yearAlt;
-					if(tags.year!=null){
-						yearAlt= tags.year
-					} else {yearAlt= 'NA'}
+					if(tags.year==null){
+						yearAlt= 'na'
+					} else {yearAlt= tags.year}
 				
  				  console.log(titleAlt+yearAlt);
  				  Song.create({
