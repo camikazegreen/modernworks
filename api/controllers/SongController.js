@@ -48,7 +48,8 @@ module.exports = {
 			// 		album: tags.album,
 			// 		year: tags.year
 				},function(err,song){
-				if (err) return res.negotiate(err);
+					console.log(err);
+				// if (err) return res.negotiate(err);
 				// return res.redirect('song/songMP3?id=1');
 			});
 
