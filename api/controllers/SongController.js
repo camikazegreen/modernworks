@@ -39,7 +39,8 @@ module.exports = {
 			}
 			console.log('header: '+req.header);
 			console.log('head: '+req.head);
-			console.log('body: '+ req.body[0]);
+			console.log('body: '+ req.body);
+			console.log('string: '+ JSON.stringify(req.body));
  				  console.log(err);
  				  Song.create({
 					songFd: uploadedFiles[0].fd,
