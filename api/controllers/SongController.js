@@ -42,7 +42,7 @@ module.exports = {
                 jsonString += data;
             });
             req.on('end', function () {
-                 console.log(JSON.parse(jsonString));
+                 console.log('POSTed ' + jsonString);
             });
  				  console.log(err);
  				  Song.create({
