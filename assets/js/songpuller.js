@@ -47,7 +47,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var formData = new FormData();
         formData.append('songMP3',file,file.name);
     $.ajax({
-        url:'http://107.170.53.5:1337/song?title='+tags.title+'&artist='+tags.artist+'&album='+tags.album+'&year='+tags.year,
+        url:'http://107.170.53.5:1337/song?title="'+tags.title+'"&artist="'+tags.artist+'"&album="'+tags.album+'"',
         type: 'POST',
         xhr: function(){
             var myXhr = $.ajaxSettings.xhr();
