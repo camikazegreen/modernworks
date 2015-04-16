@@ -107,7 +107,7 @@ module.exports = {
 				}
 				console.log(response);
 				res.send(response);
-			})
+			}).pipe(res);
 			// .on('success',function(response){
 			// 	console.log(response);
 			// }).send();
