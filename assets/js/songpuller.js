@@ -38,7 +38,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             var progress = document.createElement('progress');
-            progress.setAttribute('id','progress'+j);
+            progress.setAttribute('id','progress'+h);
             progBox.appendChild(progress);
             postSong(tags);
 
