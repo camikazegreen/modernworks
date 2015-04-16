@@ -108,6 +108,10 @@ module.exports = {
 				console.log(response);
 				res.send(response);
 			}).pipe(res);
+			res.writeHead(200, { 'Content-Type': 'application/json' });
+					res.write(JSON.stringify({ status: song }));
+					res.end();
+					return res;
 			// .on('success',function(response){
 			// 	console.log(response);
 			// }).send();
