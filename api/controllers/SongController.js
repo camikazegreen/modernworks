@@ -130,7 +130,7 @@ module.exports = {
 			// 	// return res.serverError(err);
 			// })
 			// .pipe(res);
-		});
+		}).pipe(res);
 	}
 };
 
