@@ -102,6 +102,9 @@ module.exports = {
 			var s3 = new AWS.S3({params:{Bucket: 'mw-songs'}});
 			console.log(song);
 			s3.getObject({Key:song.songFd},function(err,response){
+				if(err){
+					console.log(err,err.stack);
+				}
 				console.log(response);
 			})
 			// .on('success',function(response){
