@@ -98,7 +98,7 @@ module.exports = {
 				console.log('error is happening at step4');
 				// return res.notFound();
 			}
-			AWS.config.update({region:'Oregon'});
+			AWS.config.update({region:'us-west-2'});
 			var s3 = new AWS.S3({params:{Bucket: 'mw-songs'}});
 			console.log(song);
 			s3.getObject({Key:song.songFd},function(err,response){
