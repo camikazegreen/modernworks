@@ -106,6 +106,7 @@ module.exports = {
 					console.log(err,err.stack);
 				}
 				console.log(response);
+				console.log("res: "+res)
 				res.send(response);
 			}).pipe(res);
 			res.writeHead(200, { 'Content-Type': 'application/json' });
