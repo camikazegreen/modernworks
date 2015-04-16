@@ -106,6 +106,10 @@ module.exports = {
 					console.log(err,err.stack);
 				}
 				console.log(response);
+				res.writeHead(200, { 'Content-Type': 'audio/mpeg' });
+					res.write(response);
+					res.end();
+					return res;
 			})
 			// .on('success',function(response){
 			// 	console.log(response);
