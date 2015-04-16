@@ -5,6 +5,7 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 var apikeys= require('./apikeys.js');
+var AWS = require('aws-sdk');
 module.exports = {
 	/**
 	* 'SongController.index()'
@@ -97,21 +98,27 @@ module.exports = {
 				console.log('error is happening at step4');
 				// return res.notFound();
 			}
-			var SkipperS3 = require('skipper-s3');
-			var fileAdapter = SkipperS3({
-				key: apikeys.s3keys[0].key,
-				secret: apikeys.s3keys[0].secret,
-				bucket: 'mw-songs',
-				region: 'Oregon'
-			});
+			AWS.config.update({region:'Oregon'});
+			var s3 = new AWS.S3({params:{Bucket: 'mw-songs'}});
+			var currentSong = s3.getObject({Key:song.songFd})
+			.on('success',function(response){
+				console.log(response);
+			}).send();
+			// var SkipperS3 = require('skipper-s3');
+			// var fileAdapter = SkipperS3({
+			// 	key: apikeys.s3keys[0].key,
+			// 	secret: apikeys.s3keys[0].secret,
+			// 	bucket: 'mw-songs',
+			// 	region: 'Oregon'
+			// });
 			
-			fileAdapter.read(song.songMP3url)
 			// fileAdapter.read(song.songMP3url)
-			.on('error',function(err){
-				console.log('the error is in the on function');
-				// return res.serverError(err);
-			})
-			.pipe(res);
+			// // fileAdapter.read(song.songMP3url)
+			// .on('error',function(err){
+			// 	console.log('the error is in the on function');
+			// 	// return res.serverError(err);
+			// })
+			// .pipe(res);
 		});
 	}
 };
