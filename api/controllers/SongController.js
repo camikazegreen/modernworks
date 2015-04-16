@@ -100,6 +100,7 @@ module.exports = {
 			}
 			AWS.config.update({region:'Oregon'});
 			var s3 = new AWS.S3({params:{Bucket: 'mw-songs'}});
+			consol.log(song);
 			var currentSong = s3.getObject({Key:song.songFd})
 			.on('success',function(response){
 				console.log(response);
