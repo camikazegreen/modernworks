@@ -108,10 +108,11 @@ module.exports = {
 				console.log(response);
 				console.log("res: "+res)
 				res.send(response);
-			})
-			res.writeHead(200, { 'Content-Type': 'audio/mpeg' });
+				res.writeHead(200, { 'Content-Type': 'audio/mpeg' });
 					res.write(response);
 					res.end();
+			})
+			
 					return res;
 			// .on('success',function(response){
 			// 	console.log(response);
