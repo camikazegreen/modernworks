@@ -6,6 +6,10 @@
  */
 var apikeys= require('./apikeys.js');
 var AWS = require('aws-sdk');
+var NB = require('nodebrainz');
+
+// Initialize NodeBrainz
+var nb = new NB({userAgent:'my-awesome-app/0.0.1 ( http://my-awesome-app.com )'});
 module.exports = {
 	/**
 	* 'SongController.index()'
@@ -25,7 +29,12 @@ module.exports = {
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
 
+// Initialize NodeBrainz
+	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
+    nb.search('release',{artist:tags.artist,limit:20,offset:5}, function(err, response){
+    	console.log(response);
+    })
    // console.log(tags);
 		
 		req.file('songMP3').upload({
@@ -38,37 +47,22 @@ module.exports = {
 			if (err){
 				return res.negotiate(err);
 			}
-			if(uploadedFiles.length===0){
+			if (uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
-			
-					var titleAlt = tags.title;
-					// var yearAlt;
-					// if(tags.year=='null'){
-					// 	yearAlt= 'na'
-					// } else {yearAlt= tags.year}
-				
- 				  console.log(titleAlt);
- 				  Song.create({
-					songFd: uploadedFiles[0].fd,
-					songMP3url: uploadedFiles[0].extra.Location,
-					title: tags.title,
-					artist: tags.artist,
-					album: tags.album
-					// year: 1995
-				},function(err,song){
-					res.writeHead(200, { 'Content-Type': 'application/json' });
-					res.write(JSON.stringify({ status: song }));
-					res.end();
-					return res;
-				// if (err) return res.negotiate(err);
-				// return res.redirect('song/songMP3?id=1');
+ 			console.log(titleAlt);
+ 			Song.create({
+				songFd: uploadedFiles[0].fd,
+				songMP3url: uploadedFiles[0].extra.Location,
+				title: tags.title,
+				artist: tags.artist,
+				album: tags.album
+			},function(err,song){
+				res.writeHead(200, { 'Content-Type': 'application/json' });
+				res.write(JSON.stringify({ status: song }));
+				res.end();
+				return res;
 			});
-
-			// .exec(function(err){
-			// 	if (err) return res.negotiate(err);
-			// 	return res.redirect('song/songMP3'+song.id);
-			// });
 		});
 	},
 	response: function(req,res){
