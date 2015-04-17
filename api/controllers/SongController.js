@@ -32,7 +32,7 @@ module.exports = {
 // Initialize NodeBrainz
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
-    nb.search('release',{artist:tags.artist,limit:20,offset:5}, function(err, response){
+    nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	console.log(response);
     })
    // console.log(tags);
@@ -50,7 +50,6 @@ module.exports = {
 			if (uploadedFiles.length===0){
 				return res.badRequest('No file was uploaded');
 			}
- 			console.log(titleAlt);
  			Song.create({
 				songFd: uploadedFiles[0].fd,
 				songMP3url: uploadedFiles[0].extra.Location,
