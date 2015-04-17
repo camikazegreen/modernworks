@@ -109,8 +109,8 @@ module.exports = {
 				console.log("res: "+res)
 				res.send(response);
 			})
-			res.writeHead(200, { 'Content-Type': 'application/json' });
-					res.write(JSON.stringify({ status: song }));
+			res.writeHead(200, { 'Content-Type': 'audio/mpeg' });
+					res.write(response);
 					res.end();
 					return res;
 			// .on('success',function(response){
