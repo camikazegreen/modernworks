@@ -32,8 +32,12 @@ module.exports = {
 // Initialize NodeBrainz
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
+    var mbid = ''; //empty string for MusicBrainz ID
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
-    	console.log(response);
+    	if(response.works[0].id){
+    		mbid=response.works[0].id;
+    		console.log(response.works[0])
+    	}
     })
    // console.log(tags);
 		
@@ -55,7 +59,8 @@ module.exports = {
 				songMP3url: uploadedFiles[0].extra.Location,
 				title: tags.title,
 				artist: tags.artist,
-				album: tags.album
+				album: tags.album,
+				mbid: mbid
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));

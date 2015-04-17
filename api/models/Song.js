@@ -28,7 +28,10 @@ module.exports = {
   	},
   	songFd:{
   		type:'string'
-  	}
+  	},
+    mbid:{
+      type:'string'
+    }
 
   }
 };
