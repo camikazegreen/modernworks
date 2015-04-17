@@ -108,7 +108,7 @@ module.exports = {
 				console.log(response);
 				console.log("res: "+res)
 				res.send(response);
-			}).pipe(res);
+			})
 			res.writeHead(200, { 'Content-Type': 'application/json' });
 					res.write(JSON.stringify({ status: song }));
 					res.end();
@@ -131,7 +131,7 @@ module.exports = {
 			// 	// return res.serverError(err);
 			// })
 			// .pipe(res);
-		}).pipe(res);
+		})
 	}
 };
 
