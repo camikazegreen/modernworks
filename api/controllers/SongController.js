@@ -42,7 +42,7 @@ module.exports = {
     		if(response.works[0].relations[0]){
     			console.log('there are relations, and they are:'+response.works[0].relations.length)
     			while(i<response.works[0].relations.length){
-    				// console.log(response.works[0].relations[i]);
+    				console.log(response.works[0].relations[i]);
     				i++;
     			}
     		}

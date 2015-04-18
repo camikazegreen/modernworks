@@ -67,10 +67,13 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
     }).done(function(result){
         console.log(result);
         row=document.getElementById('row'+h);
-        var playerBox = row.insertCell(3);
-        var player = document.createElement('audio');
+        var musicbrainzBox = row.insertCell(3);
+        var mbid = result.status.mbid;
         // player.setAttribute('src','song/songMP3');
-        playerBox.appendChild(player);
+        musicbrainzBox.innerHTML=mbid;
+        var echoBox = row.insertCell(4);
+        var echoDeets = result.status.echonest;
+        echoBox.innerHTML=echoDeets;
     });
     function progressHandling(e){
         if(e.lengthComputable){
