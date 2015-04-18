@@ -100,7 +100,7 @@ module.exports = {
 				artist: tags.artist,
 				album: tags.album,
 				mbid: mbid,
-				echonest: echodeets
+				echonest: JSON.stringify(echodeets)
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
