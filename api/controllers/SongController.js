@@ -41,7 +41,7 @@ module.exports = {
     		if(response.works[0].relations[0]){
     			console.log('there are relations, and they are:'+response.works[0].relations.length)
     			while(i<response.works[0].relations.length){
-    				console.log(response.works[0].relations[i]);
+    				// console.log(response.works[0].relations[i]);
     				i++;
     			}
     		}
@@ -58,12 +58,13 @@ module.exports = {
    	artist:tags.artist,
    	title:tags.title
    }, function (error,response){
+   	console.log('searching echonest...')
    	if (error) {
    		console.log(error);
    	} else {
    		console.log('response:'+response);
    	}
-   })
+   });
    // console.log(tags);
 		
 		req.file('songMP3').upload({
