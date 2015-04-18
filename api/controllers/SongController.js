@@ -35,8 +35,9 @@ module.exports = {
     var mbid = ''; //empty string for MusicBrainz ID
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	if(response.works){
-    		mbid=response.works[0].id;
-    		console.log(response.works[0].relations[0])
+    		console.log(response.works);
+    		// mbid=response.works[0].id;
+    		// console.log(response.works[0].relations[0])
     	}
     })
    // console.log(tags);
