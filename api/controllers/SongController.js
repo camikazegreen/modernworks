@@ -37,7 +37,16 @@ module.exports = {
     	if(response.works[0]){
     		// console.log(response.works);
     		mbid=response.works[0].id;
-    		console.log(response.works[0].relations[0])
+    		i=0;
+    		if(response.works[0].relations[0]){
+    			while(i<response.works[0].relations){
+    				console.log(response.works[0].relations[i]);
+    				i++;
+    			}
+    		}
+    		
+    	} else {
+    		console.log("found nothing for this song on musicBrainz");
     	}
     })
    // console.log(tags);
