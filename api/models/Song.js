@@ -31,6 +31,9 @@ module.exports = {
   	},
     mbid:{
       type:'string'
+    },
+    echonest:{
+      type:'json'
     }
 
   }

@@ -33,6 +33,7 @@ module.exports = {
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
     var mbid = ''; //empty string for MusicBrainz ID
+    var echodeets = '';
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	if(response.works[0]){
     		console.log(response.works);
@@ -72,6 +73,7 @@ module.exports = {
    			} else {
    				console.log('song profile: ', response);
    				console.log('audio summary: ', response.songs[0].audio_summary);
+   				echodeets = response.songs[0].audio_summary;
    			}
    		});
    	}
@@ -96,8 +98,9 @@ module.exports = {
 				songMP3url: uploadedFiles[0].extra.Location,
 				title: tags.title,
 				artist: tags.artist,
-				album: tags.album
-				// mbid: mbid
+				album: tags.album,
+				mbid: mbid,
+				echonest: echodeets
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
