@@ -62,7 +62,7 @@ module.exports = {
    	if (error) {
    		console.log(error);
    	} else {
-   		console.log('response:'+response);
+   		console.log('response:'+response[0]);
    	}
    });
    // console.log(tags);
