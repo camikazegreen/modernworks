@@ -62,7 +62,17 @@ module.exports = {
    	if (error) {
    		console.log(error);
    	} else {
-   		console.log('response:', response);
+   		console.log('response:', response.songs[0]);
+   		myNest.song.profile({
+   			id: response.songs[0].id,
+   			bucket: 'audio_summary'
+   		}, function(error,response){
+   			if(error){
+   				console.log('error in searching for profile');
+   			} else {
+   				console.log('song profile: ' response);
+   			}
+   		});
    	}
    });
    // console.log(tags);
