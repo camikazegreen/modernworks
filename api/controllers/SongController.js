@@ -96,7 +96,7 @@ module.exports = {
 				songMP3url: uploadedFiles[0].extra.Location,
 				title: tags.title,
 				artist: tags.artist,
-				album: tags.album,
+				album: tags.album
 				// mbid: mbid
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
