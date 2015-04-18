@@ -7,6 +7,7 @@
 var apikeys= require('./apikeys.js');
 var AWS = require('aws-sdk');
 var NB = require('nodebrainz');
+var echonest = require('echonest');
 
 // Initialize NodeBrainz
 var nb = new NB({userAgent:'my-awesome-app/0.0.1 ( http://my-awesome-app.com )'});
@@ -28,7 +29,6 @@ module.exports = {
 	},
 	upload: function (req,res){
    // console.log(apikeys.s3keys);
-
 // Initialize NodeBrainz
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
@@ -49,7 +49,21 @@ module.exports = {
     	} else {
     		console.log("found nothing for this song on musicBrainz");
     	}
-    })
+    });
+    //initialize echonest
+   var myNest = new echonest.Echonest({
+   	api_key: apikeys.echonestkeys[0].apikey
+   });
+   myNest.song.search({
+   	artist:tags.artist,
+   	title:tags.title
+   }, function (error,response){
+   	if (error) {
+   		console.log(error);
+   	} else {
+   		console.log('response:'+response);
+   	}
+   })
    // console.log(tags);
 		
 		req.file('songMP3').upload({
