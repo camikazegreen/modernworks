@@ -97,7 +97,7 @@ module.exports = {
 				title: tags.title,
 				artist: tags.artist,
 				album: tags.album,
-				mbid: mbid
+				// mbid: mbid
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
