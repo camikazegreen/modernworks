@@ -71,6 +71,7 @@ module.exports = {
    				console.log('error in searching for profile');
    			} else {
    				console.log('song profile: ', response);
+   				console.log('audio summary: ', response.songs[0].audio_summary);
    			}
    		});
    	}
