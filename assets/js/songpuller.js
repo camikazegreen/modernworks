@@ -65,7 +65,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         contentType: false,
         processData: false
     }).done(function(result){
-        console.log(result.status.id);
+        console.log(result);
         row=document.getElementById('row'+h);
         var playerBox = row.insertCell(3);
         var player = document.createElement('audio');
