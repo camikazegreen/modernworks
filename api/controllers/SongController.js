@@ -35,10 +35,11 @@ module.exports = {
     var mbid = ''; //empty string for MusicBrainz ID
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	if(response.works[0]){
-    		// console.log(response.works);
+    		console.log(response.works);
     		mbid=response.works[0].id;
     		i=0;
     		if(response.works[0].relations[0]){
+    			console.log('there are relations, and they are:')
     			while(i<response.works[0].relations){
     				console.log(response.works[0].relations[i]);
     				i++;
