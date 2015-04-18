@@ -33,7 +33,7 @@ module.exports = {
       type:'string'
     },
     echonest:{
-      type:'json'
+      type:'string'
     }
 
   }
