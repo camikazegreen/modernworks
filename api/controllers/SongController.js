@@ -70,7 +70,7 @@ module.exports = {
    			if(error){
    				console.log('error in searching for profile');
    			} else {
-   				console.log('song profile: ' response);
+   				console.log('song profile: ', response);
    			}
    		});
    	}
