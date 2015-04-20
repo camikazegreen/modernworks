@@ -13,15 +13,14 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             var row = document.getElementById('songDetailTable').insertRow(1);
             row.setAttribute('id','row'+h);
             var imageUrl;
-           if(tags.v2.image){
-           var arrayBufferView = new Uint8Array(tags.v2.image.data);
-           var blob = new Blob([arrayBufferView],{type:"image/jpeg"});
-            var urlCreator = window.URL || window.webkitURL;
-            imageUrl = urlCreator.createObjectURL(blob);
-            } else { imageUrl='/images/MW-small.png'};
-            
-            // var img = document.querySelector("#coverArt");
-            // img.src = imageUrl; 
+           // if(tags.v2.image){
+           // var arrayBufferView = new Uint8Array(tags.v2.image.data);
+           // var blob = new Blob([arrayBufferView],{type:"image/jpeg"});
+           //  var urlCreator = window.URL || window.webkitURL;
+           //  imageUrl = urlCreator.createObjectURL(blob);
+           //  } else {
+             imageUrl='/images/MW-small.png'
+         // };
             var albumArt = document.createElement('img');
             albumArt.setAttribute('src',imageUrl);
             albumArt.setAttribute('width','50px');
