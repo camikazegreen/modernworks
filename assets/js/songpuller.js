@@ -11,7 +11,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         function thisSongDeets(){
 
             var row = document.getElementById('songDetailTable').insertRow(1);
-            row.setAttribute('id','row'+h);
+            row.setAttribute('id','row'+tags.title);
             var imageUrl;
            if(tags.picture.length>0){
             var picture = tags.picture[0];
@@ -36,7 +36,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             var progress = document.createElement('progress');
-            progress.setAttribute('id','progress'+h);
+            progress.setAttribute('id','progress'+tags.title);
             progBox.appendChild(progress);
             postSong(tags);
 
@@ -54,7 +54,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         xhr: function(){
             var myXhr = $.ajaxSettings.xhr();
             if(myXhr.upload){
-                myXhr.upload.addEventListener('progress',progressHandling, false);
+                myXhr.upload.addEventListener('#progress'+tags.title,progressHandling, false);
             }
             return myXhr;
         },
@@ -64,14 +64,14 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         processData: false
     }).done(function(result){
         console.log(result);
-        row=document.getElementById('row'+h);
+        row=document.getElementById('row'+result.status.title);
         var musicbrainzBox = row.insertCell(3);
         var mbid = result.status.mbid;
         // player.setAttribute('src','song/songMP3');
         musicbrainzBox.innerHTML=mbid;
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
-        var echoHTML ='<p>energy:'+echoDeets.energy+'</p>';
+        var echoHTML ='<progress value="'+echodeets.energy+'" max="1"</progress>';
         echoHTML +='<p>liveness:'+echoDeets.liveness+'</p>';
         echoHTML +='<p>tempo:'+echoDeets.tempo+'</p>';
         echoHTML +='<p>speechiness:'+echoDeets.speechiness+'</p>';
@@ -85,6 +85,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
     });
     function progressHandling(e){
         if(e.lengthComputable){
+            console.log('e=',e);
             $('#progress'+h).attr({value:e.loaded,max:e.total});
         }
     }
