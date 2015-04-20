@@ -71,7 +71,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         // player.setAttribute('src','song/songMP3');
         var mbidHTML = '<p>ID:'+mbid.id+'</p>';
         var i=0;
-        console.log(mbid);
+        console.log(mbid.writers);
         // while(i<mbid.writers.length){
         //     mbid+='<p>Writer:'+mbid.writers[i]+'</p>';
         // }
