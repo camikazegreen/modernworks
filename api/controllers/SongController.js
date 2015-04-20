@@ -60,8 +60,9 @@ module.exports = {
    	title:tags.title
    }, function (error,response){
    	console.log('searching echonest...')
-   	if (error) {
+   	if (error || response == 'undefined') {
    		console.log(error);
+   		console.log('no song returned');
    	} else {
    		console.log('response:', response.songs[0]);
    		myNest.song.profile({
