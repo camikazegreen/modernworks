@@ -32,12 +32,12 @@ module.exports = {
 // Initialize NodeBrainz
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
-    var mbid = "found nothing for this song on musicBrainz"; //empty string for MusicBrainz ID
+    var mbid = {'id':'no song found'}; //empty array for MusicBrainz ID
     var echodeets = '';
     nb.search('work',{artist:encodeURIComponent(tags.artist),work:encodeURIComponent(tags.title)}, function(err, response){
     	if(response.works[0]){
     		console.log(response.works);
-    		mbid=response.works[0].id;
+    		mbid.id=response.works[0].id;
     		i=0;
     		if(response.works[0].relations[0]){
     			console.log('there are relations, and they are:'+response.works[0].relations.length);
@@ -101,7 +101,7 @@ module.exports = {
 				title: tags.title,
 				artist: tags.artist,
 				album: tags.album,
-				mbid: mbid,
+				mbid: JSON.stringify(mbid),
 				echonest: JSON.stringify(echodeets)
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
