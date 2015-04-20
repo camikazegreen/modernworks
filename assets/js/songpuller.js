@@ -48,7 +48,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('songMP3',file,file.name);
-        
+
     $.ajax({
         url:'http://107.170.53.5:1337/song?title='+encodeURIComponent(tags.title)+'&artist='+encodeURIComponent(tags.artist)+'&album='+encodeURIComponent(tags.album),
         type: 'POST',
@@ -67,9 +67,14 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         console.log(result);
         row=document.getElementById('row'+result.status.title);
         var musicbrainzBox = row.insertCell(3);
-        var mbid = result.status.mbid;
+        var mbid = JSON.parse(result.status.mbid);
         // player.setAttribute('src','song/songMP3');
-        musicbrainzBox.innerHTML=mbid;
+        var mbidHTML = '<p>ID:'+mbid.id+'</p>';
+        var i=0;
+        while(i<mbid.writers.length){
+            mbid+='<p>Writer:'+mbid.writers[i]+'</p>';
+        }
+        musicbrainzBox.innerHTML=mbidHTML;
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
         var echoHTML ='<p>Energy:<progress value="'+echoDeets.energy+'" max="1"</progress></p>';
