@@ -70,10 +70,11 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var mbid = JSON.parse(result.status.mbid);
         // player.setAttribute('src','song/songMP3');
         var mbidHTML = '<p>ID:'+mbid.id+'</p>';
-        var i=0;
+        var w=0;
         console.log(mbid.writers);
-        while(i<mbid.writers.length){
-            mbidHTML+='<p>Writer:'+mbid.writers[i]+'</p>';
+        while(w<mbid.writers.length){
+            mbidHTML+='<p>Writer:'+mbid.writers[w]+'</p>';
+            w++;
         }
         musicbrainzBox.innerHTML=mbidHTML;
         var echoBox = row.insertCell(4);
