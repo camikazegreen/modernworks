@@ -34,7 +34,7 @@ module.exports = {
     var tags = req.params.all();
     var mbid = "found nothing for this song on musicBrainz"; //empty string for MusicBrainz ID
     var echodeets = '';
-    nb.search('work',{artist:encodeURIComponent(tags.artist),work:encodeURIComponent(tags.title).replace('(','').replace(')','')}, function(err, response){
+    nb.search('work',{artist:encodeURIComponent(tags.artist),work:encodeURIComponent(tags.title)}, function(err, response){
     	if(response.works[0]){
     		console.log(response.works);
     		mbid=response.works[0].id;
@@ -55,7 +55,7 @@ module.exports = {
    });
    myNest.song.search({
    	artist:encodeURIComponent(tags.artist),
-   	title:encodeURIComponent(tags.title).replace('(','').replace(')','')
+   	title:encodeURIComponent(tags.title)
    }, function (error,response){
    	console.log('searching echonest...')
    	if (error) {
