@@ -71,15 +71,15 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         musicbrainzBox.innerHTML=mbid;
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
-        var echoHTML ='<progress value="'+echoDeets.energy+'" max="1"</progress>';
-        echoHTML +='<p>liveness:'+echoDeets.liveness+'</p>';
-        echoHTML +='<p>tempo:'+echoDeets.tempo+'</p>';
-        echoHTML +='<p>speechiness:'+echoDeets.speechiness+'</p>';
-        echoHTML +='<p>acousticness:'+echoDeets.acousticness+'</p>';
-        echoHTML +='<p>instrumentalness:'+echoDeets.instrumentalness+'</p>';
-        echoHTML +='<p>loudness:'+echoDeets.loudness+'</p>';
-        echoHTML +='<p>valence:'+echoDeets.valence+'</p>';
-        echoHTML +='<p>danceability:'+echoDeets.danceability+'</p>';
+        var echoHTML ='<p>Energy:<progress value="'+echoDeets.energy+'" max="1"</progress></p>';
+        echoHTML +='<p>Liveness:<progress value="'+echoDeets.liveness+'" max="1"</progress></p>';
+        echoHTML +='<p>Tempo:<progress value="'+echoDeets.tempo+'" max="150"</progress></p>';
+        echoHTML +='<p>Speechiness:<progress value="'+echoDeets.speechiness+'" max="1"</progress></p>';
+        echoHTML +='<p>Acousticness:<progress value="'+echoDeets.acousticness+'" max="1"</progress></p>';
+        echoHTML +='<p>Instrumentalness:<progress value="'+echoDeets.instrumentalness+'" max="1"</progress></p>';
+        // echoHTML +='<p>Loudness:<progress value="'+echoDeets.loudness+'" max="1"</progress></p>';
+        echoHTML +='<p>Valence:<progress value="'+echoDeets.valence+'" max="1"</progress></p>';
+        echoHTML +='<p>Danceability:<progress value="'+echoDeets.danceability+'" max="1"</progress></p>';
 
         echoBox.innerHTML=echoHTML;
     });
