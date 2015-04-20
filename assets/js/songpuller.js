@@ -76,6 +76,11 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             mbidHTML+='<p>Writer:'+mbid.writers[w]+'</p>';
             w++;
         }
+        var c=0;
+        while(c<mbid.composers.length){
+            mbidHTML+='<p>Composer:'+mbid.composers[c]+'</p>';
+            c++;
+        }
         musicbrainzBox.innerHTML=mbidHTML;
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
