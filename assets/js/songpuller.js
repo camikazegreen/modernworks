@@ -36,7 +36,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
             var progress = document.createElement('progress');
-            progress.setAttribute('id','progress'+tags.title);
+            progress.setAttribute('id','progress'+h);
             progBox.appendChild(progress);
             postSong(tags);
 
@@ -48,11 +48,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var file = document.getElementById('fileupload').files[0];
         var formData = new FormData();
         formData.append('songMP3',file,file.name);
-            function progressHandling(e){
-        if(e.lengthComputable){
-            $('#progress'+tags.title).attr({value:e.loaded,max:e.total});
-        }
-    }
+        
     $.ajax({
         url:'http://107.170.53.5:1337/song?title='+encodeURIComponent(tags.title)+'&artist='+encodeURIComponent(tags.artist)+'&album='+encodeURIComponent(tags.album),
         type: 'POST',
@@ -88,11 +84,11 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
 
         echoBox.innerHTML=echoHTML;
     });
-    // function progressHandling(e){
-    //     if(e.lengthComputable){
-    //         $('#progress'+h).attr({value:e.loaded,max:e.total});
-    //     }
-    // }
+    function progressHandling(e){
+        if(e.lengthComputable){
+            $('#progress'+h).attr({value:e.loaded,max:e.total});
+        }
+    }
 };
 
  i++;j++;
