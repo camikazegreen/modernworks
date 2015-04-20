@@ -60,8 +60,9 @@ module.exports = {
    	title:tags.title
    }, function (error,response){
    	console.log('searching echonest...')
-   	if (error || response == 'undefined') {
+   	if (error) {
    		console.log(error);
+   	} else if(typeof response === 'undefined')
    		console.log('no song returned');
    	} else {
    		console.log('response:', response.songs[0]);
