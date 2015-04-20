@@ -60,7 +60,7 @@ module.exports = {
    	console.log('searching echonest...')
    	if (error) {
    		console.log(error);
-   	} else if(typeof response.songs[0] === 'undefined')
+   	} else if(typeof response.songs[0] === 'undefined'){
    		console.log('no song returned');
    	} else {
    		console.log('response:', response.songs[0]);
