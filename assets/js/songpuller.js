@@ -85,7 +85,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
     });
     function progressHandling(e){
         if(e.lengthComputable){
-            console.log('e=',e);
+            console.log('e='+e);
             $('#progress'+h).attr({value:e.loaded,max:e.total});
         }
     }
