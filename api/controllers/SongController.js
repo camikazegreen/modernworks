@@ -32,7 +32,7 @@ module.exports = {
 // Initialize NodeBrainz
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
-    var mbid = ''; //empty string for MusicBrainz ID
+    var mbid = "found nothing for this song on musicBrainz"; //empty string for MusicBrainz ID
     var echodeets = '';
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	if(response.works[0]){
@@ -40,15 +40,13 @@ module.exports = {
     		mbid=response.works[0].id;
     		i=0;
     		if(response.works[0].relations[0]){
-    			console.log('there are relations, and they are:'+response.works[0].relations.length)
+    			console.log('there are relations, and they are:'+response.works[0].relations.length);
     			while(i<response.works[0].relations.length){
     				console.log(response.works[0].relations[i]);
     				i++;
     			}
     		}
     		
-    	} else {
-    		mbid="found nothing for this song on musicBrainz";
     	}
     });
     //initialize echonest
