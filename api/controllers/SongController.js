@@ -48,7 +48,7 @@ module.exports = {
     		}
     		
     	} else {
-    		console.log("found nothing for this song on musicBrainz");
+    		mbid="found nothing for this song on musicBrainz";
     	}
     });
     //initialize echonest

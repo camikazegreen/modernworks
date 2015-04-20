@@ -71,7 +71,17 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         musicbrainzBox.innerHTML=mbid;
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
-        echoBox.innerHTML=echoDeets.energy;
+        var echoHTML ='<p>energy:'+echoDeets.energy+'</p><br>'
+        var echoHTML +='<p>liveness:'+echoDeets.liveness+'</p><br>'
+        var echoHTML +='<p>tempo:'+echoDeets.tempo+'</p><br>'
+        var echoHTML +='<p>speechiness:'+echoDeets.speechiness+'</p><br>'
+        var echoHTML +='<p>acousticness:'+echoDeets.acousticness+'</p><br>'
+        var echoHTML +='<p>instrumentalness:'+echoDeets.instrumentalness+'</p><br>'
+        var echoHTML +='<p>loudness:'+echoDeets.loudness+'</p><br>'
+        var echoHTML +='<p>valence:'+echoDeets.valence+'</p><br>'
+        var echoHTML +='<p>danceability:'+echoDeets.danceability+'</p><br>'
+
+        echoBox.innerHTML=echoHTML;
     });
     function progressHandling(e){
         if(e.lengthComputable){
