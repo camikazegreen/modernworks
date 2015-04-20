@@ -4,7 +4,8 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         i=0;
         while(i<this.files.length){
             var h=j;
-      id3(this.files[i], function(err, tags) {
+        musicmetadata(this.files[i], function(err, tags){
+        // id3(this.files[i], function(err, tags) {
         console.log(tags)  // tags now contains your ID3 tags 
         
         function thisSongDeets(){
