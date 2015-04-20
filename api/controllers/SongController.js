@@ -55,7 +55,7 @@ module.exports = {
    });
    myNest.song.search({
    	artist:encodeURIComponent(tags.artist),
-   	title:encodeURIComponent(tags.title)
+   	title:encodeURIComponent(tags.title).replace('(','').replace(')','')
    }, function (error,response){
    	console.log('searching echonest...')
    	if (error) {
