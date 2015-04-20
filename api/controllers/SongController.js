@@ -54,8 +54,8 @@ module.exports = {
    	api_key: apikeys.echonestkeys[0].apikey
    });
    myNest.song.search({
-   	artist:encodeURIComponent(tags.artist),
-   	title:encodeURIComponent(tags.title)
+   	artist:tags.artist,
+   	title:tags.title
    }, function (error,response){
    	console.log('searching echonest...')
    	if (error) {
