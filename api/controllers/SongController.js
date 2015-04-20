@@ -61,7 +61,7 @@ module.exports = {
    	if (error) {
    		console.log(error);
    	} else if(typeof response.songs[0] === 'undefined'){
-   		console.log('no song returned');
+   		console.log('no song returned for artist '+tags.artist+' and song '+tags.title);
    	} else {
    		console.log('response:', response.songs[0]);
    		myNest.song.profile({
