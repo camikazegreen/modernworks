@@ -7,7 +7,8 @@
 * adding some
 */
 
-module.exports = {
+var User  = {
+  schema: true,
 
   attributes: {
     username:{
