@@ -86,7 +86,6 @@ module.exports = {
       via:'cc'
     }
 
->>>>>>> 11ec5d1acf0d88aea3bb96bbfb26fe533221349d
   }
 };
 
