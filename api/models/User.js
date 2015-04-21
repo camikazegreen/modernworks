@@ -19,6 +19,10 @@ module.exports = {
     password:{
       type:'string'
     },
+    passports:{
+      collection:'passport',
+      via: 'user'
+    },
     phone:{
       type: 'string'
     },
