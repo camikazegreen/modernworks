@@ -7,7 +7,8 @@
 var apikeys= require('./apikeys.js');
 var AWS = require('aws-sdk');
 var NB = require('nodebrainz');
-var echonest = require('echonest');
+//var echonest = require('echonest');
+var echojs = require('echojs');
 
 module.exports = {
 	/**
@@ -56,10 +57,13 @@ module.exports = {
     	}
     });
     //initialize echonest
-   var myNest = new echonest.Echonest({
-   	api_key: apikeys.echonestkeys[0].apikey
-   });
-   myNest.song.search({
+   // var myNest = new echonest.Echonest({
+   // 	api_key: apikeys.echonestkeys[0].apikey
+   // });
+	var myNest = echojs({
+		key: apikeys.echonestkeys[0].apikey
+	});
+   myNest('song/search').get({
    	artist:tags.artist,
    	title:tags.title
    }, function (error,response){
@@ -84,7 +88,7 @@ module.exports = {
    		});
    	} else {
    		console.log('no songs found in echonest, analyzing...');
-   		myNest.track.upload(req.file('songMP3'),function(err,response){
+   		myNest('track/upload').post(req.file('songMP3'),function(err,response){
    			console.log(response);
    		})
 
