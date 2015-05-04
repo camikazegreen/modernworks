@@ -70,8 +70,8 @@ module.exports = {
    	console.log('searching echonest...')
    	if (error) {
    		console.log(error);
-   	// } else if(typeof response.songs[0] === 'undefined'){
-   	// 	console.log('no song returned for artist '+tags.artist+' and song '+tags.title);
+   	} else if(typeof response.songs[0] === 'undefined'){
+   		console.log(response);
    	} else if(response.songs[0]){
    		console.log('response:', response);
    		myNest.song.profile({
