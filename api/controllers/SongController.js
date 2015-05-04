@@ -75,8 +75,8 @@ module.exports = {
    		console.log(error);
    	} else if(typeof response.songs[0] === 'undefined'){
    		console.log('no songs found in echonest, analyzing...');
-   		console.log(req.file('songMP3'));
-   		myNest('track/upload').post(req.file('songMP3'),function(err,response){
+   		console.log(req.file('songMP3')._files[0].stream);
+   		myNest('track/upload').post(req.file('songMP3')._files[0].stream,function(err,response){
    			console.log(response);
    		})
    	} else if(response.songs[0]){
