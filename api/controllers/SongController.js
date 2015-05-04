@@ -68,6 +68,8 @@ module.exports = {
    	title:tags.title
    }, function (error,response){
    	console.log('searching echonest...',response)
+   	console.log(response.response);
+   	console.log(response.response.songs);
    	// if (error) {
    	// 	console.log(error);
    	// } else if(typeof response.songs[0] === 'undefined'){
