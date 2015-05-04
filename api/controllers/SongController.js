@@ -35,7 +35,7 @@ module.exports = {
     var mbid = {'id':'no song found','writers':[],'composers':[]}; //empty array for MusicBrainz ID
     var echodeets = '';
     nb.search('work',{artist:encodeURIComponent(tags.artist),work:encodeURIComponent(tags.title)}, function(err, response){
-    	console.log('searching MusicBrainz');
+    	console.log('searching MusicBrainz and getting ',response);
     	if(response.works[0]){
     		console.log(response.works);
     		mbid.id=response.works[0].id;
