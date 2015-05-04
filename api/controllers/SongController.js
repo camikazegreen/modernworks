@@ -85,8 +85,8 @@ module.exports = {
    				console.log('error in searching for profile');
    			} else {
    				console.log('song profile: ', response);
-   				console.log('audio summary: ', response.songs[0].audio_summary);
-   				echodeets = response.songs[0].audio_summary;
+   				console.log('audio summary: ', response.response.songs[0].audio_summary);
+   				echodeets = response.response.songs[0].audio_summary;
    			}
    		});
    	} else {
