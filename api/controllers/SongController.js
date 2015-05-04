@@ -77,7 +77,7 @@ module.exports = {
    		console.log(response);
    	} else if(response.songs[0]){
    		console.log('response:', response);
-   		myNest.song.profile({
+   		myNest('song/profile').get({
    			id: response.songs[0].id,
    			bucket: 'audio_summary'
    		}, function(error,response){
