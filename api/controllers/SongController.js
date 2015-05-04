@@ -9,8 +9,6 @@ var AWS = require('aws-sdk');
 var NB = require('nodebrainz');
 var echonest = require('echonest');
 
-// Initialize NodeBrainz
-var nb = new NB({userAgent:'my-awesome-app/0.0.1 ( http://my-awesome-app.com )'});
 module.exports = {
 	/**
 	* 'SongController.index()'
@@ -85,7 +83,11 @@ module.exports = {
    			}
    		});
    	} else {
-   		console.log('no songs found in echonest')
+   		console.log('no songs found in echonest, analyzing...');
+   		myNest.track.upload(req.file('songMP3'),function(err,response){
+   			console.log(response);
+   		})
+
    	}
    });
    // console.log(tags);
