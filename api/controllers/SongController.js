@@ -67,32 +67,32 @@ module.exports = {
    	artist:tags.artist,
    	title:tags.title
    }, function (error,response){
-   	console.log('searching echonest...')
-   	if (error) {
-   		console.log(error);
-   	} else if(typeof response.songs[0] === 'undefined'){
-   		console.log(response);
-   	} else if(response.songs[0]){
-   		console.log('response:', response);
-   		myNest.song.profile({
-   			id: response.songs[0].id,
-   			bucket: 'audio_summary'
-   		}, function(error,response){
-   			if(error){
-   				console.log('error in searching for profile');
-   			} else {
-   				console.log('song profile: ', response);
-   				console.log('audio summary: ', response.songs[0].audio_summary);
-   				echodeets = response.songs[0].audio_summary;
-   			}
-   		});
-   	} else {
-   		console.log('no songs found in echonest, analyzing...');
-   		myNest('track/upload').post(req.file('songMP3'),function(err,response){
-   			console.log(response);
-   		})
+   	console.log('searching echonest...',response)
+   	// if (error) {
+   	// 	console.log(error);
+   	// } else if(typeof response.songs[0] === 'undefined'){
+   	// 	console.log(response);
+   	// } else if(response.songs[0]){
+   	// 	console.log('response:', response);
+   	// 	myNest.song.profile({
+   	// 		id: response.songs[0].id,
+   	// 		bucket: 'audio_summary'
+   	// 	}, function(error,response){
+   	// 		if(error){
+   	// 			console.log('error in searching for profile');
+   	// 		} else {
+   	// 			console.log('song profile: ', response);
+   	// 			console.log('audio summary: ', response.songs[0].audio_summary);
+   	// 			echodeets = response.songs[0].audio_summary;
+   	// 		}
+   	// 	});
+   	// } else {
+   	// 	console.log('no songs found in echonest, analyzing...');
+   	// 	myNest('track/upload').post(req.file('songMP3'),function(err,response){
+   	// 		console.log(response);
+   	// 	})
 
-   	}
+   	// }
    });
    // console.log(tags);
 		
