@@ -87,13 +87,16 @@ while(a<=artists.artists.length){
 }
 console.log(concerts);
 Concerts.create({
-	id:1,
 	string:concerts
-});
-Concerts.update({
-	id:1,
-	string:concerts
-});
+}, function(err, concert){
+      if (err){
+        res.send(err);
+      }
+      else{
+        console.log(concert.id)
+      }
+    });
+
 	}
 sails.on('lifted',function(){
 	loadEvents()
