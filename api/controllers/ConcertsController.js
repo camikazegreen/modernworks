@@ -71,7 +71,7 @@ if(a==artists.artists.length){
 		return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
-		}
+		});
 }
 	a++;
 }
@@ -79,8 +79,7 @@ if(a==artists.artists.length){
 // 		return res.view('concerts',{
 // 			artists: artists,
 // 			concerts: concerts
-// 		}
-		);
+// 		});
 	}
 
 };
