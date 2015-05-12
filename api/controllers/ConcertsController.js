@@ -55,6 +55,7 @@ function getConcerts(city,artist){
 			concerts.tucson.push(details)
 		}
 			}
+			console.log(concerts);
 		});
 	}
 	http.request(options, callback).end();
@@ -67,7 +68,7 @@ while(a<=artists.artists.length){
 	getConcerts(losAngeles,artists.artists[a]);
 	getConcerts(nashville,artists.artists[a]);
 	getConcerts(tucson,artists.artists[a]);
-	console.log(concerts);
+	// console.log(concerts);
 if(a===artists.artists.length){
 		return res.view('concerts',{
 			artists: artists,
