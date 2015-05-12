@@ -61,6 +61,7 @@ function getConcerts(city,artist){
 }
 var a = 0;
 while(a<=artists.artists.length){
+	console.log(a);
 	getConcerts(newYork,artists.artists[a]);
 	getConcerts(phoenix,artists.artists[a]);
 	getConcerts(losAngeles,artists.artists[a]);
