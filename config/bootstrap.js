@@ -11,6 +11,7 @@
 
 var apikeys = require('../api/controllers/apikeys.js');
 var artists = require('../assets/roster.js');
+var http = require('http');
 
 module.exports.bootstrap = function(cb) {
 
