@@ -18,6 +18,7 @@ module.exports.bootstrap = function(cb) {
 //This loads in all of our authentication strategies.
 
 sails.services.passport.loadStrategies();
+
 function loadEvents(){
 		// console.log(artists);
 		var concerts = {};
@@ -34,7 +35,7 @@ function loadEvents(){
 		var phoenix = "sk:23068";
 		// http://api.songkick.com/api/3.0/events.xml?apikey=KEY&location=sk:2846&artist_name=fleet+foxes
 		// console.log(artists);
-function getConcerts(city,artist,end){
+function getConcerts(city,artist){
 	var options = {
 		host: 'api.songkick.com',
 		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
@@ -62,10 +63,7 @@ function getConcerts(city,artist,end){
 		}else if(city==tucson){
 			concerts.tucson.push(details)
 		}
-			}if(end){
-			console.log('Its finally ended');
-			console.log(concerts);
-		}
+			}
 		});
 	}
 	http.request(options, callback).end();
@@ -88,8 +86,12 @@ while(a<=artists.artists.length){
 	a++;
 }
 console.log(concerts);
+Concerts.update({
+	id:1,
+	string:concerts
+});
 	}
-	loadEvents();
+sails.on('lifted',loadEvents());
 
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
