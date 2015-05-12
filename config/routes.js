@@ -35,7 +35,9 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-
+  '/concerts':{
+    view: 'concerts'
+  },
   '/client': {
     view: 'client'
   },

@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+<div class="city-details">
+  <h2>New York</h2>
+  <div class="event-details" id="new-york-events">
+    <ul>
+    <% concerts.forEach(function(concert){ %>
+      <li><%= concert %></li>
+    <%  }); %>
+    </ul>
+  </div>
+</div>
+</body>
