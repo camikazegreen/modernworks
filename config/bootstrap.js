@@ -72,12 +72,12 @@ function getConcerts(city,artist){
 		}
 			}
 	var conString = JSON.stringify(concerts);
-	Concerts.update({id:1},{string:conString}, function(err, concert){
+	Concerts.update(1,{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
       else{
-        console.log(concert.id)
+        console.log(concerts)
       }
     });
 		});
