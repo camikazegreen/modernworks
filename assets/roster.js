@@ -1,6 +1,6 @@
 module.exports = {
 
-artists: {"artists":[
+artists: [
 "ADAM AARONSON",
 "FRANK ABRAHAM",
 "ZACH ABRAMSON",
@@ -418,5 +418,5 @@ artists: {"artists":[
 "ANDREW YORK",
 "MIGUEL ZENON",
 "ELIZABETH ZIMAN",
-"PATRICK ZIMMERLI"]}
+"PATRICK ZIMMERLI"]
 }
