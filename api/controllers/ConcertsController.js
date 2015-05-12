@@ -67,8 +67,8 @@ while(a<=artists.artists.length){
 	getConcerts(losAngeles,artists.artists[a]);
 	getConcerts(nashville,artists.artists[a]);
 	getConcerts(tucson,artists.artists[a]);
-if(a===artists.artists.length){
 	console.log(concerts);
+if(a===artists.artists.length){
 		return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
