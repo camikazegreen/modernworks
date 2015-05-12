@@ -85,8 +85,9 @@ while(a<=artists.artists.length){
 	a++;
 }
 console.log(concerts);
+var conString = JSON.stringify(concerts);
 Concerts.create({
-	string:concerts
+	string:conString
 }, function(err, concert){
       if (err){
         console.log(err);
