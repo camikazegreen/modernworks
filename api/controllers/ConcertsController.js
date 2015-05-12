@@ -41,15 +41,21 @@ function getConcerts(city,artist){
 
 		response.on('end', function(){
 			var json = JSON.parse(str);
+			if(json.resultsPage.totalEntries>0){
 			if(city==phoenix){
 			concerts.phoenix.push(json.resultsPage.results.event[0].displayName)
 		}
+			}
 			console.log(concerts);
 		});
 	}
 	http.request(options, callback).end();
 }
-getConcerts(phoenix,"jakubi");
+var a = 0;
+while(a<artists.length){
+	getConcerts(phoenix,artists[a]);
+	a++;
+}
 
 		return res.view('concerts',{
 			artists: artists,
