@@ -25,7 +25,7 @@ module.exports = {
 		var tucson = "sk:10046";
 		var phoenix = "sk:23068";
 		// http://api.songkick.com/api/3.0/events.xml?apikey=KEY&location=sk:2846&artist_name=fleet+foxes
-		console.log(artists);
+		// console.log(artists);
 function getConcerts(city,artist){
 	var options = {
 		host: 'api.songkick.com',
@@ -42,10 +42,17 @@ function getConcerts(city,artist){
 		response.on('end', function(){
 			var json = JSON.parse(str);
 			if(json.resultsPage.totalEntries>0){
+				var details = json.resultsPage.results.event;
 			if(city==phoenix){
-			concerts.phoenix.push(json.resultsPage.results.event[0].displayName)
+			concerts.phoenix.push(details)
 		}else if(city==newYork){
-			concerts.newYork.push(json.resultsPage.results.event[0].displayName)
+			concerts.newYork.push(details)
+		}else if(city==losAngeles){
+			concerts.losAngeles.push(details)
+		}else if(city==nashville){
+			concerts.nashville.push(details)
+		}else if(city==tucson){
+			concerts.tucson.push(details)
 		}
 			}
 			console.log(concerts);
@@ -56,6 +63,11 @@ function getConcerts(city,artist){
 var a = 0;
 while(a<artists.artists.length){
 	getConcerts(newYork,artists.artists[a]);
+	getConcerts(phoenix,artists.artists[a]);
+	getConcerts(losAngeles,artists.artists[a]);
+	getConcerts(nashville,artists.artists[a]);
+	getConcerts(tucson,artists.artists[a]);
+
 	a++;
 }
 
