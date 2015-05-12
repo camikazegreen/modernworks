@@ -20,7 +20,7 @@ module.exports.bootstrap = function(cb) {
 sails.services.passport.loadStrategies();
 
 function loadEvents(){
-	var cities = {'newYork','losAngeles','nashville','tucson','phoenix'}
+	var cities = ['newYork','losAngeles','nashville','tucson','phoenix']
 	var c=0;
 	while(c<cities.length){
 	Concerts.create({string:'no events',location:cities[c]},function(err,concert){
