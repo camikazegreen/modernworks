@@ -44,6 +44,8 @@ function getConcerts(city,artist){
 			if(json.resultsPage.totalEntries>0){
 			if(city==phoenix){
 			concerts.phoenix.push(json.resultsPage.results.event[0].displayName)
+		}else if(city==newYork){
+			concerts.newYork.push(json.resultsPage.results.event[0].displayName)
 		}
 			}
 			console.log(concerts);
@@ -53,7 +55,7 @@ function getConcerts(city,artist){
 }
 var a = 0;
 while(a<artists.artists.length){
-	getConcerts(phoenix,artists.artists[a]);
+	getConcerts(newYork,artists.artists[a]);
 	a++;
 }
 
