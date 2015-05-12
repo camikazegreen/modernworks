@@ -20,6 +20,7 @@ module.exports.bootstrap = function(cb) {
 sails.services.passport.loadStrategies();
 
 function loadEvents(){
+	Concerts.create({string:'no events'});
 		// console.log(artists);
 		var concerts = {};
 		concerts.newYork = [];
@@ -64,10 +65,8 @@ function getConcerts(city,artist){
 			concerts.tucson.push(details)
 		}
 			}
-			var conString = JSON.stringify(concerts);
-Concerts.create({
-	string:conString
-}, function(err, concert){
+	var conString = JSON.stringify(concerts);
+	Concerts.update({id:1},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
