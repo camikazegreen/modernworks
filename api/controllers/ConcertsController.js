@@ -55,7 +55,6 @@ function getConcerts(city,artist){
 			concerts.tucson.push(details)
 		}
 			}
-			console.log(concerts);
 		});
 	}
 	http.request(options, callback).end();
@@ -70,7 +69,7 @@ while(a<artists.artists.length){
 
 	a++;
 }
-
+console.log(concerts);
 		return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
