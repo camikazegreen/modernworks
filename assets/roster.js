@@ -1,6 +1,6 @@
 module.exports = {
 
-var artists = {"artists":[
+{"artists":[
 "ADAM AARONSON",
 "FRANK ABRAHAM",
 "ZACH ABRAMSON",
