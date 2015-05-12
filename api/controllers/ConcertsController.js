@@ -54,14 +54,15 @@ function getConcerts(city,artist){
 		}else if(city==tucson){
 			concerts.tucson.push(details)
 		}
-			console.log(concerts);
 			}
+			console.log(concerts);
 		});
 	}
 	http.request(options, callback).end();
 }
 var a = 0;
 while(a<artists.artists.length){
+	console.log('checking artist '+artists.artists[a]);
 	getConcerts(newYork,artists.artists[a]);
 	getConcerts(phoenix,artists.artists[a]);
 	getConcerts(losAngeles,artists.artists[a]);
