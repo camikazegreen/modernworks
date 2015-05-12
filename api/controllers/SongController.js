@@ -36,7 +36,7 @@ module.exports = {
     var echodeets = '';
     var readable = req;
     readable.on('data', function(chunk){
-    	console.log('got %d bytes of data', chunk.length);
+    	console.log('got %d bytes of data', chunk);
     });
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	console.log('searching MusicBrainz and getting ',response);
