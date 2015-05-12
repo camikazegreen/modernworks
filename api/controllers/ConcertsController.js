@@ -10,6 +10,7 @@ var artists = require('roster.json');
 module.exports = {
 	
 	index: function (req, res){
+		console.log(artists);
 		return res.view({
 			concerts: {"only one show","a second show"}
 		});
