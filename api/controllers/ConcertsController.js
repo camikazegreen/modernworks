@@ -10,9 +10,13 @@ var artists = require('../../assets/roster.js');
 module.exports = {
 	
 	index: function (req, res){
-		console.log(artists);
+		// console.log(artists);
+		var concerts = [];
+		var apikey = apikeys.songkickkeys[0].apikey;
+		console.log(apikey);
 		return res.view('concerts',{
-			artists: artists
+			artists: artists,
+			concerts: concerts
 		});
 	}
 
