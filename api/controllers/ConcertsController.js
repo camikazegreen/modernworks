@@ -60,20 +60,27 @@ function getConcerts(city,artist){
 	http.request(options, callback).end();
 }
 var a = 0;
-while(a<artists.artists.length){
+while(a<=artists.artists.length){
 	getConcerts(newYork,artists.artists[a]);
 	getConcerts(phoenix,artists.artists[a]);
 	getConcerts(losAngeles,artists.artists[a]);
 	getConcerts(nashville,artists.artists[a]);
 	getConcerts(tucson,artists.artists[a]);
-
-	a++;
-}
-console.log(concerts);
+if(a==artists.artists.length){
+	console.log(concerts);
 		return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
-		});
+		}
+}
+	a++;
+}
+// console.log(concerts);
+// 		return res.view('concerts',{
+// 			artists: artists,
+// 			concerts: concerts
+// 		}
+		);
 	}
 
 };
