@@ -29,7 +29,7 @@ module.exports = {
 function getConcerts(city,artist){
 	var options = {
 		host: 'api.songkick.com',
-		path: '/api/3.0/events.json?apikey='+apikey+'&location='+concerts.location[city]+'&artist_name='+artist
+		path: '/api/3.0/events.json?apikey='+apikey+'&location='+concerts.locations[city]+'&artist_name='+artist
 	};
 
 	var callback = function(response){
