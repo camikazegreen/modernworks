@@ -10,6 +10,8 @@
  */
 
 var apikeys = require('../api/controllers/apikeys.js');
+var artists = require('../assets/roster.js');
+
 module.exports.bootstrap = function(cb) {
 
 //This loads in all of our authentication strategies.
