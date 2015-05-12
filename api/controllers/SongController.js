@@ -9,6 +9,7 @@ var AWS = require('aws-sdk');
 var NB = require('nodebrainz');
 //var echonest = require('echonest');
 var echojs = require('echojs');
+var stream = require('stream');
 
 module.exports = {
 	/**
@@ -33,6 +34,10 @@ module.exports = {
     var tags = req.params.all();
     var mbid = {'id':'no song found','writers':[],'composers':[]}; //empty array for MusicBrainz ID
     var echodeets = '';
+    var readable = req;
+    readable.on('data', function(chunk){
+    	console.log('got %d bytes of data', chunk.length);
+    });
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	console.log('searching MusicBrainz and getting ',response);
     	if(response.works[0]){
