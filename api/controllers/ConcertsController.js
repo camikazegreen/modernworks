@@ -12,7 +12,7 @@ module.exports = {
 	index: function (req, res){
 		console.log(artists);
 		return res.view({
-			concerts: "only one show"
+			concerts: artists
 		});
 	}
 
