@@ -26,7 +26,7 @@ module.exports = {
 		var phoenix = "sk:23068";
 		// http://api.songkick.com/api/3.0/events.xml?apikey=KEY&location=sk:2846&artist_name=fleet+foxes
 
-var getConcerts(city,artist){
+function getConcerts(city,artist){
 	var options = {
 		host: 'api.songkick.com',
 		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
