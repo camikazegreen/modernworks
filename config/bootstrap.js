@@ -75,7 +75,7 @@ function getConcerts(city,artist){
     });
 		}else if(city==newYork){
 			concerts.newYork.push(details);
-			Concerts.update({location:'newYork',{string:conString}, function(err, concert){
+			Concerts.update({location:'newYork'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
@@ -85,7 +85,7 @@ function getConcerts(city,artist){
     });
 		}else if(city==losAngeles){
 			concerts.losAngeles.push(details);
-			Concerts.update({location:'losAngeles',{string:conString}, function(err, concert){
+			Concerts.update({location:'losAngeles'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
@@ -95,7 +95,7 @@ function getConcerts(city,artist){
     });
 		}else if(city==nashville){
 			concerts.nashville.push(details);
-			Concerts.update({location:'nashville',{string:conString}, function(err, concert){
+			Concerts.update({location:'nashville'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
@@ -105,7 +105,7 @@ function getConcerts(city,artist){
     });
 		}else if(city==tucson){
 			concerts.tucson.push(details);
-			Concerts.update({location:'tucson',{string:conString}, function(err, concert){
+			Concerts.update({location:'tucson'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
