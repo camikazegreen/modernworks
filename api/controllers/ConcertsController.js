@@ -68,8 +68,8 @@ while(a<=artists.artists.length){
 	console.log(a);
 	if(a===artists.artists.length){
 		end=true;
-		});
-}
+		};
+
 	getConcerts(newYork,artists.artists[a]);
 	getConcerts(phoenix,artists.artists[a]);
 	getConcerts(losAngeles,artists.artists[a]);
