@@ -86,6 +86,10 @@ while(a<=artists.artists.length){
 	a++;
 }
 console.log(concerts);
+Concerts.create({
+	id:1,
+	string:concerts
+});
 Concerts.update({
 	id:1,
 	string:concerts
