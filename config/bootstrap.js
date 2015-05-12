@@ -64,6 +64,17 @@ function getConcerts(city,artist){
 			concerts.tucson.push(details)
 		}
 			}
+			var conString = JSON.stringify(concerts);
+Concerts.create({
+	string:conString
+}, function(err, concert){
+      if (err){
+        console.log(err);
+      }
+      else{
+        console.log(concert.id)
+      }
+    });
 		});
 	}
 	http.request(options, callback).end();
@@ -85,17 +96,7 @@ while(a<=artists.artists.length){
 	a++;
 }
 console.log(concerts);
-var conString = JSON.stringify(concerts);
-Concerts.create({
-	string:conString
-}, function(err, concert){
-      if (err){
-        console.log(err);
-      }
-      else{
-        console.log(concert.id)
-      }
-    });
+
 
 	}
 sails.on('lifted',function(){
