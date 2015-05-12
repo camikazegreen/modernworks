@@ -71,7 +71,6 @@ function getConcerts(city,artist){
 var a = 0;
 var end = false;
 while(a<=artists.artists.length){
-	console.log(a);
 	if(a===artists.artists.length){
 		end=true;
 		};
@@ -90,7 +89,7 @@ Concerts.create({
 	string:concerts
 }, function(err, concert){
       if (err){
-        res.send(err);
+        console.log(err);
       }
       else{
         console.log(concert.id)
