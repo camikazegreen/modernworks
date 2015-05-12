@@ -6,9 +6,9 @@
   <h2>New York</h2>
   <div class="event-details" id="new-york-events">
     <ul>
-    <% concerts.forEach(function(concert){ %>
-      <li><%= concert %></li>
-    <%  }); %>
+    <% for(i=0;i<artists.length;i++;){ %>
+      <li><%= artists[i] %></li>
+    <%  }  %>
     </ul>
   </div>
 </div>
