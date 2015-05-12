@@ -52,8 +52,8 @@ function getConcerts(city,artist){
 	http.request(options, callback).end();
 }
 var a = 0;
-while(a<artists.length){
-	getConcerts(phoenix,artists[a]);
+while(a<artists.artists.length){
+	getConcerts(phoenix,artists.artists[a]);
 	a++;
 }
 
