@@ -11,8 +11,8 @@ module.exports = {
 	
 	index: function (req, res){
 		console.log(artists);
-		return res.view({
-			concerts: artists
+		return res.view({'concerts',
+			artists: artists
 		});
 	}
 
