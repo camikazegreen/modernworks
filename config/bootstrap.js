@@ -9,7 +9,7 @@
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.bootstrap.html
  */
 
-var apikeys = require('./apikeys.js');
+var apikeys = require('../api/controllers/apikeys.js');
 module.exports.bootstrap = function(cb) {
 
 //This loads in all of our authentication strategies.
