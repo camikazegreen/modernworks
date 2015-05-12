@@ -13,8 +13,8 @@ module.exports = {
 	index: function (req, res){
 		// console.log(artists);
 		var concerts = {};
-		concerts.newyork = [];
-		concerts.losangeles = [];
+		concerts.newYork = [];
+		concerts.losAngeles = [];
 		concerts.nashville = [];
 		concerts.tucson = [];
 		concerts.phoenix = [];
@@ -40,7 +40,9 @@ function getConcerts(city,artist){
 		});
 
 		response.on('end', function(){
-			console.log(str);
+			var json = JSON.parse(str);
+			concerts[city].push(json.resultsPage.results.event.displayName)
+			console.log(concerts);
 		});
 	}
 	http.request(options, callback).end();
