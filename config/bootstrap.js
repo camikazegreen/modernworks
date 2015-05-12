@@ -65,7 +65,7 @@ function getConcerts(city,artist){
 				var details = json.resultsPage.results.event;
 			if(city==phoenix){
 			concerts.phoenix.push(details);
-			Concerts.update({location:'phoenix',{string:conString}, function(err, concert){
+			Concerts.update({location:'phoenix'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
