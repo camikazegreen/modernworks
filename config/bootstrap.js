@@ -20,7 +20,13 @@ module.exports.bootstrap = function(cb) {
 sails.services.passport.loadStrategies();
 
 function loadEvents(){
-	Concerts.create({string:'no events'});
+	Concerts.create({string:'no events'},function(err,concert){
+		if(err){
+			console.log(err);
+		} else {
+			console.log(concert.id);
+		}
+	});
 		// console.log(artists);
 		var concerts = {};
 		concerts.newYork = [];
