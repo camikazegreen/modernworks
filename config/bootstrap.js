@@ -14,7 +14,7 @@ module.exports.bootstrap = function(cb) {
 //This loads in all of our authentication strategies.
 
 sails.services.passport.loadStrategies();
-function (req, res){
+function loadEvents(){
 		// console.log(artists);
 		var concerts = {};
 		concerts.newYork = [];
@@ -85,6 +85,7 @@ while(a<=artists.artists.length){
 }
 console.log(concerts);
 	}
+	loadEvents();
 
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
