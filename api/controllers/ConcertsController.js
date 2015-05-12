@@ -5,7 +5,7 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 var apikeys = require('./apikeys.js');
-var artists = require('roster.json');
+var artists = require('../../assets/roster.js');
 
 module.exports = {
 	
