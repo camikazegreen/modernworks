@@ -12,7 +12,7 @@ module.exports = {
 	
 	index: function (req, res){
 		// console.log(artists);
-		var concerts = {};
+		var concerts = {'locations':["sk:7644","sk:17835","sk:11104","sk:10046","sk:23068"],'events':{'newyork':[],'losangeles':[],'nashville':[],'tucson':[],'phoenix':[]}};
 		concerts.newYork = [];
 		concerts.losAngeles = [];
 		concerts.nashville = [];
@@ -29,7 +29,7 @@ module.exports = {
 function getConcerts(city,artist){
 	var options = {
 		host: 'api.songkick.com',
-		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
+		path: '/api/3.0/events.json?apikey='+apikey+'&location='+concerts.location[city]+'&artist_name='+artist
 	};
 
 	var callback = function(response){
@@ -41,13 +41,13 @@ function getConcerts(city,artist){
 
 		response.on('end', function(){
 			var json = JSON.parse(str);
-			concerts.phoenix.push(json.resultsPage.results.event[0].displayName)
+			concerts.events[city].push(json.resultsPage.results.event[0].displayName)
 			console.log(concerts);
 		});
 	}
 	http.request(options, callback).end();
 }
-getConcerts(phoenix,"jakubi");
+getConcerts(5,"jakubi");
 
 		return res.view('concerts',{
 			artists: artists,
