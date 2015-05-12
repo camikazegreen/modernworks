@@ -41,7 +41,7 @@ function getConcerts(city,artist){
 
 		response.on('end', function(){
 			var json = JSON.parse(str);
-			concerts.phoenix.push(json)
+			concerts.phoenix.push(json.resultsPage)
 			console.log(concerts);
 		});
 	}
