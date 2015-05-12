@@ -10,6 +10,9 @@ module.exports = {
   attributes: {
   	string:{
   		type:'string'
+  	},
+  	location:{
+  		type:'string'
   	}
   }
 };

@@ -20,13 +20,17 @@ module.exports.bootstrap = function(cb) {
 sails.services.passport.loadStrategies();
 
 function loadEvents(){
-	Concerts.create({string:'no events'},function(err,concert){
+	var cities = {'newYork','losAngeles','nashville','tucson','phoenix'}
+	var c=0;
+	while(c<cities.length){
+	Concerts.create({string:'no events',location:cities[c]},function(err,concert){
 		if(err){
 			console.log(err);
 		} else {
 			console.log(concert.id);
 		}
 	});
+}
 		// console.log(artists);
 		var concerts = {};
 		concerts.newYork = [];
@@ -60,15 +64,55 @@ function getConcerts(city,artist){
 			if(json.resultsPage.totalEntries>0){
 				var details = json.resultsPage.results.event;
 			if(city==phoenix){
-			concerts.phoenix.push(details)
+			concerts.phoenix.push(details);
+			Concerts.update({location:'phoenix',{string:conString}, function(err, concert){
+      if (err){
+        console.log(err);
+      }
+      else{
+        console.log(concerts)
+      }
+    });
 		}else if(city==newYork){
-			concerts.newYork.push(details)
+			concerts.newYork.push(details);
+			Concerts.update({location:'newYork',{string:conString}, function(err, concert){
+      if (err){
+        console.log(err);
+      }
+      else{
+        console.log(concerts)
+      }
+    });
 		}else if(city==losAngeles){
-			concerts.losAngeles.push(details)
+			concerts.losAngeles.push(details);
+			Concerts.update({location:'losAngeles',{string:conString}, function(err, concert){
+      if (err){
+        console.log(err);
+      }
+      else{
+        console.log(concerts)
+      }
+    });
 		}else if(city==nashville){
-			concerts.nashville.push(details)
+			concerts.nashville.push(details);
+			Concerts.update({location:'nashville',{string:conString}, function(err, concert){
+      if (err){
+        console.log(err);
+      }
+      else{
+        console.log(concerts)
+      }
+    });
 		}else if(city==tucson){
-			concerts.tucson.push(details)
+			concerts.tucson.push(details);
+			Concerts.update({location:'tucson',{string:conString}, function(err, concert){
+      if (err){
+        console.log(err);
+      }
+      else{
+        console.log(concerts)
+      }
+    });
 		}
 			}
 	var conString = JSON.stringify(concerts);
