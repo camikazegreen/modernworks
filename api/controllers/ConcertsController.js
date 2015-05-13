@@ -21,7 +21,7 @@ module.exports = {
 
 
 		Concerts.find({location:'newYork'}).exec(function(err, events) {
-			console.log(events);
+			console.log(events[0]);
   			concerts.newYork.push(events);
 		Concerts.find({location:'losAngeles'}).exec(function(err, events) {
   			concerts.losAngeles.push(events);
