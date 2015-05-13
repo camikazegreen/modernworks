@@ -20,27 +20,39 @@ module.exports = {
 		concerts.phoenix = [];
 
 		Concerts.find({location:'newYork'}).exec(function(err, events) {
-  			concerts.newYork.push(events);console.log(concerts);
-		});
-		Concerts.find({location:'losAngeles'}).exec(function(err, events) {
-  			concerts.losAngeles.push(events);console.log(concerts);
-		});
-		Concerts.find({location:'nashville'}).exec(function(err, events) {
-  			concerts.nashville.push(events);console.log(concerts);
-		});
-		Concerts.find({location:'tucson'}).exec(function(err, events) {
-  			concerts.tucson.push(events);console.log(concerts);
-		});
-		Concerts.find({location:'tucson'}).exec(function(err, events) {
-  			concerts.tucson.push(events);console.log(concerts);
-		});
-		console.log(concerts)
-
-
-		return res.view('concerts',{
+  			concerts.newYork.push(events);
+		}).find({location:'losAngeles'}).exec(function(err, events) {
+  			concerts.losAngeles.push(events);
+		}).find({location:'nashville'}).exec(function(err, events) {
+  			concerts.nashville.push(events);
+		}).find({location:'tucson'}).exec(function(err, events) {
+  			concerts.tucson.push(events);
+		}).find({location:'phoenix'}).exec(function(err, events) {
+  			concerts.phoenix.push(events);
+  			return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
 		});
+		});
+		// Concerts.find({location:'losAngeles'}).exec(function(err, events) {
+  // 			concerts.losAngeles.push(events);
+		// });
+		// Concerts.find({location:'nashville'}).exec(function(err, events) {
+  // 			concerts.nashville.push(events);
+		// });
+		// Concerts.find({location:'tucson'}).exec(function(err, events) {
+  // 			concerts.tucson.push(events);
+		// });
+		// Concerts.find({location:'tucson'}).exec(function(err, events) {
+  // 			concerts.tucson.push(events);
+		// });
+		// console.log(concerts)
+
+
+		// return res.view('concerts',{
+		// 	artists: artists,
+		// 	concerts: concerts
+		// });
 	}
 
 };
