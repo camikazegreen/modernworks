@@ -115,11 +115,11 @@ function getConcerts(city,artist){
 var a = 0;
 while(a<=artists.artists.length){
 
-	getConcerts(newYork,artists.artists[a]);
-	getConcerts(phoenix,artists.artists[a]);
-	getConcerts(losAngeles,artists.artists[a]);
-	getConcerts(nashville,artists.artists[a]);
-	getConcerts(tucson,artists.artists[a]);
+	getConcerts(newYork,encodeURI(artists.artists[a]));
+	getConcerts(phoenix,encodeURI(artists.artists[a]));
+	getConcerts(losAngeles,encodeURI(artists.artists[a]));
+	getConcerts(nashville,encodeURI(artists.artists[a]));
+	getConcerts(tucson,encodeURI(artists.artists[a]));
 	// console.log(concerts);
 
 	a++;
