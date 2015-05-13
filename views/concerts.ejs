@@ -7,7 +7,7 @@
   <div class="event-details" id="new-york-events">
     <ul>
     <% for(i=0;i<concerts.newYork[0].length;i++){ %>
-    <% var data = JSON.parse(concerts.newYork[0][i].string);(for(j=0;j<data.length;j++){ %>
+    <% var data = JSON.parse(concerts.newYork[0][i].string);for(j=0;j<data.length;j++){ %>
       <!-- <li><%= concerts.newYork[0][i].string[j].displayName %></li> -->
       <li><%= j %></li>
     <%  } } %>
