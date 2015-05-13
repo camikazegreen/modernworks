@@ -113,17 +113,17 @@ function getConcerts(city,artist){
 	http.request(options, callback).end();
 }
 var a = 0;
-while(a<artists.artists.length){
+// while(a<artists.artists.length){
 
-	getConcerts(newYork,encodeURI(artists.artists[a]));
-	getConcerts(phoenix,encodeURI(artists.artists[a]));
-	getConcerts(losAngeles,encodeURI(artists.artists[a]));
-	getConcerts(nashville,encodeURI(artists.artists[a]));
-	getConcerts(tucson,encodeURI(artists.artists[a]));
-	// console.log(concerts);
+// 	getConcerts(newYork,encodeURI(artists.artists[a]));
+// 	getConcerts(phoenix,encodeURI(artists.artists[a]));
+// 	getConcerts(losAngeles,encodeURI(artists.artists[a]));
+// 	getConcerts(nashville,encodeURI(artists.artists[a]));
+// 	getConcerts(tucson,encodeURI(artists.artists[a]));
+// 	// console.log(concerts);
 
-	a++;
-}
+// 	a++;
+// }
 
 
 	}

@@ -25,8 +25,9 @@ module.exports.models = {
   * tables/collections/etc. in your schema.                                  *
   *                                                                          *
   * See http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html  *
-  *                                                                          *
+  *             
+  * migrate options: drop, safe, alter                                       *
   ***************************************************************************/
-   migrate: 'drop'
+   migrate: 'alter'
 
 };
