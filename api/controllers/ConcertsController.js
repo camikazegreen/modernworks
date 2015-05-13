@@ -19,37 +19,27 @@ module.exports = {
 		concerts.tucson = [];
 		concerts.phoenix = [];
 
-		var promise = new Promise(function(resolve, reject){
+
 		Concerts.find({location:'newYork'}).exec(function(err, events) {
   			concerts.newYork.push(events);
-		})
 		Concerts.find({location:'losAngeles'}).exec(function(err, events) {
   			concerts.losAngeles.push(events);
-		});
 		Concerts.find({location:'nashville'}).exec(function(err, events) {
   			concerts.nashville.push(events);
-		});
 		Concerts.find({location:'tucson'}).exec(function(err, events) {
   			concerts.tucson.push(events);
-		});
-		Concerts.find({location:'tucson'}).exec(function(err, events) {
-  			concerts.tucson.push(events);
-		});
-		if(concerts){
-			resolve(concerts);
-		} else{
-			reject(Error('No concerts'));
-		}
-		})// Promise function
-		promise.then(function(result){
-			console.log(result);
+		Concerts.find({location:'phoenix'}).exec(function(err, events) {
+  			concerts.phoenix.push(events);console.log(result);
 			return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
-		});
-		}, function(err){
-			console.log(err);
-		})
+		});//return
+		});//find phoenix
+		});//find tucson
+		});//find nashville
+		});//find losAngeles
+		})//find newYork
+
 		
 
 
