@@ -20,21 +20,21 @@ module.exports = {
 		concerts.phoenix = [];
 
 		Concerts.find({location:'newYork'}).exec(function(err, events) {
-  			concerts.newYork.push(events);
+  			concerts.newYork.push(events);console.log(concerts);
 		});
 		Concerts.find({location:'losAngeles'}).exec(function(err, events) {
-  			concerts.losAngeles.push(events);
+  			concerts.losAngeles.push(events);console.log(concerts);
 		});
 		Concerts.find({location:'nashville'}).exec(function(err, events) {
-  			concerts.nashville.push(events);
+  			concerts.nashville.push(events);console.log(concerts);
 		});
 		Concerts.find({location:'tucson'}).exec(function(err, events) {
-  			concerts.tucson.push(events);
+  			concerts.tucson.push(events);console.log(concerts);
 		});
 		Concerts.find({location:'tucson'}).exec(function(err, events) {
-  			concerts.tucson.push(events);
+  			concerts.tucson.push(events);console.log(concerts);
 		});
-		console.log(concerts);
+		console.log(concerts)
 
 
 		return res.view('concerts',{
