@@ -34,6 +34,7 @@ module.exports = {
 		Concerts.find({location:'tucson'}).exec(function(err, events) {
   			concerts.tucson.push(events);
 		});
+		console.log(concerts);
 
 
 		return res.view('concerts',{
