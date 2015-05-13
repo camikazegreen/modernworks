@@ -62,68 +62,60 @@ function getConcerts(city,artist){
 		response.on('end', function(){
 			var json = JSON.parse(str);
 			if(json.resultsPage.totalEntries>0){
-				var details = json.resultsPage.results.event;
+				var conString = JSON.stringify(json.resultsPage.results.event);
 			if(city==phoenix){
-			concerts.phoenix.push(details);
-			Concerts.update({location:'phoenix'},{string:conString}, function(err, concert){
+			// concerts.phoenix.push(details);
+			Concerts.create({location:'phoenix'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
       else{
-        console.log(concerts)
+        console.log(artist+" in "+city)
       }
     });
 		}else if(city==newYork){
-			concerts.newYork.push(details);
-			Concerts.update({location:'newYork'},{string:conString}, function(err, concert){
+			// concerts.newYork.push(details);
+			Concerts.create({location:'newYork'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
       else{
-        console.log(concerts)
+        console.log(artist+" in "+city)
       }
     });
 		}else if(city==losAngeles){
-			concerts.losAngeles.push(details);
-			Concerts.update({location:'losAngeles'},{string:conString}, function(err, concert){
+			// concerts.losAngeles.push(details);
+			Concerts.create({location:'losAngeles'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
       else{
-        console.log(concerts)
+        console.log(artist+" in "+city)
       }
     });
 		}else if(city==nashville){
-			concerts.nashville.push(details);
-			Concerts.update({location:'nashville'},{string:conString}, function(err, concert){
+			// concerts.nashville.push(details);
+			Concerts.create({location:'nashville'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
       else{
-        console.log(concerts)
+        console.log(artist+" in "+city)
       }
     });
 		}else if(city==tucson){
-			concerts.tucson.push(details);
-			Concerts.update({location:'tucson'},{string:conString}, function(err, concert){
+			// concerts.tucson.push(details);
+			Concerts.create({location:'tucson'},{string:conString}, function(err, concert){
       if (err){
         console.log(err);
       }
       else{
-        console.log(concerts)
+        console.log(artist+" in "+city)
       }
     });
 		}
 			}
-	var conString = JSON.stringify(concerts);
-	Concerts.update(1,{string:conString}, function(err, concert){
-      if (err){
-        console.log(err);
-      }
-      else{
-        console.log(concerts)
-      }
-    });
+
 		});
 	}
 	http.request(options, callback).end();
