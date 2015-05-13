@@ -38,11 +38,11 @@ function loadEvents(){
 		// http://api.songkick.com/api/3.0/events.xml?apikey=KEY&location=sk:2846&artist_name=fleet+foxes
 		// console.log(artists);
 function getConcerts(city,artist){
-	console.log('getting concerts for '+artist+' in '+city)
 	var options = {
 		host: 'api.songkick.com',
 		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
 	};
+	console.log('getting concerts for '+path)
 
 	var callback = function(response){
 		var str = '';
