@@ -113,7 +113,7 @@ function getConcerts(city,artist){
 	http.request(options, callback).end();
 }
 var a = 0;
-while(a<=artists.artists.length){
+while(a<artists.artists.length){
 
 	getConcerts(newYork,encodeURI(artists.artists[a]));
 	getConcerts(phoenix,encodeURI(artists.artists[a]));
