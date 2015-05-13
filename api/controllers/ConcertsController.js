@@ -19,7 +19,7 @@ module.exports = {
 		concerts.tucson = [];
 		concerts.phoenix = [];
 
-		Concerts.find({id:1}).then(function(err, rows) {
+		Concerts.find({id:'1'}).then(function(err, rows) {
   console.log('new york has these events: '+rows);
 })
 
