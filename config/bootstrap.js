@@ -42,7 +42,7 @@ function getConcerts(city,artist){
 		host: 'api.songkick.com',
 		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
 	};
-	console.log('getting concerts for '+path)
+	console.log('getting concerts for '+options.path)
 
 	var callback = function(response){
 		var str = '';
