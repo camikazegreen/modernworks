@@ -20,7 +20,7 @@ module.exports = {
 		concerts.phoenix = [];
 
 		Concerts.find({location:'newYork'}).then(function(err, rows) {
-  console.log(rows);
+  console.log('new york has these events: '+rows);
 })
 
 
