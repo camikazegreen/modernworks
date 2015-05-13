@@ -20,17 +20,8 @@ module.exports.bootstrap = function(cb) {
 sails.services.passport.loadStrategies();
 
 function loadEvents(){
-	var cities = ['newYork','losAngeles','nashville','tucson','phoenix']
-	var c=0;
-	while(c<cities.length){
-	Concerts.create({string:'no events',location:cities[c]},function(err,concert){
-		if(err){
-			console.log(err);
-		} else {
-			console.log(concert.id);
-		}
-	});
-}
+	console.log("loading events...")
+
 		// console.log(artists);
 		var concerts = {};
 		concerts.newYork = [];
@@ -47,6 +38,7 @@ function loadEvents(){
 		// http://api.songkick.com/api/3.0/events.xml?apikey=KEY&location=sk:2846&artist_name=fleet+foxes
 		// console.log(artists);
 function getConcerts(city,artist){
+	console.log('getting concerts for '+artist+' in '+city)
 	var options = {
 		host: 'api.songkick.com',
 		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
@@ -111,32 +103,27 @@ function getConcerts(city,artist){
       }
       else{
         console.log(artist+" in "+city)
-      }
-    });
-		}
-			}
+      }// else
+    });//Concerts.create
+		}// if tucson
+			}//if totalEntries > 0
 
 		});
 	}
 	http.request(options, callback).end();
 }
 var a = 0;
-var end = false;
 while(a<=artists.artists.length){
-	if(a===artists.artists.length){
-		end=true;
-		};
 
 	getConcerts(newYork,artists.artists[a]);
 	getConcerts(phoenix,artists.artists[a]);
 	getConcerts(losAngeles,artists.artists[a]);
 	getConcerts(nashville,artists.artists[a]);
-	getConcerts(tucson,artists.artists[a],end);
+	getConcerts(tucson,artists.artists[a]);
 	// console.log(concerts);
 
 	a++;
 }
-console.log(concerts);
 
 
 	}
