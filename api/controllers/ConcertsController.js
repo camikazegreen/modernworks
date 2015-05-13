@@ -18,18 +18,11 @@ module.exports = {
 		concerts.nashville = [];
 		concerts.tucson = [];
 		concerts.phoenix = [];
-		var apikey = apikeys.songkickkeys[0].apikey;
-		var newYork = "sk:7644";
-		var losAngeles = "sk:17835"; 
-		var nashville = "sk:11104";
-		var tucson = "sk:10046";
-		var phoenix = "sk:23068";
-		// http://api.songkick.com/api/3.0/events.xml?apikey=KEY&location=sk:2846&artist_name=fleet+foxes
-		// console.log(artists);
-function getConcerts(city,artist,end){
-}
 
-console.log(concerts);
+		var newYork = Concerts.find({where:{location:'newYork'}});
+		console.log(newYork);
+
+
 		return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
