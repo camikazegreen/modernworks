@@ -19,40 +19,41 @@ module.exports = {
 		concerts.tucson = [];
 		concerts.phoenix = [];
 
+		var promise = new Promise(function(resolve, reject){
 		Concerts.find({location:'newYork'}).exec(function(err, events) {
   			concerts.newYork.push(events);
-		}).find({location:'losAngeles'}).exec(function(err, events) {
+		})
+		Concerts.find({location:'losAngeles'}).exec(function(err, events) {
   			concerts.losAngeles.push(events);
-		}).find({location:'nashville'}).exec(function(err, events) {
+		});
+		Concerts.find({location:'nashville'}).exec(function(err, events) {
   			concerts.nashville.push(events);
-		}).find({location:'tucson'}).exec(function(err, events) {
+		});
+		Concerts.find({location:'tucson'}).exec(function(err, events) {
   			concerts.tucson.push(events);
-		}).find({location:'phoenix'}).exec(function(err, events) {
-  			concerts.phoenix.push(events);
-  			return res.view('concerts',{
+		});
+		Concerts.find({location:'tucson'}).exec(function(err, events) {
+  			concerts.tucson.push(events);
+		});
+		if(concerts){
+			resolve(concerts);
+		} else{
+			reject(Error('No concerts'));
+		}
+		})// Promise function
+		promise.then(function(result){
+			console.log(result);
+			return res.view('concerts',{
 			artists: artists,
 			concerts: concerts
 		});
-		});
-		// Concerts.find({location:'losAngeles'}).exec(function(err, events) {
-  // 			concerts.losAngeles.push(events);
-		// });
-		// Concerts.find({location:'nashville'}).exec(function(err, events) {
-  // 			concerts.nashville.push(events);
-		// });
-		// Concerts.find({location:'tucson'}).exec(function(err, events) {
-  // 			concerts.tucson.push(events);
-		// });
-		// Concerts.find({location:'tucson'}).exec(function(err, events) {
-  // 			concerts.tucson.push(events);
-		// });
-		// console.log(concerts)
+		}, function(err){
+			console.log(err);
+		})
+		
 
 
-		// return res.view('concerts',{
-		// 	artists: artists,
-		// 	concerts: concerts
-		// });
+		
 	}
 
 };
