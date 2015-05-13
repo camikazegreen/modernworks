@@ -19,8 +19,9 @@ module.exports = {
 		concerts.tucson = [];
 		concerts.phoenix = [];
 
-		var newYork = Concerts.find({where:{location:'newYork'},select:[string]});
-		console.log(newYork);
+		Concerts.find({where:{location:'newYork'},select:[string]}).then(function(err, rows) {
+  console.log(rows);
+})
 
 
 		return res.view('concerts',{
