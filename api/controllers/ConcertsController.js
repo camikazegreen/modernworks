@@ -19,8 +19,8 @@ module.exports = {
 		concerts.tucson = [];
 		concerts.phoenix = [];
 
-		Concerts.find({id:'1'}).exec(function(err, events) {
-  console.log('new york has these events: '+events);
+		Concerts.find({location:'newYork'}).exec(function(err, events) {
+  console.log('new york has these events: ',events);
 })
 
 
