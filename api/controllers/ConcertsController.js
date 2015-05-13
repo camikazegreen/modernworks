@@ -23,7 +23,7 @@ module.exports = {
 		Concerts.find({location:'newYork'}).exec(function(err, events) {
 			// console.log(events[0].id);
   			concerts.newYork.push(events);
-			console.log(concerts.newYork[0]);
+			console.log(concerts.newYork[0][0]);
 		Concerts.find({location:'losAngeles'}).exec(function(err, events) {
   			concerts.losAngeles.push(events);
 		Concerts.find({location:'nashville'}).exec(function(err, events) {
