@@ -102,7 +102,7 @@ function storeToken(token) {
 function getEvents(auth) {
   calendar.events.list({
     auth: auth,
-    calendarId: 'primary',
+    calendarId: 'modernworkspub.com_lgqrgbv7b4p6gg9720iu46oej0@group.calendar.google.com',
     timeMin: (new Date()).toISOString(),
     maxResults: 10,
     singleEvents: true,
