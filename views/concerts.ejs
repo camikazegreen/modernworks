@@ -8,7 +8,50 @@
     <ul>
     <% for(i=0;i<concerts.newYork[0].length;i++){ %>
     <% var data = JSON.parse(concerts.newYork[0][i].string);for(j=0;j<data.length;j++){ %>
-      <!-- <li><%= concerts.newYork[0][i].string[j].displayName %></li> -->
+      <li><%= data[j].displayName %></li>
+    <%  } } %>
+    </ul>
+  </div>
+</div>
+<div class="city-details">
+  <h2>Nashville</h2>
+  <div class="event-details" id="nashville-events">
+    <ul>
+    <% for(i=0;i<concerts.nashville[0].length;i++){ %>
+    <% var data = JSON.parse(concerts.nashville[0][i].string);for(j=0;j<data.length;j++){ %>
+      <li><%= data[j].displayName %></li>
+    <%  } } %>
+    </ul>
+  </div>
+</div>
+<div class="city-details">
+  <h2>Los Angeles</h2>
+  <div class="event-details" id="los-angeles-events">
+    <ul>
+    <% for(i=0;i<concerts.losAngeles[0].length;i++){ %>
+    <% var data = JSON.parse(concerts.losAngeles[0][i].string);for(j=0;j<data.length;j++){ %>
+      <li><%= data[j].displayName %></li>
+    <%  } } %>
+    </ul>
+  </div>
+</div>
+<div class="city-details">
+  <h2>Phoenix</h2>
+  <div class="event-details" id="phoenix-events">
+    <ul>
+    <% for(i=0;i<concerts.phoenix[0].length;i++){ %>
+    <% var data = JSON.parse(concerts.phoenix[0][i].string);for(j=0;j<data.length;j++){ %>
+      <li><%= data[j].displayName %></li>
+    <%  } } %>
+    </ul>
+  </div>
+</div>
+<div class="city-details">
+  <h2>Tucson</h2>
+  <div class="event-details" id="tucson-events">
+    <ul>
+    <% for(i=0;i<concerts.tucson[0].length;i++){ %>
+    <% var data = JSON.parse(concerts.tucson[0][i].string);for(j=0;j<data.length;j++){ %>
       <li><%= data[j].displayName %></li>
     <%  } } %>
     </ul>
