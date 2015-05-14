@@ -16,7 +16,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     return;
   }
   // Authorize a client with the loaded credentials, then call the Calendar API.
-  console.log(content);
+  console.log(JSON.parse(content));
   authorize(JSON.parse(content), getEvents);
 });
 
