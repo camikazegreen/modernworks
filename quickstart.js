@@ -17,7 +17,7 @@ fs.readFile('client_secret2.json', function processClientSecrets(err, content) {
   }
   // Authorize a client with the loaded credentials, then call the Calendar API.
   console.log(JSON.parse(content));
-  authorize(JSON.parse(content), getEvents);
+  authorize(JSON.parse(content), addEvent);
 });
 
 /**
@@ -124,4 +124,14 @@ function getEvents(auth) {
       }
     }
   });
+}
+function addEvent(auth,event){
+  calendar.events.insert({
+    auth: auth,
+    calendarId: 'modernworkspub.com_d7sja9bbac4ll8ohaq3cj08jg4@group.calendar.google.com',
+    end:{'timezone':'EST','dateTime':'2015-05-23T20:00:00'},
+    start:{"dateTime": "2015-05-23T19:00:00","timeZone": "EST"},
+    summary:'Ben Allison',
+    location: 'Dizzys Club'
+  })
 }
