@@ -88,25 +88,26 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var a=0;
         console.log[mbid['artist-credit']]
         while(a<mbid['artist-credit'].length){
-            mbidHTML+='<p>Artist Credit:'+mbid['artist-credit'][a]+'</p>';
+            mbidHTML+='<p>Artist Credit:'+mbid['artist-credit'][a].artist.name+': '+mbid['artist-credit'][a].artist.id+'</p>';
             a++;
         }
         var i=0;
         while(i<mbid.isrcs.length){
-            mbidHTML+='<p>ISRC:'+mbid.isrcs[i]+'</p>';
+            mbidHTML+='<p>ISRC:'+mbid.isrcs[i].id+'</p>';
             i++;
         }
         var r=0;
         while(r<mbid.releases.length){
-            mbidHTML+='<p>Release:'+mbid.releases[r]+'</p>';
+            // released on *format* in *country* on *date*
+            mbidHTML+='<p>Released on'+mbid.releases[r].media[0].format+' in '+mbid.releases[r]['release-events'][0].area.name+' on '+mbid.releases[r].date+'</p>';
             r++;
         }
         var t=0;
         while(t<mbid.tags.length){
-            mbidHTML+='<p>Tags:'+mbid.tags[t]+'</p>';
+            mbidHTML+='<p>Tags:'+mbid.tags[t].name+'</p>';
             t++;
         }
-        
+
             musicbrainzBox.innerHTML=mbidHTML;
         }
         var echoBox = row.insertCell(4);
