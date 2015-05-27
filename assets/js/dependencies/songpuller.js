@@ -87,6 +87,26 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             mbidHTML+='<p>Composer:'+mbid.composers[c]+'</p>';
             c++;
         }
+        var a=0;
+        while(a<mbid['artist-credit'].length){
+            mbidHTML+='<p>Artist Credit:'+mbid['artist-credit'][a]+'</p>';
+            a++;
+        }
+        var i=0;
+        while(i<mbid.isrcs.length){
+            mbidHTML+='<p>ISRC:'+mbid.isrcs[i]+'</p>';
+            i++;
+        }
+        var r=0;
+        while(r<mbid.releases.length){
+            mbidHTML+='<p>Release:'+mbid.releases[r]+'</p>';
+            r++;
+        }
+        var t=0;
+        while(t<mbid.tags.length){
+            mbidHTML+='<p>Tags:'+mbid.tags[t]+'</p>';
+            t++;
+        }
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
         var echoHTML ='<p>Energy:<progress value="'+echoDeets.energy+'" max="1"</progress></p>';

@@ -32,7 +32,7 @@ module.exports = {
 // Initialize NodeBrainz
 	var nb = new NB({userAgent:'Modern Works Music Publishing ( http://modernworksmusicpublishing.com )'});
     var tags = req.params.all();
-    var mbid = {'id':'no song found','writers':[],'composers':[]}; //empty array for MusicBrainz ID
+    var mbid = {'id':'no song found','writers':[],'composers':[],'artist-credit':[],'releases':[],'isrcs':[],'tags':[]}; //empty array for MusicBrainz ID
     var echodeets = '';
     var readable = req;
     readable.on('data', function(chunk){
@@ -43,8 +43,39 @@ module.exports = {
     	if(response.recordings[0]){
     		console.log(response.works);
     		mbid.id=response.recordings[0].id;
-    		i=0;
-    		var relations = response.recordings[0].relations
+    		if(mbid.score<100){
+    			//add code to verify
+    		},
+    		if(response.recordings[0].'artist-credit'){
+    			a=0;
+    			while(a<response.recordings[0]['artist-credit'].length){
+    				mbid['artist-credit'].push(response.recordings[0]['artist-credit'][a]);
+    				a++;
+    			}
+    		},
+    		if(response.recordings[0].releases){
+    			r=0;
+    			while(a<response.recordings[0].releases.length){
+    				mbid.releases.push(response.recordings[0].releases[r]);
+    				r++;
+    			}
+    		},
+    		if(response.recordings[0].isrcs){
+    			i=0;
+    			while(i<response.recordings[0].isrcs.length){
+    				mbid.isrcs.push(response.recordings[0].isrc[i]);
+    				i++;
+    			}
+    		},
+    		if(response.recordings[0].tags){
+    			t=0;
+    			while(t<response.recordings[0].tags.length){
+    				mbid.tags.push(response.recordings[0].tags[t]);
+    				t++;
+    			}
+    		}
+    		// i=0;
+    		// var relations = response.recordings[0].relations
     		// if(relations[0]){
     		// 	console.log('there are relations, and they are:'+response.recordings[0].relations.length);
     		// 	while(i<relations.length){
