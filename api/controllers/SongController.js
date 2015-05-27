@@ -134,8 +134,9 @@ module.exports = {
 			}
 			res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
-				console.log("The song has been created: ",song)
+				console.log("The song has been created: ",song);
 				res.end();
+				return res;
    			}
    		});
    	} else {
@@ -249,7 +250,6 @@ module.exports = {
 					res.end();
 			})
 			
-					return res;
 			// .on('success',function(response){
 			// 	console.log(response);
 			// }).send();
