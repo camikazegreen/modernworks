@@ -45,19 +45,19 @@ module.exports = {
     		mbid.id=response.recordings[0].id;
     		i=0;
     		var relations = response.recordings[0].relations
-    		if(relations[0]){
-    			console.log('there are relations, and they are:'+response.recordings[0].relations.length);
-    			while(i<relations.length){
-    				if(relations[i].type=='writer'){
-    					mbid.writers.push(relations[i].artist.name)
-    				}
-    				if(relations[i].type=='composer'){
-    					mbid.composers.push(relations[i].artist.name)
-    				}
-    				console.log(response.works[0].relations[i]);
-    				i++;
-    			}
-    		}
+    		// if(relations[0]){
+    		// 	console.log('there are relations, and they are:'+response.recordings[0].relations.length);
+    		// 	while(i<relations.length){
+    		// 		if(relations[i].type=='writer'){
+    		// 			mbid.writers.push(relations[i].artist.name)
+    		// 		}
+    		// 		if(relations[i].type=='composer'){
+    		// 			mbid.composers.push(relations[i].artist.name)
+    		// 		}
+    		// 		console.log(response.works[0].relations[i]);
+    		// 		i++;
+    		// 	}
+    		// } //relations
     		
     	}
     });
