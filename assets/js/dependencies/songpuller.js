@@ -74,8 +74,6 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         // player.setAttribute('src','song/songMP3');
         if(mbid.id !== 'no song found'){
             var mbidHTML = '<p>ID:'+mbid.id+'</p>';
-            musicbrainzBox.innerHTML=mbidHTML;
-        }
         var w=0;
         console.log(mbid);
         while(w<mbid.writers.length){
@@ -107,6 +105,9 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         while(t<mbid.tags.length){
             mbidHTML+='<p>Tags:'+mbid.tags[t]+'</p>';
             t++;
+        }
+        
+            musicbrainzBox.innerHTML=mbidHTML;
         }
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
