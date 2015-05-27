@@ -141,29 +141,28 @@ module.exports = {
    });
    // console.log(tags);
 		
-		// req.file('songMP3').upload({
-		// 	adapter: require('skipper-s3'),
-		// 	key: apikeys.s3keys[0].key,
-		// 	secret: apikeys.s3keys[0].secret,
-		// 	bucket: 'mw-songs',
-		// 	region: 'Oregon'
-		// },function whenDone(err,uploadedFiles){
-		// 	if (err){
-		// 		return res.negotiate(err);
-		// 	}
-		// 	if (uploadedFiles.length===0){
-		// 		return res.badRequest('No file was uploaded');
-		// 	}
+		req.file('songMP3').upload({
+			adapter: require('skipper-s3'),
+			key: apikeys.s3keys[0].key,
+			secret: apikeys.s3keys[0].secret,
+			bucket: 'mw-songs',
+			region: 'Oregon'
+		},function whenDone(err,uploadedFiles){
+			if (err){
+				return res.negotiate(err);
+			}
+			if (uploadedFiles.length===0){
+				return res.badRequest('No file was uploaded');
+			}
  			Song.create({
-				// songFd: uploadedFiles[0].fd,
-				// songMP3url: uploadedFiles[0].extra.Location,
+				songFd: uploadedFiles[0].fd,
+				songMP3url: uploadedFiles[0].extra.Location,
 				title: tags.title,
 				artist: tags.artist,
 				album: tags.album,
 				mbid: JSON.stringify(mbid),
 				echonest: JSON.stringify(echodeets)
 			},function(err,song){
-				console.log(err);
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
 				console.log("The song has been created: ",song)
@@ -171,7 +170,7 @@ module.exports = {
 				return res;
 			});
 
-		// });
+		});
 	},
 	response: function(req,res){
 		console.log("at least this one is working");
