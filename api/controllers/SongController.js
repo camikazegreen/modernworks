@@ -145,7 +145,7 @@ module.exports = {
 				res.write(JSON.stringify({ status: song }));
 				console.log("The song has been created: ",song)
 				res.end();
-				return res;
+				// return res;
     }//echonestCallback
     function searchEchonest(){
     	myNest('song/search').get({
@@ -193,6 +193,8 @@ module.exports = {
 		// 	});
 
 		// });
+
+				return res;
 	},
 	response: function(req,res){
 		console.log("at least this one is working");
