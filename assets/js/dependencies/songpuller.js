@@ -36,7 +36,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             infoBox.appendChild(title);
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
-            mbidHTML = '<a href="http://musicbrainz.org/search?query='+encodeURIComponent(title)+'&type=recording&method=indexed" target="_blank">Search by song</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(album)+'&type=release&method=indexed target="_blank"">Search by album</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(artist)+'&type=artist&method=indexed" target="_blank">Search by artist</a></br>'
+            mbidHTML = '<a href="http://musicbrainz.org/search?query='+encodeURIComponent(tags.title)+'&type=recording&method=indexed" target="_blank">Search by song</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(tags.album)+'&type=release&method=indexed target="_blank"">Search by album</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(tags.artist)+'&type=artist&method=indexed" target="_blank">Search by artist</a></br>'
             musicbrainzBox.innerHTML=mbidHTML;
             var progress = document.createElement('progress');
             progress.setAttribute('id','progress'+h);
