@@ -77,7 +77,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             musicbrainzBox.innerHTML=mbidHTML;
         }
         var w=0;
-        console.log(mbid.writers);
+        console.log(mbid);
         while(w<mbid.writers.length){
             mbidHTML+='<p>Writer:'+mbid.writers[w]+'</p>';
             w++;
