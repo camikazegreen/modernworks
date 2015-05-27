@@ -67,7 +67,7 @@ module.exports = {
     			console.log(response.recordings[0].isrcs.length);
     			i=0;
     			while(i<response.recordings[0].isrcs.length){
-    				mbid.isrcs.push(response.recordings[0].isrc[i]);
+    				mbid.isrcs.push(response.recordings[0].isrcs[i]);
     				i++;
     			}
     		}
