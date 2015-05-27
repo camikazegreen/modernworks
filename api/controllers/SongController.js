@@ -98,9 +98,6 @@ module.exports = {
     	}
     });
     //initialize echonest
-   // var myNest = new echonest.Echonest({
-   // 	api_key: apikeys.echonestkeys[0].apikey
-   // });
 	var myNest = echojs({
 		key: apikeys.echonestkeys[0].apikey
 	});
@@ -166,6 +163,7 @@ module.exports = {
 				mbid: JSON.stringify(mbid),
 				echonest: JSON.stringify(echodeets)
 			},function(err,song){
+				console.log(err);
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
 				console.log("The song has been created: "+song)
