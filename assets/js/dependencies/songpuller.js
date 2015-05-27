@@ -15,6 +15,19 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             var imageUrl;
            if(tags.picture.length>0){
             var picture = tags.picture[0];
+// check to see if the picture data is in ASCII characters. Damn you Moog!
+            function isValid(str){
+                if(typeof(str)!=='string'){
+                    return false;
+                 }
+                for(var i=0;i<str.length;i++){
+                    if(str.charCodeAt(i)>127){
+                    return false;
+                    }
+                }
+                return true;
+            }
+            if(!isValid(picture.data){picture.data="jpg"}
             imageUrl = URL.createObjectURL(new Blob([picture.data],{'type':'image/'+picture.format}));
             } else {
              imageUrl='/images/MW-small.png'
