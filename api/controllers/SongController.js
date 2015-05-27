@@ -38,7 +38,7 @@ module.exports = {
     readable.on('data', function(chunk){
     	// console.log('got %s bytes of data', chunk);
     });
-    nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
+    nb.search('work',{artist:tags.artist,recording:tags.title}, function(err, response){
     	console.log('searching MusicBrainz and getting ',response);
     	if(response.works[0]){
     		console.log(response.works);
