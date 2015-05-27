@@ -37,9 +37,12 @@ module.exports = {
     var readable = req;
     readable.on('data', function(chunk){
     	// console.log('got %s bytes of data', chunk);
-    });
-    nb.search('recording',{artist:tags.artist,recording:tags.title}, function(err, response){
-    	console.log('searching MusicBrainz and getting ',response);
+    });    //initialize echonest
+	var myNest = echojs({
+		key: apikeys.echonestkeys[0].apikey
+	});
+    function musicbrainzCallback(response){
+    	    	console.log('searching MusicBrainz and getting ',response);
     	if(response.recordings[0]){
     		console.log(response.works);
     		mbid.id=response.recordings[0].id;
@@ -95,17 +98,10 @@ module.exports = {
     		// 	}
     		// } //relations
     		
-    	}
-    });
-    //initialize echonest
-	var myNest = echojs({
-		key: apikeys.echonestkeys[0].apikey
-	});
-   myNest('song/search').get({
-   	artist:tags.artist,
-   	title:tags.title
-   }, function (error,response){
-   	var response = response.response;
+    	} // if(responses.recordings)
+    } //musicbrainzCallback
+    function echonestCallback(error,response){
+    	   	var response = response.response;
    	console.log('searching echonest...',response)
    	// console.log(response.response);
    	// console.log(response.response.songs);
@@ -137,40 +133,66 @@ module.exports = {
    			console.log(response);
    		})
 
-   	}
-   });
-   // console.log(tags);
-		
-		req.file('songMP3').upload({
-			adapter: require('skipper-s3'),
-			key: apikeys.s3keys[0].key,
-			secret: apikeys.s3keys[0].secret,
-			bucket: 'mw-songs',
-			region: 'Oregon'
-		},function whenDone(err,uploadedFiles){
-			if (err){
-				return res.negotiate(err);
-			}
-			if (uploadedFiles.length===0){
-				return res.badRequest('No file was uploaded');
-			}
- 			Song.create({
-				songFd: uploadedFiles[0].fd,
-				songMP3url: uploadedFiles[0].extra.Location,
+   	} 
+   	var song = {
 				title: tags.title,
 				artist: tags.artist,
 				album: tags.album,
 				mbid: JSON.stringify(mbid),
 				echonest: JSON.stringify(echodeets)
-			},function(err,song){
-				res.writeHead(200, { 'Content-Type': 'application/json' });
+			}
+			res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
 				console.log("The song has been created: ",song)
 				res.end();
 				return res;
-			});
+    }//echonestCallback
+    functin searchEchonest(){
+    	myNest('song/search').get({
+   		artist:tags.artist,
+   		title:tags.title
+   }, function (error,response){
+   		echonestCallback(error,response);
+   });
+    }
+    nb.search('recording',{artist:tags.artist,recording:tags.title}, function(err, response){
+    	musicbrainzCallback(response);
+    	searchEchonest()
+    }); // musicbrainz request
 
-		});
+
+   // console.log(tags);
+		
+		// req.file('songMP3').upload({
+		// 	adapter: require('skipper-s3'),
+		// 	key: apikeys.s3keys[0].key,
+		// 	secret: apikeys.s3keys[0].secret,
+		// 	bucket: 'mw-songs',
+		// 	region: 'Oregon'
+		// },function whenDone(err,uploadedFiles){
+		// 	if (err){
+		// 		return res.negotiate(err);
+		// 	}
+		// 	if (uploadedFiles.length===0){
+		// 		return res.badRequest('No file was uploaded');
+		// 	}
+ 	// 		Song.create({
+		// 		songFd: uploadedFiles[0].fd,
+		// 		songMP3url: uploadedFiles[0].extra.Location,
+		// 		title: tags.title,
+		// 		artist: tags.artist,
+		// 		album: tags.album,
+		// 		mbid: JSON.stringify(mbid),
+		// 		echonest: JSON.stringify(echodeets)
+		// 	},function(err,song){
+		// 		res.writeHead(200, { 'Content-Type': 'application/json' });
+		// 		res.write(JSON.stringify({ status: song }));
+		// 		console.log("The song has been created: ",song)
+		// 		res.end();
+		// 		return res;
+		// 	});
+
+		// });
 	},
 	response: function(req,res){
 		console.log("at least this one is working");
