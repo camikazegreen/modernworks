@@ -28,6 +28,10 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             artist.innerHTML = 'by ' + tags.artist;
             var album = document.createElement('h5');
             album.innerHTML = 'on ' + tags.album;
+            var year = document.createElement('h6');
+            year.innerHTML = 'Year: '+tags.year;
+            var genre = document.createElement('h6');
+            genre.innerHTML = 'Genre: '+tags.genre[0];
             var artBox = row.insertCell(0);
             var infoBox = row.insertCell(1);
             var progBox = row.insertCell(2);
@@ -36,6 +40,8 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             infoBox.appendChild(title);
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
+            infoBox.appendChild(year);
+            infoBox.appendChild(genre);
             mbidHTML = '<a href="http://musicbrainz.org/search?query='+encodeURIComponent(tags.title)+'&type=recording&method=indexed" target="_blank">Search by song</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(tags.album)+'&type=release&method=indexed target="_blank"">Search by album</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(tags.artist)+'&type=artist&method=indexed" target="_blank">Search by artist</a></br>'
             musicbrainzBox.innerHTML=mbidHTML;
             var progress = document.createElement('progress');
@@ -96,19 +102,19 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             mbidHTML+='<p>ISRC:'+mbid.isrcs[i].id+'</p>';
             i++;
         }
-        var r=0;
-        while(r<mbid.releases.length){
-            // released on *format* in *country* on *date*
-            var format = "CD";
-            if(mbid.releases[r].media[0].format){format = mbid.releases[r].media[0].format};
-            var area = "Worldwide";
-            if(mbid.releases[r]['release-events']){
-            if(mbid.releases[r]['release-events'][0].area){area = mbid.releases[r]['release-events'][0].area.name};};
-            var date = "unknown";
-            if(mbid.releases[r].date){date = mbid.releases[r].date};
-            mbidHTML+='<p>Released on '+format+' in '+area+' on '+date+'</p>';
-            r++;
-        }
+        // var r=0;
+        // while(r<mbid.releases.length){
+        //     // released on *format* in *country* on *date*
+        //     var format = "CD";
+        //     if(mbid.releases[r].media[0].format){format = mbid.releases[r].media[0].format};
+        //     var area = "Worldwide";
+        //     if(mbid.releases[r]['release-events']){
+        //     if(mbid.releases[r]['release-events'][0].area){area = mbid.releases[r]['release-events'][0].area.name};};
+        //     var date = "unknown";
+        //     if(mbid.releases[r].date){date = mbid.releases[r].date};
+        //     mbidHTML+='<p>Released on '+format+' in '+area+' on '+date+'</p>';
+        //     r++;
+        // }
         var t=0;
         while(t<mbid.tags.length){
             mbidHTML+='<p>Tags:'+mbid.tags[t].name+'</p>';
