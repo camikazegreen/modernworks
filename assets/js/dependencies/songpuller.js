@@ -87,7 +87,6 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             mbidHTML+='<p>Composer:'+mbid.composers[c]+'</p>';
             c++;
         }
-        musicbrainzBox.innerHTML=mbidHTML;
         var echoBox = row.insertCell(4);
         var echoDeets = JSON.parse(result.status.echonest);
         var echoHTML ='<p>Energy:<progress value="'+echoDeets.energy+'" max="1"</progress></p>';
