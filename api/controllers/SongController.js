@@ -45,28 +45,28 @@ module.exports = {
     		mbid.id=response.recordings[0].id;
     		if(mbid.score<100){
     			//add code to verify
-    		},
+    		}
     		if(response.recordings[0].'artist-credit'){
     			a=0;
     			while(a<response.recordings[0]['artist-credit'].length){
     				mbid['artist-credit'].push(response.recordings[0]['artist-credit'][a]);
     				a++;
     			}
-    		},
+    		}
     		if(response.recordings[0].releases){
     			r=0;
     			while(a<response.recordings[0].releases.length){
     				mbid.releases.push(response.recordings[0].releases[r]);
     				r++;
     			}
-    		},
+    		}
     		if(response.recordings[0].isrcs){
     			i=0;
     			while(i<response.recordings[0].isrcs.length){
     				mbid.isrcs.push(response.recordings[0].isrc[i]);
     				i++;
     			}
-    		},
+    		}
     		if(response.recordings[0].tags){
     			t=0;
     			while(t<response.recordings[0].tags.length){
