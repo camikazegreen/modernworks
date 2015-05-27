@@ -36,7 +36,7 @@ module.exports = {
     var echodeets = '';
     var readable = req;
     readable.on('data', function(chunk){
-    	console.log('got %s bytes of data', chunk);
+    	// console.log('got %s bytes of data', chunk);
     });
     nb.search('work',{artist:tags.artist,work:tags.title}, function(err, response){
     	console.log('searching MusicBrainz and getting ',response);
@@ -80,7 +80,7 @@ module.exports = {
    		console.log(error);
    	} else if(typeof response.songs[0] === 'undefined'){
    		console.log('no songs found in echonest, analyzing...');
-   		// console.log(req.file('songMP3')._files[0].stream);
+   		console.log(req.file('songMP3')._files[0].stream);
    		myNest('track/upload').post(req.file('songMP3')._files[0].stream,function(err,response){
    			console.log(response);
    		})
