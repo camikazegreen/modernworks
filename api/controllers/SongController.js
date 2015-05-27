@@ -147,7 +147,7 @@ module.exports = {
 				res.end();
 				return res;
     }//echonestCallback
-    functin searchEchonest(){
+    function searchEchonest(){
     	myNest('song/search').get({
    		artist:tags.artist,
    		title:tags.title
