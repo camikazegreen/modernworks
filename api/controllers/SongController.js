@@ -40,7 +40,7 @@ module.exports = {
     });
     nb.search('recording',{artist:tags.artist,recording:tags.title}, function(err, response){
     	console.log('searching MusicBrainz and getting ',response);
-    	if(response.works[0]){
+    	if(response.recordings[0]){
     		console.log(response.works);
     		mbid.id=response.works[0].id;
     		i=0;
