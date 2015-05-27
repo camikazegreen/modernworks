@@ -45,8 +45,10 @@ module.exports = {
     		mbid.id=response.recordings[0].id;
     		if(mbid.score<100){
     			//add code to verify
+    			console.log("less than 100 certainty")
     		}
     		if(response.recordings[0]['artist-credit']){
+    			console.log(response.recordings[0]['artist-credit'].length);
     			a=0;
     			while(a<response.recordings[0]['artist-credit'].length){
     				mbid['artist-credit'].push(response.recordings[0]['artist-credit'][a]);
@@ -54,13 +56,15 @@ module.exports = {
     			}
     		}
     		if(response.recordings[0].releases){
+    			console.log(response.recordings[0].releases.length);
     			r=0;
-    			while(a<response.recordings[0].releases.length){
+    			while(r<response.recordings[0].releases.length){
     				mbid.releases.push(response.recordings[0].releases[r]);
     				r++;
     			}
     		}
     		if(response.recordings[0].isrcs){
+    			console.log(response.recordings[0].isrcs.length);
     			i=0;
     			while(i<response.recordings[0].isrcs.length){
     				mbid.isrcs.push(response.recordings[0].isrc[i]);
@@ -68,6 +72,7 @@ module.exports = {
     			}
     		}
     		if(response.recordings[0].tags){
+    			console.log(response.recordings[0].tags.length);
     			t=0;
     			while(t<response.recordings[0].tags.length){
     				mbid.tags.push(response.recordings[0].tags[t]);
