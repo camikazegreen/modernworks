@@ -70,6 +70,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var mbid = JSON.parse(result.status.mbid);
         // player.setAttribute('src','song/songMP3');
         var mbidHTML = '<p>ID:'+mbid.id+'</p>';
+        console.log(mbid);
         if(mbid == 'no song found'){
             mbidHTML = '<a href="http://musicbrainz.org/search?query='+encodeURIComponent(title)+'&type=recording&method=indexed" target="_blank">Search by song</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(album)+'&type=release&method=indexed target="_blank"">Search by album</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(artist)+'&type=artist&method=indexed" target="_blank">Search by artist</a></br>'
         }
