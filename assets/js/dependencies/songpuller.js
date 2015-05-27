@@ -31,10 +31,13 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             var artBox = row.insertCell(0);
             var infoBox = row.insertCell(1);
             var progBox = row.insertCell(2);
+            var musicbrainzBox = row.insertCell(3);
             artBox.appendChild(albumArt);
             infoBox.appendChild(title);
             infoBox.appendChild(artist);
             infoBox.appendChild(album);
+            mbidHTML = '<a href="http://musicbrainz.org/search?query='+encodeURIComponent(title)+'&type=recording&method=indexed" target="_blank">Search by song</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(album)+'&type=release&method=indexed target="_blank"">Search by album</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(artist)+'&type=artist&method=indexed" target="_blank">Search by artist</a></br>'
+            musicbrainzBox.innerHTML=mbidHTML;
             var progress = document.createElement('progress');
             progress.setAttribute('id','progress'+h);
             progBox.appendChild(progress);
@@ -66,13 +69,12 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
     }).done(function(result){
         console.log(result);
         row=document.getElementById('row'+result.status.title);
-        var musicbrainzBox = row.insertCell(3);
+        var musicbrainzBox = row.cells[3];
         var mbid = JSON.parse(result.status.mbid);
         // player.setAttribute('src','song/songMP3');
-        var mbidHTML = '<p>ID:'+mbid.id+'</p>';
-        console.log(mbid);
-        if(mbid.id == 'no song found'){
-            mbidHTML = '<a href="http://musicbrainz.org/search?query='+encodeURIComponent(title)+'&type=recording&method=indexed" target="_blank">Search by song</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(album)+'&type=release&method=indexed target="_blank"">Search by album</a></br><a href="http://musicbrainz.org/search?query='+encodeURIComponent(artist)+'&type=artist&method=indexed" target="_blank">Search by artist</a></br>'
+        if(mbid.id !== 'no song found'){
+            var mbidHTML = '<p>ID:'+mbid.id+'</p>';
+            musicbrainzBox.innerHTML=mbidHTML;
         }
         var w=0;
         console.log(mbid.writers);
