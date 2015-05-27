@@ -62,7 +62,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
             }
             return myXhr;
         },
-        data: formData,
+        // data: formData,
         cache: false,
         contentType: false,
         processData: false
