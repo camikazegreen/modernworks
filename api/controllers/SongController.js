@@ -168,9 +168,11 @@ module.exports = {
 			},function(err,song){
 				res.writeHead(200, { 'Content-Type': 'application/json' });
 				res.write(JSON.stringify({ status: song }));
+				console.log("The song has been created: "+song)
 				res.end();
 				return res;
 			});
+
 		// });
 	},
 	response: function(req,res){
