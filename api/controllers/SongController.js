@@ -125,6 +125,17 @@ module.exports = {
    				console.log('song profile: ', response);
    				console.log('audio summary: ', response.response.songs[0].audio_summary);
    				echodeets = response.response.songs[0].audio_summary;
+   				var song = {
+				title: tags.title,
+				artist: tags.artist,
+				album: tags.album,
+				mbid: JSON.stringify(mbid),
+				echonest: JSON.stringify(echodeets)
+			}
+			res.writeHead(200, { 'Content-Type': 'application/json' });
+				res.write(JSON.stringify({ status: song }));
+				console.log("The song has been created: ",song)
+				res.end();
    			}
    		});
    	} else {
