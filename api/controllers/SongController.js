@@ -42,11 +42,11 @@ module.exports = {
     	console.log('searching MusicBrainz and getting ',response);
     	if(response.recordings[0]){
     		console.log(response.works);
-    		mbid.id=response.works[0].id;
+    		mbid.id=response.recordings[0].id;
     		i=0;
-    		var relations = response.works[0].relations
+    		var relations = response.recordings[0].relations
     		if(relations[0]){
-    			console.log('there are relations, and they are:'+response.works[0].relations.length);
+    			console.log('there are relations, and they are:'+response.recordings[0].relations.length);
     			while(i<relations.length){
     				if(relations[i].type=='writer'){
     					mbid.writers.push(relations[i].artist.name)
