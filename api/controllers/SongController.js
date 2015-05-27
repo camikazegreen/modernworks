@@ -46,7 +46,7 @@ module.exports = {
     		if(mbid.score<100){
     			//add code to verify
     		}
-    		if(response.recordings[0].'artist-credit'){
+    		if(response.recordings[0]['artist-credit']){
     			a=0;
     			while(a<response.recordings[0]['artist-credit'].length){
     				mbid['artist-credit'].push(response.recordings[0]['artist-credit'][a]);
