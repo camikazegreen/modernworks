@@ -27,7 +27,7 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
                 }
                 return true;
             }
-            if(!isValid(picture.data){picture.data="jpg"}
+            if(!isValid(picture.data)){picture.data="jpg"}
             imageUrl = URL.createObjectURL(new Blob([picture.data],{'type':'image/'+picture.format}));
             } else {
              imageUrl='/images/MW-small.png'
