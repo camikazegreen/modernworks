@@ -99,7 +99,13 @@ var j=0;//definied outside of the loop so that each progress bar will have a uni
         var r=0;
         while(r<mbid.releases.length){
             // released on *format* in *country* on *date*
-            mbidHTML+='<p>Released on'+mbid.releases[r].media[0].format+' in '+mbid.releases[r]['release-events'][0].area.name+' on '+mbid.releases[r].date+'</p>';
+            var format = "CD";
+            if(mbid.releases[r].media[0].format){format = mbid.releases[r].media[0].format};
+            var area = "Worldwide";
+            if(mbid.releases[r]['release-events'][0].area.name){area = mbid.releases[r]['release-events'][0].area.name};
+            var date = "unknown";
+            if(mbid.releases[r].date){date = mbid.releases[r].date};
+            mbidHTML+='<p>Released on '+format+' in '+area+' on '+date+'</p>';
             r++;
         }
         var t=0;
