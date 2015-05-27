@@ -146,17 +146,17 @@ module.exports = {
    		})
 
    	} 
-   	var song = {
-				title: tags.title,
-				artist: tags.artist,
-				album: tags.album,
-				mbid: JSON.stringify(mbid),
-				echonest: JSON.stringify(echodeets)
-			}
-			res.writeHead(200, { 'Content-Type': 'application/json' });
-				res.write(JSON.stringify({ status: song }));
-				console.log("The song has been created: ",song)
-				res.end();
+   // 	var song = {
+			// 	title: tags.title,
+			// 	artist: tags.artist,
+			// 	album: tags.album,
+			// 	mbid: JSON.stringify(mbid),
+			// 	echonest: JSON.stringify(echodeets)
+			// }
+			// res.writeHead(200, { 'Content-Type': 'application/json' });
+			// 	res.write(JSON.stringify({ status: song }));
+			// 	console.log("The song has been created: ",song)
+			// 	res.end();
 				// return res;
     }//echonestCallback
     function searchEchonest(){
