@@ -1,6 +1,7 @@
 <html>
 <head>
   <script type="text/javascript">
+  $(document).ready(function(){
     var perform = document.getElementById('pkaName1');
     var first = document.getElementById('firstName1');
     var last = document.getElementById('lastName1');
@@ -10,7 +11,7 @@
     }
     first.onchange=fillPerform();
     last.onchange=fillPerform();
-
+  })
   </script>
 </head>
 <body>
