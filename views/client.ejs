@@ -20,9 +20,19 @@
 
       <form action="/client/create" enctype="multipart/form-data" method="post">
   <div class="form-group">
-      <label for="inputName1">Client Name</label>
-      <input type="text" class="form-control" id="inputName1" name="name" placeholder="Enter name">
+    <div class="col-sm-3">
+      <label for="inputName1">First Name</label>
+      <input type="text" class="form-control" id="firstName1" name="name" placeholder="First name">
+    </div>
+    <div class="col-sm-3">
+      <label for="inputName1">Last Name</label>
+      <input type="text" class="form-control" id="lastName1" name="name" placeholder="Last name">
+    </div>
+    <div class="col-sm-3">
+      <label for="inputName1">Performs as</label>
+      <input type="text" class="form-control" id="pkaName1" name="name" placeholder="Enter name">
   </div>
+</div> <!--Close form-group for Name -->
   <div class="form-group">
       <label for="inputEmail1">Client Email</label>
       <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Enter email">
@@ -85,14 +95,14 @@
 </div>
 </fieldset>
 <label class="radio-inline">
-  <input type="radio" id="digital1" name="digitalStatements" value="1">Digital statements
+  <input type="radio" id="digital1" name="digitalStatements" value="1" checked="checked">Digital statements
 </label>
 <label class="radio-inline">
   <input type="radio" id="digital2" name="digitalStatements" value="0">Paper statements
 </label></br>
 
   <button type="submit" class="btn btn-default">Submit</button>
-  
+
 </form>
     </div> <!--close tabpanel for artist -->
     <div role="tabpanel" class="tab-pane" id="payment">
@@ -103,7 +113,7 @@
 <label class="radio-inline">
   <input type="radio" id="deposit2" name="directDeposits" value="0">Paper Checks
 </label>
-<div id="directDepositDiv" class="hidden">
+<div id="directDepositDiv">
 <div class="form-group">
   <label for="ddPayeeName">Payee Name</label>
   <input type="text" class="form-control" id="payeeName" placeholder="Payee Name">
@@ -130,7 +140,7 @@
   <input type="file" id="attachmentUpload1">
   <p class="help-block">Upload the Direct Deposit agreement.</p>
 </div>
-</div>
+</div> <!-- close directDepositDiv -->
 <div id="checkDetailsDiv" class="hidden">
   <div class="form-group">
     <label for="checkPayeeName">Payee Name</label>
