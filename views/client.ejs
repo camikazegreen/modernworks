@@ -58,7 +58,7 @@
   </div><br>
 </div> <!--Close form-group for Name --><br>
 </div> <!-- Close this row -->
-
+<br>
   <legend>Band Details</legend>
 <div class="row">
   <div class="checkbox col-sm-3">
@@ -74,6 +74,7 @@
 
   <legend>PRO Details</legend>
   <div class="row">
+    <div class="col-sm-3">
     <div class="radio">
   <label>
     <input type="radio" name="proRadios" id="optionsRadios1" value="ascap" checked>
@@ -86,22 +87,36 @@
     BMI
   </label>
 </div>
-<div class="radio disabled">
+<div class="radio">
   <label>
     <input type="radio" name="proRadios" id="optionsRadios3" value="sesac">
     SESAC
   </label>
 </div>
+</div>
+    <div class="col-sm-3">
+      <label for="inputCAE1">CAE/IPI #</label>
+      <input type="text" class="form-control" id="artistCAE" name="cae" placeholder="CAE/IPI">
+    </div>
+    <div class="col-sm-3">
+      <label for="inputName1">Publisher Name</label>
+      <input type="text" class="form-control" id="publisherName1" name="publisher" placeholder="Publisher name">
+    </div>
+    <div class="col-sm-3">
+      <label for="inputName1">Publisher CAE/IPI</label>
+      <input type="text" class="form-control" id="publisherCAE" name="cae2" placeholder="CAE/IPI">
+    </div>
+
   </div> <!-- Close row for PRO details -->
 <div class="row">
   <div class="form-group">
-      <label class="col-sm-2 control-label" for="textinput">Client Email</label>
+      <label class="col-sm-3 control-label" for="textinput">Client Email</label>
       <div class="col-sm-3">
       <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Enter email">
       </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label" for="textinput">Phone Number</label>
+    <label class="col-sm-3 control-label" for="textinput">Phone Number</label>
       <div class="col-sm-3">
       <input type="tel" class="form-control" id="inputPhone1" name="phone" placeholder="XXX XXX-XXXX">
       </div>
