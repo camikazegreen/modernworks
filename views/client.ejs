@@ -2,26 +2,27 @@
 <head>
 </head>
 <body>
-  <div role="tabpanel">
+ 
+<div class="container">
+   <div role="tabpanel">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    <li role="presentation" class="active"><a href="#artist" aria-controls="artist" role="tab" data-toggle="tab">Artist Info</a></li>
+    <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab">Payment Info</a></li>
+    <li role="presentation"><a href="#website" aria-controls="website" role="tab" data-toggle="tab">Website Profile</a></li>
+    <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">This is where I put the artist info</div>
-    <div role="tabpanel" class="tab-pane" id="profile">This is where I put the payment info</div>
-    <div role="tabpanel" class="tab-pane" id="messages">This is where I put the Website Profile</div>
-    <div role="tabpanel" class="tab-pane" id="settings">This is where I put the notes</div>
+    <div role="tabpanel" class="tab-pane active" id="artist">This is where I put the artist info</div>
+    <div role="tabpanel" class="tab-pane" id="payment">This is where I put the payment info</div>
+    <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile</div>
+    <div role="tabpanel" class="tab-pane" id="notes">This is where I put the notes</div>
   </div>
 
 </div>
-<div class="container">
 <form action="/client/create" enctype="multipart/form-data" method="post">
   <div class="form-group">
       <label for="inputName1">Client Name</label>
