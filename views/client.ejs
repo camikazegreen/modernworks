@@ -7,6 +7,8 @@
     var last = document.getElementById('lastName1');
 
     function fillPerform(){
+      first = document.getElementById('firstName1');
+      last = document.getElementById('lastName1');
       perform.value=first.value+" "+last.value;
     }
     first.onchange=fillPerform();
