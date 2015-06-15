@@ -35,6 +35,8 @@
     <div role="tabpanel" class="tab-pane active" id="artist">
 
       <form action="/client/create" enctype="multipart/form-data" method="post">
+
+  <legend>Name Details</legend>
         <div class="row">
   <div class="form-group">
     <div class="col-sm-3">
@@ -56,6 +58,8 @@
   </div><br>
 </div> <!--Close form-group for Name --><br>
 </div> <!-- Close this row -->
+
+  <legend>Band Details</legend>
 <div class="row">
   <div class="checkbox col-sm-3">
     <label>
@@ -67,6 +71,28 @@
     </div>
 
 </div> <!-- Close row for band info -->
+
+  <legend>PRO Details</legend>
+  <div class="row">
+    <div class="radio">
+  <label>
+    <input type="radio" name="proRadios" id="optionsRadios1" value="ascap" checked>
+    ASCAP
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="proRadios" id="optionsRadios2" value="bmi">
+    BMI
+  </label>
+</div>
+<div class="radio disabled">
+  <label>
+    <input type="radio" name="proRadios" id="optionsRadios3" value="sesac">
+    SESAC
+  </label>
+</div>
+  </div> <!-- Close row for PRO details -->
 <div class="row">
   <div class="form-group">
       <label class="col-sm-2 control-label" for="textinput">Client Email</label>
