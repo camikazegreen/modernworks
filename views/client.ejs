@@ -12,8 +12,8 @@
       console.log(first,last);
       perform.value=first.value+" "+last.value;
     }
-    first.onchange=fillPerform();
-    last.onchange=fillPerform();
+    first.addEventListener('change','fillPerform');
+    last.addEventListener('change','fillPerform');
   })
   </script>
 </head>
