@@ -16,8 +16,9 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-      <!-- <form action="/client/create" enctype="multipart/form-data" method="post"> -->
     <div role="tabpanel" class="tab-pane active" id="artist">
+
+      <form action="/client/create" enctype="multipart/form-data" method="post">
   <div class="form-group">
       <label for="inputName1">Client Name</label>
       <input type="text" class="form-control" id="inputName1" name="name" placeholder="Enter name">
@@ -89,7 +90,11 @@
 <label class="radio-inline">
   <input type="radio" id="digital2" name="digitalStatements" value="0">Paper statements
 </label></br>
-    </div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
+  
+</form>
+    </div> <!--close tabpanel for artist -->
     <div role="tabpanel" class="tab-pane" id="payment">
 <legend>Payment Details</legend>
 <label class="radio-inline">
@@ -143,9 +148,7 @@
 
     <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile</div>
     <div role="tabpanel" class="tab-pane" id="notes">This is where I put the notes</div>
-  <button type="submit" class="btn btn-default">Submit</button>
 </div>
-<!-- </form> -->
 </div>
 </body>
 </html>
