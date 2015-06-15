@@ -16,14 +16,8 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="artist">This is where I put the artist info</div>
-    <div role="tabpanel" class="tab-pane" id="payment">This is where I put the payment info</div>
-    <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile</div>
-    <div role="tabpanel" class="tab-pane" id="notes">This is where I put the notes</div>
-  </div>
-
-</div>
-<form action="/client/create" enctype="multipart/form-data" method="post">
+    <div role="tabpanel" class="tab-pane active" id="artist">
+      <form action="/client/create" enctype="multipart/form-data" method="post">
   <div class="form-group">
       <label for="inputName1">Client Name</label>
       <input type="text" class="form-control" id="inputName1" name="name" placeholder="Enter name">
@@ -95,6 +89,8 @@
 <label class="radio-inline">
   <input type="radio" id="digital2" name="digitalStatements" value="0">Paper statements
 </label></br>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="payment">
 <legend>Payment Details</legend>
 <label class="radio-inline">
   <input type="radio" id="deposit1" name="directDeposits" value="1">Direct Deposit
@@ -113,10 +109,10 @@
 </div>
 <div class="form-group">
   <label for="accountNumber">Account Number</label>
-  <input type="text" class="form-control id="accountNum" placeholder="Account Number">
+  <input type="text" class="form-control" id="accountNum" placeholder="Account Number">
 </div>
 <div class="form-group">
-  <lavel for="bankName">Bank Name</label>
+  <label for="bankName">Bank Name</label>
   <input type="text" class="form-control" id="bankName" placeholder="Bank Name">
 </div>
 <label class="radio-inline">
@@ -141,6 +137,14 @@
 <div id="checkAddressDiv" class="hidden">
 
   <fieldset>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile</div>
+    <div role="tabpanel" class="tab-pane" id="notes">This is where I put the notes</div>
+  </div>
+
+</div>
+
+
   <!-- Form Name -->
   <legend>Address Details</legend>
   <!-- Text input-->
