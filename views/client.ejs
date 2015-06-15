@@ -27,6 +27,7 @@
     <li role="presentation" class="active"><a href="#artist" aria-controls="artist" role="tab" data-toggle="tab">Artist Info</a></li>
     <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab">Payment Info</a></li>
     <li role="presentation"><a href="#website" aria-controls="website" role="tab" data-toggle="tab">Website Profile</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Artist Profile</a></li>
     <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
   </ul>
 
@@ -172,8 +173,10 @@
 <input type="text" placeholder="Country" class="form-control">
 </div>
 </div>
-<p>If anyone else should receive all of the communications that this client gets, enter their name and email below</p>
         <div class="row">
+<div class="col-sm-3">
+<p>Should anyone else receive all communications to the client? This includes access to statements.</p>
+</div>
   <div class="form-group">
     <div class="col-sm-3">
       <label for="inputName2">First Name</label>
@@ -196,11 +199,53 @@
 <label class="radio-inline">
   <input type="radio" id="digital2" name="digitalStatements" value="0">Paper statements
 </label></br>
+  <legend>Client Rep</legend>
+    <div class="col-sm-3">
+    <div class="radio">
+  <label>
+    <input type="radio" name="clientRep" id="clientRep1" value="adam">
+    Adam
+  </label>
+</div>
+    <div class="radio">
+  <label>
+    <input type="radio" name="clientRep" id="clientRep2" value="alex">
+    Alex
+  </label>
+</div>
+    <div class="radio">
+  <label>
+    <input type="radio" name="clientRep" id="clientRep3" value="dan">
+    Dan
+  </label>
+</div>
+    <div class="radio">
+  <label>
+    <input type="radio" name="clientRep" id="clientRep4" value="erin">
+    Erin
+  </label>
+</div>
+    <div class="radio">
+  <label>
+    <input type="radio" name="clientRep" id="clientRep5" value="mara">
+    Mara
+  </label>
+</div>
+    <div class="radio">
+  <label>
+    <input type="radio" name="clientRep" id="clientRep6" value="melissa">
+    Melissa
+  </label>
+</div>
+</div>
+
 
   <button type="submit" class="btn btn-default">Submit</button>
 
 </form>
     </div> <!--close tabpanel for artist -->
+
+
     <div role="tabpanel" class="tab-pane" id="payment">
 <legend>Payment Details</legend>
 <label class="radio-inline">
@@ -253,6 +298,7 @@
 </div> <!--Close the payment tab div -->
 
     <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile</div>
+    <div role="tabpanel" class="tab-pane" id="profile">This is where I put the Artist Profile that we recently added to our other website.</div>
     <div role="tabpanel" class="tab-pane" id="notes">This is where I put the notes</div>
 </div>
 </div>
