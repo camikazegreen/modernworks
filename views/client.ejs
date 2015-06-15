@@ -1,5 +1,17 @@
 <html>
 <head>
+  <script type="text/javascript">
+    var perform = document.getElementById('pkaName1');
+    var first = document.getElementById('firstName1');
+    var last = document.getElementById('lastName1');
+
+    function fillPerform(){
+      perform.value=first.value+" "+last.value;
+    }
+    first.onchange=fillPerform();
+    last.onchange=fillPerform();
+
+  </script>
 </head>
 <body>
  
@@ -34,7 +46,7 @@
   </div>
   <div class="checkbox col-sm-3">
     <label>
-      <input type="checkbox"> Controlled?
+      <input type="checkbox"> Controlled?var p
     </label>
   </div>
 </div> <!--Close form-group for Name -->
