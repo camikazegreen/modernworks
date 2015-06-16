@@ -95,7 +95,40 @@
     }
   }
     document.getElementById('businessName').addEventListener('input',toggleTID);
-  })
+
+
+    var sameAddressCheck2 = document.getElementById('addressChecker2');
+
+    function fillAddress2(){
+      console.log("calling fillAddress");
+      if(sameAddressCheck2.checked){
+        console.log("the box is checked");
+    var line1original = document.getElementById('line1original').value;
+    var line2original = document.getElementById('line2original').value;
+    var cityoriginal = document.getElementById('cityoriginal').value;
+    var stateoriginal = document.getElementById('stateoriginal').value;
+    var ziporiginal = document.getElementById('ziporiginal').value;
+    var countryoriginal = document.getElementById('countryoriginal').value;
+
+    var line1payee = document.getElementById('line1payee');
+    var line2payee = document.getElementById('line2payee');
+    var citypayee = document.getElementById('citypayee');
+    var statepayee = document.getElementById('statepayee');
+    var zippayee = document.getElementById('zippayee');
+    var countrypayee = document.getElementById('countrypayee');
+
+    line1payee.value = line1original;
+    line2payee.value = line2original;
+    citypayee.value = cityoriginal;
+    statepayee.value = stateoriginal;
+    zippayee.value = ziporiginal;
+    countrypayee.value = countryoriginal;
+
+    }
+  }
+    sameAddressCheck2.addEventListener('change',fillAddress2);
+
+  }) // close document.ready
   </script>
 </head>
 <body>
@@ -497,6 +530,120 @@
   </div>
   </div> <!--Close the checkDetailsDiv-->
   <div id="INTLDetailsDiv" class="hidden">
+    <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Payee Name</label>
+  <div class="col-sm-10">
+  <input type="text" placeholder="Payee Name" class="form-control" id="payeeName">
+  </div>
+  </div>
+  <div class="checkbox col-sm-12">
+    <label>
+      <input type="checkbox" id="addressChecker"> Same as mailing address?
+    </label>
+  </div>
+ <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+  <div class="col-sm-10">
+  <input type="text" placeholder="Address Line 1" class="form-control" id="line1tax">
+  </div>
+  </div>
+
+  <!-- Text input-->
+ <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+ <div class="col-sm-10">
+  <input type="text" placeholder="Address Line 2" class="form-control" id="line2tax">
+ </div>
+ </div>
+
+ <!-- Text input-->
+  <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">City</label>
+  <div class="col-sm-10">
+ <input type="text" placeholder="City" class="form-control" id="citytax">
+  </div>
+  </div>
+<!-- Text input-->
+<div class="form-group">
+ <label class="col-sm-2 control-label" for="textinput">State</label>
+<div class="col-sm-4">
+<input type="text" placeholder="State" class="form-control" id="statetax">
+</div>
+<label class="col-sm-2 control-label" for="textinput">Postcode</label>
+<div class="col-sm-4">
+<input type="text" placeholder="Post Code" class="form-control" id="ziptax">
+</div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+<label class="col-sm-2 control-label" for="textinput">Country</label>
+<div class="col-sm-10">
+<input type="text" placeholder="Country" class="form-control" id="countrytax">
+</div>
+</div>
+    <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">International Bank Account Number (IBAN)</label>
+  <div class="col-sm-10">
+  <input type="text" placeholder="IBAN #" class="form-control" id="iban">
+  </div>
+  </div>
+    <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Bank Name</label>
+  <div class="col-sm-10">
+  <input type="text" placeholder="Bank Name" class="form-control" id="bankName">
+  </div>
+  </div>
+  <div class="checkbox col-sm-12">
+    <label>
+      <input type="checkbox" id="addressChecker2"> Same as mailing address?
+    </label>
+  </div>
+ <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+  <div class="col-sm-10">
+  <input type="text" placeholder="Payee Address Line 1" class="form-control" id="line1payee">
+  </div>
+  </div>
+
+  <!-- Text input-->
+ <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+ <div class="col-sm-10">
+  <input type="text" placeholder="Payee Address Line 2" class="form-control" id="line2payee">
+ </div>
+ </div>
+
+ <!-- Text input-->
+  <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">City</label>
+  <div class="col-sm-10">
+ <input type="text" placeholder="City" class="form-control" id="citypayee">
+  </div>
+  </div>
+<!-- Text input-->
+<div class="form-group">
+ <label class="col-sm-2 control-label" for="textinput">State</label>
+<div class="col-sm-4">
+<input type="text" placeholder="State" class="form-control" id="statepayee">
+</div>
+<label class="col-sm-2 control-label" for="textinput">Postcode</label>
+<div class="col-sm-4">
+<input type="text" placeholder="Post Code" class="form-control" id="zippayee">
+</div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+<label class="col-sm-2 control-label" for="textinput">Country</label>
+<div class="col-sm-10">
+<input type="text" placeholder="Country" class="form-control" id="countrypayee">
+</div>
+</div>
+    <div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">SWIFT code/BIC</label>
+  <div class="col-sm-10">
+  <input type="text" placeholder="SWIFT" class="form-control" id="swiftCode">
+  </div>
+  </div>
 <div>Name</div>
 <div>Address</div>
 <div>International Bank Account number (IBAN)</div>
@@ -504,6 +651,22 @@
 <div>Swift Code/BIC</div>
 <div>Bank Address</div>
   </div> <!-- Close the INTLDetailsDiv -->
+<legend>Funky Payment Situations</legend>
+  <div class="checkbox col-sm-12">
+    <label>
+      <input type="checkbox" id="heirsChecker"> Heirs
+    </label>
+  </div>
+  <div class="checkbox col-sm-12">
+    <label>
+      <input type="checkbox" id="findersChecker"> Finders
+    </label>
+  </div>
+  <div class="checkbox col-sm-12">
+    <label>
+      <input type="checkbox" id="overridesChecker"> Overrides
+    </label>
+  </div>
 
 </div> <!--Close the payment tab div -->
 
