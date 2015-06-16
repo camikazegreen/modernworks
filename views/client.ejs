@@ -82,7 +82,7 @@
       //International Wire active
         $('#directDepositDiv').addClass('hidden');
         $('#checkDetailsDiv').addClass('hidden');
-        $('#INTLDetailsDivr').removeClass('hidden');
+        $('#INTLDetailsDiv').removeClass('hidden');
 }
     })
 
@@ -342,6 +342,12 @@
 
 
     <div role="tabpanel" class="tab-pane" id="payment">
+
+  <div class="checkbox col-sm-12 has-error">
+    <label>
+      <input type="checkbox" id="hold"> Hold payment?
+    </label>
+  </div>
 <legend>Tax Details</legend>
 <label class="radio-inline">
   <input type="radio" id="usa" name="entity" value="usa" checked>Domestic Person or Entity
