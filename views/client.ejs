@@ -66,14 +66,15 @@
 }
 
     }) //close toggle tax forms function
-    $('#businessName').change(function(){
+    function toggleTID(){
     if($('#businessName').val()){
       document.getElementById('taxID').placeholder = "XX-XXXXXXX";
     } else {
 
       document.getElementById('taxID').placeholder = "XXX-XX-XXXX";
     }
-    })
+  }
+    document.getElementById('businessName').addEventListener('input',toggleTID);
   })
   </script>
 </head>
