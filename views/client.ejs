@@ -4,6 +4,7 @@
   $(document).ready(function(){
     var perform = document.getElementById('pkaName1');
     var legal = document.getElementById('legalName');
+    var intlName = document.getElementById('payeeName');
     var first = document.getElementById('firstName1');
     var last = document.getElementById('lastName1');
 
@@ -12,6 +13,7 @@
       last = document.getElementById('lastName1');
       perform.value=first.value+" "+last.value;
       legal.value=first.value+" "+last.value;
+      intlName.value=first.value+" "+last.value;
     }
     first.addEventListener('input',fillPerform);
     last.addEventListener('input',fillPerform);
