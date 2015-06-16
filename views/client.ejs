@@ -73,12 +73,12 @@
         $('#directDepositDiv').removeClass('hidden');
         $('#checkDetailsDiv').addClass('hidden');
         $('#INTLDetailsDiv').addClass('hidden');
-      } else if($('input:radio[name=entity]')[1].checked){
+      } else if($('input:radio[name=directDeposits]')[1].checked){
       //Check active
         $('#directDepositDiv').addClass('hidden');
         $('#checkDetailsDiv').removeClass('hidden');
         $('#INTLDetailsDiv').addClass('hidden');
-    } else if($('input:radio[name=entity]')[2].checked){
+    } else if($('input:radio[name=directDeposits]')[2].checked){
       //International Wire active
         $('#directDepositDiv').addClass('hidden');
         $('#checkDetailsDiv').addClass('hidden');
@@ -457,7 +457,7 @@
   <input type="radio" id="deposit3" name="directDeposits" value="2">International Wire
 </label>
 <div id="directDepositDiv">
-<div class="form-group">
+<div class="form-group col-sm-12">
   <label for="ddPayeeName">Payee Name</label>
   <input type="text" class="form-control" id="payeeName" placeholder="Payee Name">
 </div>
@@ -469,7 +469,7 @@
   <label for="accountNumber">Account Number</label>
   <input type="text" class="form-control" id="accountNum" placeholder="Account Number">
 </div>
-<div class="form-group">
+<div class="form-group col-sm-12">
   <label for="bankName">Bank Name</label>
   <input type="text" class="form-control" id="bankName" placeholder="Bank Name">
 </div>
