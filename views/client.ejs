@@ -46,6 +46,26 @@
     }
   }
     sameAddressCheck.addEventListener('change',fillAddress);
+
+    $('input:radio[name=entity').change(function(){
+      if($('input:radio[name=entity')[0].checked){
+        //W9 active
+        $('#w9').removeClass('hidden');
+        $('#w8ben').addClass('hidden');
+        $('#w8benE').addClass('hidden');
+      } else if('input:radio[name=entity')[1].checked){
+      //W-8Ben active
+        $('#w9').addClass('hidden');
+        $('#w8ben').removeClass('hidden');
+        $('#w8benE').addClass('hidden');
+    } else if('input:radio[name=entity')[2].checked){
+      //W-8Ben-E active
+        $('#w9').addClass('hidden');
+        $('#w8ben').addClass('hidden');
+        $('#w8benE').removeClass('hidden');
+}
+
+    })
   })
   </script>
 </head>
@@ -365,13 +385,29 @@
 <div class="col-sm-10">
 <input type="text" placeholder="Country" class="form-control" id="countrytax">
 </div>
-</div><br>
+</div>
   <div class="form-group">
     <label for="w9Form">Upload Form W9</label>
     <input type="file" id="w9Form">
     <p class="help-block">It will be stored securely.</p>
   </div>
 </div> <!-- Closing the W9 div -->
+<div id="w8ben" class="hidden">
+  <legend>W-8Ben Details</legend>
+  <div class="form-group">
+    <label for="w8benForm">Upload Form W-8Ben</label>
+    <input type="file" id="w8benForm">
+    <p class="help-block">It will be stored securely.</p>
+  </div>
+</div><!-- Closing the w8ben div -->
+<div id="w8benE" class="hidden">
+  <legend>W-8Ben-E Details</legend>
+  <div class="form-group">
+    <label for="w8beneForm">Upload Form W-8Ben-E</label>
+    <input type="file" id="w8beneForm">
+    <p class="help-block">It will be stored securely.</p>
+  </div>
+</div><!-- Closing the w8benE div -->
 <legend>Payment Details</legend>
 <label class="radio-inline">
   <input type="radio" id="deposit1" name="directDeposits" value="1" checked="checked">Direct Deposit
