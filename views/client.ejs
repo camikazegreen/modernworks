@@ -66,6 +66,26 @@
 }
 
     }) //close toggle tax forms function
+
+    $('input:radio[name=directDeposits]').change(function(){
+      if($('input:radio[name=directDeposits]')[0].checked){
+        //Direct Deposit active
+        $('#directDepositDiv').removeClass('hidden');
+        $('#checkDetailsDiv').addClass('hidden');
+        $('#INTLDetailsDiv').addClass('hidden');
+      } else if($('input:radio[name=entity]')[1].checked){
+      //Check active
+        $('#directDepositDiv').addClass('hidden');
+        $('#checkDetailsDiv').removeClass('hidden');
+        $('#INTLDetailsDiv').addClass('hidden');
+    } else if($('input:radio[name=entity]')[2].checked){
+      //International Wire active
+        $('#directDepositDiv').addClass('hidden');
+        $('#checkDetailsDiv').addClass('hidden');
+        $('#INTLDetailsDivr').removeClass('hidden');
+}
+    })
+
     function toggleTID(){
     if($('#businessName').val()){
       document.getElementById('taxID').placeholder = "XX-XXXXXXX";
@@ -334,6 +354,7 @@
 </label>
 <div id="w9">
 <legend>W9 Details</legend>
+<a href="http://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank">Get blank W9 here</a>
   <div class="form-group">
     <label for="w9Form">Upload Form W9</label>
     <input type="file" id="w9Form">
@@ -409,6 +430,7 @@
 </div> <!-- Closing the W9 div -->
 <div id="w8ben" class="hidden">
   <legend>W-8Ben Details</legend>
+<a href="http://www.irs.gov/pub/irs-pdf/fw8ben.pdf" target="_blank">Get blank W-8Ben here</a>
   <div class="form-group">
     <label for="w8benForm">Upload Form W-8Ben</label>
     <input type="file" id="w8benForm">
@@ -417,6 +439,7 @@
 </div><!-- Closing the w8ben div -->
 <div id="w8benE" class="hidden">
   <legend>W-8Ben-E Details</legend>
+<a href="http://www.irs.gov/pub/irs-pdf/fw8bene.pdf" target="_blank">Get blank W-8Ben-E here</a>
   <div class="form-group">
     <label for="w8beneForm">Upload Form W-8Ben-E</label>
     <input type="file" id="w8beneForm">
@@ -438,11 +461,11 @@
   <label for="ddPayeeName">Payee Name</label>
   <input type="text" class="form-control" id="payeeName" placeholder="Payee Name">
 </div>
-<div class="form-group">
+<div class="form-group col-sm-6">
   <label for="routingNumber">Routing Number</label>
   <input type="text" class="form-control" id="routingNum" placeholder="Routing Number">
 </div>
-<div class="form-group">
+<div class="form-group col-sm-6">
   <label for="accountNumber">Account Number</label>
   <input type="text" class="form-control" id="accountNum" placeholder="Account Number">
 </div>
@@ -466,13 +489,15 @@
     <label for="checkPayeeName">Payee Name</label>
     <input type="text" class="form-control" id="checkPayeeName" placeholder="Payee Name">
   </div>
-  <label class="checkbox-inline">
-    <input type="checkbox" id="sameAddress1" value="1" checked>Same address as above
-  </label>
-<div id="checkAddressDiv" class="hidden">
-
-    </div> <!--Close the checkAddressDiv -->
   </div> <!--Close the checkDetailsDiv-->
+  <div id="INTLDetailsDiv" class="hidden">
+<div>Name</div>
+<div>Address</div>
+<div>International Bank Account number (IBAN)</div>
+<div>Bank Name</div>
+<div>Swift Code/BIC</div>
+<div>Bank Address</div>
+  </div> <!-- Close the INTLDetailsDiv -->
 
 </div> <!--Close the payment tab div -->
 
