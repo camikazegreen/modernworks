@@ -15,6 +15,37 @@
     }
     first.addEventListener('input',fillPerform);
     last.addEventListener('input',fillPerform);
+
+    var sameAddressCheck = document.getElementById('addressChecker');
+
+    function fillAddress(){
+      console.log("calling fillAddress");
+      if(sameAddressCheck){
+        console.log("the box is checked");
+    var line1original = document.getElementById('line1original').value;
+    var line2original = document.getElementById('line2original').value;
+    var cityoriginal = document.getElementById('cityoriginal').value;
+    var stateoriginal = document.getElementById('stateoriginal').value;
+    var ziporiginal = document.getElementById('ziporiginal').value;
+    var countryoriginal = document.getElementById('countryoriginal').value;
+
+    var line1tax = document.getElementById('line1tax');
+    var line2tax = document.getElementById('line2tax');
+    var citytax = document.getElementById('citytax');
+    var statetax = document.getElementById('statetax');
+    var ziptax = document.getElementById('ziptax');
+    var countrytax = document.getElementById('countrytax');
+
+    line1tax.value = line1original;
+    line2tax.value = line2original;
+    citytax.value = cityoriginal;
+    statetax.value = stateoriginal;
+    ziptax.value = ziporiginal;
+    country.value = countryoriginal;
+
+    }
+  }
+    sameAddressCheck.addEventListener('change',fillAddress);
   })
   </script>
 </head>
@@ -137,7 +168,7 @@
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 1</label>
   <div class="col-sm-10">
-  <input type="text" placeholder="Address Line 1" class="form-control">
+  <input type="text" placeholder="Address Line 1" class="form-control" id="line1original">
   </div>
   </div>
 
@@ -145,7 +176,7 @@
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 2</label>
  <div class="col-sm-10">
-  <input type="text" placeholder="Address Line 2" class="form-control">
+  <input type="text" placeholder="Address Line 2" class="form-control" id="line2original">
  </div>
  </div>
 
@@ -153,25 +184,25 @@
   <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">City</label>
   <div class="col-sm-10">
- <input type="text" placeholder="City" class="form-control">
+ <input type="text" placeholder="City" class="form-control" id="cityoriginal">
   </div>
   </div>
 <!-- Text input-->
 <div class="form-group">
  <label class="col-sm-2 control-label" for="textinput">State</label>
 <div class="col-sm-4">
-<input type="text" placeholder="State" class="form-control">
+<input type="text" placeholder="State" class="form-control" id="stateoriginal">
 </div>
 <label class="col-sm-2 control-label" for="textinput">Postcode</label>
 <div class="col-sm-4">
-<input type="text" placeholder="Post Code" class="form-control">
+<input type="text" placeholder="Post Code" class="form-control" id="ziporiginal">
 </div>
 </div>
 <!-- Text input-->
 <div class="form-group">
 <label class="col-sm-2 control-label" for="textinput">Country</label>
 <div class="col-sm-10">
-<input type="text" placeholder="Country" class="form-control">
+<input type="text" placeholder="Country" class="form-control" id="countryoriginal">
 </div>
 </div><br>
         <div class="row">
@@ -262,6 +293,17 @@
 
 
     <div role="tabpanel" class="tab-pane" id="payment">
+<legend>Tax Details</legend>
+<label class="radio-inline">
+  <input type="radio" id="usa" name="entity" value="usa" checked>Domestic Person or Entity
+</label>
+<label class="radio-inline">
+  <input type="radio" id="exusap" name="entity" value="exusap">Foreign Person
+</label>
+<label class="radio-inline">
+  <input type="radio" id="exusae" name="entity" value="exusac">Foreign Entity
+</label>
+<div id="w9">
 <legend>W9 Details</legend>
 <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Legal Name</label>
@@ -279,7 +321,7 @@
   <!-- Text input-->
 
   <label class="col-sm-3 control-label" for="textinput">Tax Address</label>
-  <div class="checkbox col-sm-3">
+  <div class="checkbox col-sm-12">
     <label>
       <input type="checkbox" id="addressChecker"> Same as mailing address?
     </label>
@@ -287,7 +329,7 @@
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 1</label>
   <div class="col-sm-10">
-  <input type="text" placeholder="Address Line 1" class="form-control">
+  <input type="text" placeholder="Address Line 1" class="form-control" id="line1tax">
   </div>
   </div>
 
@@ -295,7 +337,7 @@
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 2</label>
  <div class="col-sm-10">
-  <input type="text" placeholder="Address Line 2" class="form-control">
+  <input type="text" placeholder="Address Line 2" class="form-control" id="line2tax">
  </div>
  </div>
 
@@ -303,27 +345,33 @@
   <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">City</label>
   <div class="col-sm-10">
- <input type="text" placeholder="City" class="form-control">
+ <input type="text" placeholder="City" class="form-control" id="citytax">
   </div>
   </div>
 <!-- Text input-->
 <div class="form-group">
  <label class="col-sm-2 control-label" for="textinput">State</label>
 <div class="col-sm-4">
-<input type="text" placeholder="State" class="form-control">
+<input type="text" placeholder="State" class="form-control" id="statetax">
 </div>
 <label class="col-sm-2 control-label" for="textinput">Postcode</label>
 <div class="col-sm-4">
-<input type="text" placeholder="Post Code" class="form-control">
+<input type="text" placeholder="Post Code" class="form-control" id="ziptax">
 </div>
 </div>
 <!-- Text input-->
 <div class="form-group">
 <label class="col-sm-2 control-label" for="textinput">Country</label>
 <div class="col-sm-10">
-<input type="text" placeholder="Country" class="form-control">
+<input type="text" placeholder="Country" class="form-control" id="countrytax">
 </div>
 </div><br>
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Form W9</label>
+    <input type="file" id="w9Form">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+</div> <!-- Closing the W9 div -->
 <legend>Payment Details</legend>
 <label class="radio-inline">
   <input type="radio" id="deposit1" name="directDeposits" value="1" checked="checked">Direct Deposit
