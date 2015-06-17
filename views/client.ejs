@@ -704,37 +704,43 @@
 
 </div> <!--Close the payment tab div -->
 
-    <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile
-
+    <div role="tabpanel" class="tab-pane" id="website">
+      <div class="row">
+      <div class="checkbox col-sm-3">
+        <label>
+          <input type="checkbox"> Included on Roster
+        </label>
+      </div></div>
+      <div class="row">
       <div class="checkbox col-sm-3">
         <label>
           <input type="checkbox"> Front Page Slideshow
         </label>
       </div>
+    </div><div class="row">
   <div class="form-group">
     <label for="bwImage">Upload Black and White Image</label>
     <input type="file" id="bwImage">
     <p class="help-block">This image should be 605px x 363px</p>
   </div>
+    </div><div class="row">
       <!-- Upload Black and White image with dimensions -->
       <div class="checkbox col-sm-3">
         <label>
           <input type="checkbox"> Front Page Feature
         </label>
       </div>
+    </div><div class="row">
   <div class="form-group">
     <label for="colorImage">Upload Color Image</label>
     <input type="file" id="colorImage">
     <p class="help-block">This image should be 1024px by 576px</p>
   </div>
+    </div><div class="row">
       <!-- Upload Color image with dimensions -->
       <label>Short Bio</label>
     <textarea class="form-control" rows="6"></textarea>
-      <div class="checkbox col-sm-3">
-        <label>
-          <input type="checkbox"> Included on Roster
-        </label>
-      </div>
+    </div>
     </div> <!-- Close website profile div -->
 
     <div role="tabpanel" class="tab-pane" id="profile">This is where I put the Artist Profile that we recently added to our other website.</div>
