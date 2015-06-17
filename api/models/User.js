@@ -1,93 +1,34 @@
+var bcrypt = require('bcrypt');
 
-/**
-* User.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-* adding some
-*/
-
-var User  = {
-  schema: true,
-
-  attributes: {
-    username:{
-      type:'string',
-      unique: true
+module.exports = {
+    attributes: {
+        email: {
+            type: 'email',
+            required: true,
+            unique: true
+        },
+        password: {
+            type: 'string',
+            minLength: 6,
+            required: true
+        },
+        toJSON: function() {
+            var obj = this.toObject();
+            delete obj.password;
+            return obj;
+        }
     },
-    email:{
-      type:'email',
-      unique:true
-    },
-    password:{
-      type:'string'
-    },
-    passports:{
-      collection:'passport',
-      via: 'user'
-    },
-    phone:{
-      type: 'string'
-    },
-    address:{
-      model: 'address'
-    },
-    digital:{
-      type: 'boolean'
-    },
-    deposit:{
-      type: 'boolean'
-    },
-    depositDetail:{
-      model: 'depositDetail'
-    },
-    checkDetail:{
-      model: 'checkDetail'
-    },
-    company:{
-      model: 'company'
-    },
-    publisher:{
-      model:'publisher'
-    },
-    isComposer:{
-      type: 'boolean'
-    },
-    composer:{
-      model: 'composer'
-    },
-    accountManager:{
-      model: 'user'
-    },
-    isAccountManager:{
-      type: 'boolean'
-    },
-    accountsManaged:{
-      collection:'user',
-      via:'accountManager'
-    },
-    startDate:{
-      type:'date'
-    },
-    expiryDate:{
-      type:'date'
-    },
-    finder:{
-      model:'user'
-    },
-    finderClients:{
-      collection:'user',
-      via:'finder'
-    },
-    cc:{
-      model:'user'
-    },
-    ccFor:{
-      collection:'user',
-      via:'cc'
+    beforeCreate: function(user, cb) {
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(user.password, salt, function(err, hash) {
+                if (err) {
+                    console.log(err);
+                    cb(err);
+                } else {
+                    user.password = hash;
+                    cb();
+                }
+            });
+        });
     }
-
-  }
 };
-
-module.exports = User;
