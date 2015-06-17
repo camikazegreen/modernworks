@@ -147,7 +147,7 @@
     <li role="presentation" class="active"><a href="#artist" aria-controls="artist" role="tab" data-toggle="tab">Artist Info</a></li>
     <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab">Payment Info</a></li>
     <li role="presentation"><a href="#website" aria-controls="website" role="tab" data-toggle="tab">Website Profile</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Artist Profile</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Client Profile</a></li>
     <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
     <li role="presentation"><a href="#import" aria-controls="import" role="tab" data-toggle="tab">Import CSV</a></li>
   </ul>
@@ -232,7 +232,7 @@
     <div class="col-sm-3">
     <div class="radio">
   <label>
-    <input type="radio" name="proRadios" id="optionsRadios1" value="ascap" checked>
+    <input type="radio" name="proRadios" id="optionsRadios1" value="ascap">
     ASCAP
   </label>
 </div>
@@ -416,11 +416,11 @@
 
     <div role="tabpanel" class="tab-pane" id="payment">
 
-  <div class="checkbox col-sm-12 has-error">
+  <div class="checkbox col-sm-3 has-error">
     <label>
       <input type="checkbox" id="hold"> Hold payment?
     </label>
-    <textarea class="form-control" rows="3"></textarea>
+    <textarea class="form-control" rows="2"></textarea>
   </div>
 <legend>Tax Details</legend>
 <label class="radio-inline">
@@ -704,9 +704,45 @@
 
 </div> <!--Close the payment tab div -->
 
-    <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile</div>
+    <div role="tabpanel" class="tab-pane" id="website">This is where I put the Website Profile
+
+      <div class="checkbox col-sm-3">
+        <label>
+          <input type="checkbox"> Front Page Slideshow
+        </label>
+      </div>
+  <div class="form-group">
+    <label for="bwImage">Upload Black and White Image</label>
+    <input type="file" id="bwImage">
+    <p class="help-block">This image should be 605px x 363px</p>
+  </div>
+      <!-- Upload Black and White image with dimensions -->
+      <div class="checkbox col-sm-3">
+        <label>
+          <input type="checkbox"> Front Page Feature
+        </label>
+      </div>
+  <div class="form-group">
+    <label for="colorImage">Upload Color Image</label>
+    <input type="file" id="colorImage">
+    <p class="help-block">This image should be 1024px by 576px</p>
+  </div>
+      <!-- Upload Color image with dimensions -->
+      <label>Short Bio</label>
+    <textarea class="form-control" rows="6"></textarea>
+      <div class="checkbox col-sm-3">
+        <label>
+          <input type="checkbox"> Included on Roster
+        </label>
+      </div>
+    </div> <!-- Close website profile div -->
+
     <div role="tabpanel" class="tab-pane" id="profile">This is where I put the Artist Profile that we recently added to our other website.</div>
-    <div role="tabpanel" class="tab-pane" id="notes">This is where I put the notes</div>
+    <div role="tabpanel" class="tab-pane" id="notes">Miscellaneous Notes
+      <div class="col-sm-6">
+    <textarea class="form-control" rows="10"></textarea>
+      </div>
+    </div><!-- Close notes tab div -->
     <div role="tabpanel" class="tab-pane" id="import">This is where I will put the ability to import clients from CSV</div>
 </div>
 </div>
