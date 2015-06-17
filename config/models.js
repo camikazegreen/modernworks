@@ -28,6 +28,6 @@ module.exports.models = {
   *             
   * migrate options: drop, safe, alter                                       *
   ***************************************************************************/
-   migrate: 'alter'
+   migrate: 'drop'
 
 };
